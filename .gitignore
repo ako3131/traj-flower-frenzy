@@ -1,4 +1,5 @@
 .godot/
+.import/
 *.dmg
 *.zip
 *.pck
