@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://km2iwyldcphq"]
+
+[ext_resource type="Texture2D" uid="uid://dwaffpgotk4nl" path="res://arts/Free Pixel Art Hill/PNG/Hills Layer 05.png" id="1_22o0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ips0v"]
+size = Vector2(270, 42)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(125, -11)
+shape = SubResource("RectangleShape2D_ips0v")
+
+[node name="HillsLayer05" type="Sprite2D" parent="."]
+position = Vector2(127, -357)
+scale = Vector2(0.542969, 2.88281)
+texture = ExtResource("1_22o0k")
