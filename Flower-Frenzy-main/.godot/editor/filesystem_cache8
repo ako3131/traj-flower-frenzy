@@ -1,22 +1,39 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1740279407
-bug_monster.gd::GDScript::-1::1740278516::0::1::::<>CharacterBody2D<>::
-bug_monster.tscn::PackedScene::3126430097831233898::1740278648::0::1::::<><>::uid://mv1key8poclf::::res://arts/caterpillar-still.png<>res://bug_monster.gd<>uid://i3sysjnw4av1::::res://arts/caterpillar-walk.png
-coco.gd::GDScript::-1::1739830940::0::1::::<>CharacterBody2D<>::
-coco.tscn::PackedScene::6151027184450250069::1740278620::0::1::::<><>::res://coco.gd<>uid://bv8optfes7yr5::::res://arts/coco-attack.png<>uid://br17rkenbojqy::::res://arts/coco-jump.PNG<>uid://br4f7fauxe3nr::::res://arts/coco-still.PNG<>uid://cvuhp2w5beguv::::res://arts/coco-walk.PNG
-export_presets.cfg::TextFile::-1::1739838538::0::1::::<><>::
-icon.svg::CompressedTexture2D::7722172542673072842::1739838404::1739838459::1::::<><>::
-::res://arts/::1740266353
-caterpillar-still.png::CompressedTexture2D::887214804931294467::1740266348::1740266349::1::::<><>::
-caterpillar-walk.png::CompressedTexture2D::620450051086189452::1740266353::1740266353::1::::<><>::
-coco-attack.png::CompressedTexture2D::3929388696657814304::1739830940::1739831091::1::::<><>::
-coco-jump.PNG::CompressedTexture2D::3635278681415393020::1739830940::1739831091::1::::<><>::
-coco-still.PNG::CompressedTexture2D::3639858974332559051::1739830940::1739831091::1::::<><>::
-coco-walk.PNG::CompressedTexture2D::6288547898204731333::1739830940::1739831091::1::::<><>::
-::res://Exports/::1739838581
-::res://Exports/Windows/::1739838538
-::res://scene/::1740278620
-main.gd::GDScript::-1::1740277663::0::1::::<>Node2D<>::
-main.tscn::PackedScene::564485382552419441::1740278620::0::1::::<><>::uid://bksp32b5te1ja::::res://bug_monster.tscn<>uid://ctvurwa2kqli0::::res://coco.tscn
-player.tscn::PackedScene::5404984247148895294::1739830940::0::1::::<><>::res://scene/playercontorl.gd<>uid://br4f7fauxe3nr::::res://arts/coco-still.PNG
-playercontorl.gd::GDScript::-1::1739830940::0::1::::<>CharacterBody2D<>::
+::res://::1740371925
+bug_monster.gd::GDScript::-1::1740353910::0::1::::<>CharacterBody2D<>::
+bug_monster.tscn::PackedScene::3126430097831233898::1740371925::0::1::::<><>::uid://mv1key8poclf::::res://arts/caterpillar-still.png<>res://bug_monster.gd<>uid://i3sysjnw4av1::::res://arts/caterpillar-walk.png
+coco.gd::GDScript::-1::1740371922::0::1::::<>CharacterBody2D<>::
+coco.tscn::PackedScene::6151027184450250069::1740371925::0::1::::<><>::res://coco.gd<>uid://bv8optfes7yr5::::res://arts/coco-attack.png<>uid://br17rkenbojqy::::res://arts/coco-jump.PNG<>uid://br4f7fauxe3nr::::res://arts/coco-still.PNG<>uid://cvuhp2w5beguv::::res://arts/coco-walk.PNG
+export_presets.cfg::TextFile::-1::1740353910::0::1::::<><>::
+icon.svg::CompressedTexture2D::2112302618503224602::1740353910::1740371873::1::::<><>::
+::res://arts/::1740372023
+caterpillar-still.png::CompressedTexture2D::887214804931294467::1740353910::1740371873::1::::<><>::
+caterpillar-walk.png::CompressedTexture2D::620450051086189452::1740353910::1740371873::1::::<><>::
+coco-attack.png::CompressedTexture2D::3929388696657814304::1740353910::1740371873::1::::<><>::
+coco-jump.PNG::CompressedTexture2D::3635278681415393020::1740353910::1740371873::1::::<><>::
+coco-still.PNG::CompressedTexture2D::3639858974332559051::1740353910::1740371873::1::::<><>::
+coco-walk.PNG::CompressedTexture2D::6288547898204731333::1740353910::1740371873::1::::<><>::
+::res://arts/Pixel Art Hill/::1740372031
+contact.txt::TextFile::-1::1740371643::0::1::::<><>::
+Lisense.txt::TextFile::-1::1740371643::0::1::::<><>::
+readme.txt::TextFile::-1::1740371643::0::1::::<><>::
+::res://arts/Pixel Art Hill/PNG/::1740372011
+Hills Layer 01.png::CompressedTexture2D::5716383522881900147::1740371643::1740372042::1::::<><>::
+Hills Layer 02.png::CompressedTexture2D::7439296215383688492::1740371643::1740372042::1::::<><>::
+Hills Layer 03.png::CompressedTexture2D::8534358133287983271::1740371643::1740372042::1::::<><>::
+Hills Layer 04.png::CompressedTexture2D::4022549603099047988::1740371643::1740372042::1::::<><>::
+Hills Layer 05.png::CompressedTexture2D::8703729922830364409::1740371644::1740372042::1::::<><>::
+Hills Layer 06.png::CompressedTexture2D::3127937549317188648::1740371644::1740372042::1::::<><>::
+::res://arts/Pixel Art Hill/PREVIEWS/::1740372011
+Hills Free (update 3.0).png::CompressedTexture2D::9217825543157310551::1740371644::1740372042::1::::<><>::
+::res://arts/Pixel Art Hill/PSD/::1740372011
+::res://arts/Pixel Art Hill/You may also like/::1740372011
+Pixel Art Forest.png::CompressedTexture2D::7020937764081520073::1740371644::1740372043::1::::<><>::
+Pixel Art Plataformer Painted Style.png::CompressedTexture2D::3119021343287076922::1740371644::1740372043::1::::<><>::
+Pixel Art Runner.png::CompressedTexture2D::5426760548714199097::1740371644::1740372043::1::::<><>::
+Pixel Art Snowy Forest.png::CompressedTexture2D::3824068751960932922::1740371644::1740372043::1::::<><>::
+::res://scene/::1740371925
+main.gd::GDScript::-1::1740353910::0::1::::<>Node2D<>::
+main.tscn::PackedScene::564485382552419441::1740371925::0::1::::<><>::uid://bksp32b5te1ja::::res://bug_monster.tscn<>uid://ctvurwa2kqli0::::res://coco.tscn
+player.tscn::PackedScene::5404984247148895294::1740353910::0::1::::<><>::res://scene/playercontorl.gd<>uid://br4f7fauxe3nr::::res://arts/coco-still.PNG
+playercontorl.gd::GDScript::-1::1740353910::0::1::::<>CharacterBody2D<>::
