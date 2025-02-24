@@ -2,7 +2,7 @@
 /android/
 addons/
 plugins/
-.import/
+*.import
 *.dmg
 *.zip
 *.pck

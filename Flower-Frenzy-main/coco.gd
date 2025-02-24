@@ -8,7 +8,10 @@ extends CharacterBody2D
 @export var jump_force = -400.0
 @export_range(0,1) var decelerate_on_jump_release = 0.5
 
+@export var knock_back_strength = 100
+
 var is_attacking = false
+var enemy_in_range = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,6 +30,8 @@ func _physics_process(delta: float) -> void:
 		is_attacking = true
 		$AnimatedSprite2D.animation = "attack"
 		$AnimatedSprite2D.play()
+		if enemy_in_range:
+			deal_damage()
 		return  # Prevent other animations from playing during attack
 
 	# Handle movement only if not attacking
@@ -65,3 +70,20 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			$AnimatedSprite2D.animation = "still"
 		else:
 			$AnimatedSprite2D.animation = "walk"
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		enemy_in_range = true
+		
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		enemy_in_range = false
+		
+func deal_damage() -> void:
+	var bodies = $Area2D.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("enemy"):
+			# Only change x direction
+			var knock_back_direction = Vector2(body.global_position.x - global_position.x, 0).normalized()
+			var knock_back = knock_back_direction * knock_back_strength
+			body.global_position += knock_back
