@@ -1,4 +1,7 @@
 .godot/
+/android/
+addons/
+plugins/
 .import/
 *.dmg
 *.zip
