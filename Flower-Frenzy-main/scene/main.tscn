@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bxks2lyxgeyoy" path="res://arts/Pixel Art Hill/PNG/Hills Layer 04.png" id="6_kp848"]
 [ext_resource type="Texture2D" uid="uid://dwaffpgotk4nl" path="res://arts/Pixel Art Hill/PNG/Hills Layer 05.png" id="7_341bm"]
 [ext_resource type="Texture2D" uid="uid://bktgw6wgi7hy3" path="res://arts/Pixel Art Hill/PNG/Hills Layer 06.png" id="8_ddo0f"]
-[ext_resource type="PackedScene" uid="uid://cu6hfaysbpa6s" path="res://scene/floor.tscn" id="9_8w2qt"]
+[ext_resource type="PackedScene" path="res://scene/floor.tscn" id="9_8w2qt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s3emh"]
 distance = -606.0
@@ -79,3 +79,10 @@ collision_mask = 3
 position = Vector2(320, 27)
 collision_layer = 3
 collision_mask = 3
+
+[node name="Combo" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 307.0
+offset_right = 398.0
+offset_bottom = 333.0
+text = "COMBO: "

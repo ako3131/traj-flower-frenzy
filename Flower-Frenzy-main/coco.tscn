@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=22 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://coco.gd" id="1_l0cam"]
 [ext_resource type="Texture2D" uid="uid://bv8optfes7yr5" path="res://arts/coco-attack.png" id="1_plgdq"]
@@ -119,6 +119,9 @@ size = Vector2(35, 94)
 [sub_resource type="CircleShape2D" id="CircleShape2D_vuavu"]
 radius = 70.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfpj"]
+size = Vector2(38.271, 14.7163)
+
 [node name="coco" type="CharacterBody2D"]
 script = ExtResource("1_l0cam")
 
@@ -126,7 +129,7 @@ script = ExtResource("1_l0cam")
 position = Vector2(6.10352e-05, -11)
 scale = Vector2(4.0625, 4.77083)
 sprite_frames = SubResource("SpriteFrames_oq0jm")
-animation = &"still"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -2)
@@ -136,6 +139,14 @@ shape = SubResource("RectangleShape2D_evwk8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_vuavu")
+
+[node name="AttackArea" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(44.2793, 4.85039)
+rotation = -0.975068
+shape = SubResource("RectangleShape2D_fpfpj")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

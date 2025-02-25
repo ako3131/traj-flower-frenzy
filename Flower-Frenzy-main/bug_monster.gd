@@ -4,7 +4,7 @@ extends CharacterBody2D
 var player_position
 var target_position
 @onready var player = get_parent().get_node("coco")
-
+@export var health = 10
 func _physics_process(delta: float) -> void:	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -21,5 +21,11 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector2(0,0)
 			$AnimatedSprite2D.animation = "still"
 		
-	$AnimatedSprite2D.play()	
+	$AnimatedSprite2D.play()
+	
 	move_and_slide()
+	
+func take_damage():
+	health -= 1
+	if health <= 0:
+		queue_free()
