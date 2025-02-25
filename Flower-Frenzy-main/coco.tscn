@@ -116,8 +116,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evwk8"]
 size = Vector2(35, 94)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vuavu"]
-radius = 70.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb3j2"]
+radius = 19.0
+height = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfpj"]
 size = Vector2(38.271, 14.7163)
@@ -138,7 +139,7 @@ shape = SubResource("RectangleShape2D_evwk8")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_vuavu")
+shape = SubResource("CapsuleShape2D_lb3j2")
 
 [node name="AttackArea" type="Area2D" parent="."]
 monitoring = false

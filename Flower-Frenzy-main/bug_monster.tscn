@@ -52,18 +52,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8kbt"]
-size = Vector2(63.5, 36.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s4j3h"]
+radius = 9.01606
+height = 59.9816
 
 [node name="bug_monster" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_4qgxo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.999969, -7)
+position = Vector2(0, -6)
 scale = Vector2(2.82812, 2.875)
 sprite_frames = SubResource("SpriteFrames_ymtva")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 0)
-shape = SubResource("RectangleShape2D_o8kbt")
+position = Vector2(-4, 3)
+rotation = -1.56262
+shape = SubResource("CapsuleShape2D_s4j3h")

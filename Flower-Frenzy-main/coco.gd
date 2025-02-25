@@ -82,21 +82,14 @@ func _physics_process(delta: float) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "attack":
 		is_attacking = false
-		# Resume appropriate animation based on state
+		$AttackArea.monitoring = false
+				# Resume appropriate animation based on state
 		if not is_on_floor():
 			$AnimatedSprite2D.animation = "jump"
 		elif velocity.length() == 0:
 			$AnimatedSprite2D.animation = "still"
 		else:
 			$AnimatedSprite2D.animation = "walk"
-
-#func _on_area_2d_body_entered(body: Node2D) -> void:
-	#if body.is_in_group("enemy"):
-		#enemy_in_range = true
-		
-#func _on_area_2d_body_exited(body: Node2D) -> void:
-	#if body.is_in_group("enemy"):
-		#enemy_in_range = false
 		
 func deal_damage() -> bool:
 	var hit_registered = false
