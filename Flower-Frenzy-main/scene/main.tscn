@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ibo8yq4bg5ij"]
 
-[ext_resource type="PackedScene" uid="uid://bksp32b5te1ja" path="res://bug_monster.tscn" id="2_pg63v"]
+[ext_resource type="Script" path="res://scene/main.gd" id="1_qlag6"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://coco.tscn" id="2_sxahc"]
 [ext_resource type="Texture2D" uid="uid://cnpcabw5yq6up" path="res://arts/Pixel Art Hill/PNG/Hills Layer 01.png" id="3_lfwtu"]
 [ext_resource type="Texture2D" uid="uid://dd8wee1fdipoe" path="res://arts/Pixel Art Hill/PNG/Hills Layer 02.png" id="4_qofbv"]
@@ -8,21 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://bxks2lyxgeyoy" path="res://arts/Pixel Art Hill/PNG/Hills Layer 04.png" id="6_kp848"]
 [ext_resource type="Texture2D" uid="uid://dwaffpgotk4nl" path="res://arts/Pixel Art Hill/PNG/Hills Layer 05.png" id="7_341bm"]
 [ext_resource type="Texture2D" uid="uid://bktgw6wgi7hy3" path="res://arts/Pixel Art Hill/PNG/Hills Layer 06.png" id="8_ddo0f"]
-[ext_resource type="PackedScene" path="res://scene/floor.tscn" id="9_8w2qt"]
+[ext_resource type="PackedScene" uid="uid://cu6hfaysbpa6s" path="res://scene/floor.tscn" id="9_8w2qt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s3emh"]
 distance = -606.0
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_qlag6")
 
 [node name="coco" parent="." instance=ExtResource("2_sxahc")]
 position = Vector2(435, 192)
 
 [node name="Camera2D" type="Camera2D" parent="coco"]
 position = Vector2(-10, 0)
-
-[node name="bug_monster" parent="." instance=ExtResource("2_pg63v")]
-position = Vector2(435, 193)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

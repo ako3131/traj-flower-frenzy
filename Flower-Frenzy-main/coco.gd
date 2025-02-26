@@ -8,15 +8,12 @@ extends CharacterBody2D
 @export var jump_force = -400.0
 @export_range(0,1) var decelerate_on_jump_release = 0.5
 
-@export var knock_back_strength = 100
+@export var knock_back_strength = 150
+@export var hit_strength = 20
 
 var is_attacking = false
-#Removed the in_are boolean
-#Hit counter variables 
 var hit_count: int = 0
-
 var missed_swings: int = 0
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -96,12 +93,13 @@ func deal_damage() -> bool:
 	var bodies = $Area2D.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemy"):
+			print("body in player area")
 			# Only change x direction
 			hit_registered = true
-			body.take_damage()
-			var knock_back_direction = Vector2(body.global_position.x - global_position.x, 0).normalized()
-			var knock_back = knock_back_direction * knock_back_strength
-			body.global_position += knock_back
+			body.take_damage(position, knock_back_strength, hit_strength)
+			#var knock_back_direction = Vector2(body.global_position.x - global_position.x, 0).normalized()
+			#var knock_back = knock_back_direction * knock_back_strength
+			#body.global_position += knock_back
 	update_hit_display()
 	return hit_registered
 	

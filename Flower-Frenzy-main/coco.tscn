@@ -121,9 +121,11 @@ radius = 19.0
 height = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfpj"]
-size = Vector2(38.271, 14.7163)
+size = Vector2(40.4876, 20.5104)
 
 [node name="coco" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_l0cam")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -137,15 +139,19 @@ position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_evwk8")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_lb3j2")
 
 [node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(44.2793, 4.85039)
+position = Vector2(45, 3.99999)
 rotation = -0.975068
 shape = SubResource("RectangleShape2D_fpfpj")
 
