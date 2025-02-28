@@ -2,6 +2,7 @@
 /android/
 addons/
 plugins/
+Exports/
 *.import
 *.dmg
 *.zip

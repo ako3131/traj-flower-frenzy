@@ -4,7 +4,7 @@ extends CharacterBody2D
 var player_position
 var target_position
 @onready var player = get_parent().get_node("coco")
-@export var max_health = 80
+@export var max_health = 40
 var health = max_health
 func _physics_process(delta: float) -> void:	
 	

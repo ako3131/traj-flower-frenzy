@@ -43,10 +43,10 @@ func _physics_process(delta: float) -> void:
 			missed_swings = 0  # Reset missed count
 		else:
 			missed_swings += 1
-			if missed_swings >= 3:
+			if missed_swings >= 1:
 				hit_count = 0  # Reset hit count after 3 missed swings
 
-		update_hit_display()  # Update UI
+		#update_hit_display()  # Update UI
 		return  # Prevent other animations from playing during attack
  
 
@@ -93,20 +93,19 @@ func deal_damage() -> bool:
 	var bodies = $Area2D.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemy"):
-			print("body in player area")
 			# Only change x direction
 			hit_registered = true
 			body.take_damage(position, knock_back_strength, hit_strength)
 			#var knock_back_direction = Vector2(body.global_position.x - global_position.x, 0).normalized()
 			#var knock_back = knock_back_direction * knock_back_strength
 			#body.global_position += knock_back
-	update_hit_display()
+	#update_hit_display()
 	return hit_registered
 	
-func update_hit_display():
-	var hit_display = get_node_or_null("/root/main/Combo") 
-	if hit_display:
-		hit_display.text = "COMBO: " + str(hit_count)
-	else: 
-		print("Error: NO COMBO found")
+#func update_hit_display():
+	#var hit_display = get_node_or_null("/root/main/Combo") 
+	#if hit_display:
+		#hit_display.text = "COMBO: " + str(hit_count)
+	#else: 
+		#print("Error: NO COMBO found")
 	
