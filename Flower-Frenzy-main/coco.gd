@@ -8,19 +8,19 @@ extends CharacterBody2D
 @export var jump_force = -400.0
 @export_range(0,1) var decelerate_on_jump_release = 0.5
 
-@export var knock_back_strength = 150
-@export var hit_strength = 20
+@export var knock_back_strength = 150  # Strength of knockback applied to enemies
+@export var hit_strength = 20  # Damage per hit
 
 var is_attacking = false
 var hit_count: int = 0
 var missed_swings: int = 0
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Add gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
+	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_force
 		
@@ -80,7 +80,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "attack":
 		is_attacking = false
 		$AttackArea.monitoring = false
-				# Resume appropriate animation based on state
+		# Resume appropriate animation based on state
 		if not is_on_floor():
 			$AnimatedSprite2D.animation = "jump"
 		elif velocity.length() == 0:
@@ -88,24 +88,31 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		else:
 			$AnimatedSprite2D.animation = "walk"
 		
+@export var knock_back_distance = 4  # Adjust this to control knockback distance
+
 func deal_damage() -> bool:
 	var hit_registered = false
 	var bodies = $Area2D.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemy"):
-			# Only change x direction
+			print("body in player area")
 			hit_registered = true
-			body.take_damage(position, knock_back_strength, hit_strength)
-			#var knock_back_direction = Vector2(body.global_position.x - global_position.x, 0).normalized()
-			#var knock_back = knock_back_direction * knock_back_strength
-			#body.global_position += knock_back
-	#update_hit_display()
+
+			# Knockback calculation (now includes knock_back_distance multiplier)
+			var knock_back_direction = Vector2(body.global_position.x - global_position.x, 0).normalized()
+			var knock_back = knock_back_direction * knock_back_strength * knock_back_distance
+
+			# Apply knockback smoothly by calling enemy's `apply_knockback` method
+			if body.has_method("apply_knockback"):
+				body.apply_knockback(knock_back, hit_strength)  # Pass both values
+
+	update_hit_display()
 	return hit_registered
+
 	
-#func update_hit_display():
-	#var hit_display = get_node_or_null("/root/main/Combo") 
-	#if hit_display:
-		#hit_display.text = "COMBO: " + str(hit_count)
-	#else: 
-		#print("Error: NO COMBO found")
-	
+func update_hit_display():
+	var hit_display = get_node_or_null("/root/main/Combo") 
+	if hit_display:
+		hit_display.text = "COMBO: " + str(hit_count)
+	else: 
+		print("Error: NO COMBO found")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=24 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://coco.gd" id="1_l0cam"]
 [ext_resource type="Texture2D" uid="uid://bv8optfes7yr5" path="res://arts/coco-attack.png" id="1_plgdq"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="2_2titg"]
 [ext_resource type="Texture2D" uid="uid://br17rkenbojqy" path="res://arts/coco-jump.PNG" id="2_f8jyt"]
 [ext_resource type="Texture2D" uid="uid://br4f7fauxe3nr" path="res://arts/coco-still.PNG" id="3_0carb"]
 [ext_resource type="Texture2D" uid="uid://cvuhp2w5beguv" path="res://arts/coco-walk.PNG" id="4_0ohiv"]
@@ -128,6 +129,13 @@ size = Vector2(40.4876, 20.5104)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_l0cam")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(-10, 0)
+scale = Vector2(3.36563, -2.36483)
+zoom = Vector2(0.55, 0.55)
+script = ExtResource("2_2titg")
+player = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6.10352e-05, -11)
