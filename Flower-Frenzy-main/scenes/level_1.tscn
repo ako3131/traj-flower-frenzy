@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://ibo8yq4bg5ij"]
 
-[ext_resource type="Script" path="res://scene/main.gd" id="1_qlag6"]
-[ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://coco.tscn" id="2_sxahc"]
-[ext_resource type="Texture2D" uid="uid://bvwll15sbt6o" path="res://arts/Forest-nature-fantasy-tilese/Terrain_and_Props.png" id="3_aoonk"]
-[ext_resource type="Texture2D" uid="uid://c24phtxge41rp" path="res://arts/Forest-nature-fantasy-tilese/BG_1/BG_1.png" id="4_54kef"]
-[ext_resource type="Texture2D" uid="uid://dqfst5kl2fldy" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_4jb85"]
-[ext_resource type="Texture2D" uid="uid://bhcx6a0tqre6" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_yl52y"]
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3gl47"]
+[ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="2_x5y03"]
+[ext_resource type="Texture2D" uid="uid://bq0pic2v2fkw5" path="res://arts/Forest-nature-fantasy-tilese/Terrain_and_Props.png" id="3_65c1m"]
+[ext_resource type="Texture2D" uid="uid://jyfqg6lg6uko" path="res://arts/Forest-nature-fantasy-tilese/BG_1/BG_1.png" id="4_0xcho"]
+[ext_resource type="Texture2D" uid="uid://gsamj2m6hi6n" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
+[ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
-texture = ExtResource("3_aoonk")
+texture = ExtResource("3_65c1m")
 0:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -447,7 +447,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_5c3xw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pojac"]
-texture = ExtResource("3_aoonk")
+texture = ExtResource("3_65c1m")
 0:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -828,9 +828,9 @@ tile_size = Vector2i(16, 12)
 sources/0 = SubResource("TileSetAtlasSource_pojac")
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_qlag6")
+script = ExtResource("1_3gl47")
 
-[node name="coco" parent="." instance=ExtResource("2_sxahc")]
+[node name="coco" parent="." instance=ExtResource("2_x5y03")]
 position = Vector2(435, 192)
 
 [node name="Combo" type="Label" parent="."]
@@ -859,16 +859,16 @@ layer_0/tile_data = PackedInt32Array(131071, 262144, 19, 196607, 262144, 20, 262
 z_index = -3
 position = Vector2(2983, 904)
 scale = Vector2(6, 6)
-texture = ExtResource("4_54kef")
+texture = ExtResource("4_0xcho")
 
 [node name="Bg2" type="Sprite2D" parent="."]
 z_index = -4
 position = Vector2(3300, 902)
 scale = Vector2(6, 6)
-texture = ExtResource("5_4jb85")
+texture = ExtResource("5_wqrka")
 
 [node name="Bg3" type="Sprite2D" parent="."]
 z_index = -5
 position = Vector2(2635, 908)
 scale = Vector2(6, 6)
-texture = ExtResource("6_yl52y")
+texture = ExtResource("6_5etcc")

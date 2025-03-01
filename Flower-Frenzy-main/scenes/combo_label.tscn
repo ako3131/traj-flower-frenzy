@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://3m8yn16m1ti0"]
+
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_16tf5"]
+[ext_resource type="Script" path="res://scripts/combo_label.gd" id="2_pk4y3"]
+
+[node name="combo_label" type="Label"]
+offset_left = -44.0
+offset_top = 2.0
+offset_right = 43.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("1_16tf5")
+theme_override_font_sizes/font_size = 60
+text = "X"
+script = ExtResource("2_pk4y3")

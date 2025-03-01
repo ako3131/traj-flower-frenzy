@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var character = $coco
-var shoe_scene = preload("res://shoe_monster.tscn")
-var bug_scene = preload("res://bug_monster.tscn")
+var shoe_scene = preload("res://scenes/shoe_monster.tscn")
+var bug_scene = preload("res://scenes/bug_monster.tscn")
 
 func _ready() -> void:
 	character.position = Vector2(551, 482)

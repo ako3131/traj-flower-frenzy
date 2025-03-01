@@ -1,28 +1,28 @@
 [gd_scene load_steps=12 format=3 uid="uid://bksp32b5te1ja"]
 
-[ext_resource type="Texture2D" uid="uid://mv1key8poclf" path="res://arts/caterpillar-still.png" id="1_4ke4q"]
-[ext_resource type="Script" path="res://bug_monster.gd" id="1_4qgxo"]
-[ext_resource type="Texture2D" uid="uid://i3sysjnw4av1" path="res://arts/caterpillar-walk.png" id="2_xc6bc"]
-[ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://health_bar.tscn" id="4_ltbsf"]
+[ext_resource type="Script" path="res://scripts/bug_monster.gd" id="1_rtbsm"]
+[ext_resource type="Texture2D" uid="uid://mv1key8poclf" path="res://arts/caterpillar-still.png" id="2_uvq3j"]
+[ext_resource type="Texture2D" uid="uid://i3sysjnw4av1" path="res://arts/caterpillar-walk.png" id="3_ayf2g"]
+[ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="4_bwg2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fro4a"]
-atlas = ExtResource("1_4ke4q")
+atlas = ExtResource("2_uvq3j")
 region = Rect2(0, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wew16"]
-atlas = ExtResource("2_xc6bc")
+atlas = ExtResource("3_ayf2g")
 region = Rect2(0, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e806t"]
-atlas = ExtResource("2_xc6bc")
+atlas = ExtResource("3_ayf2g")
 region = Rect2(32, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs5ea"]
-atlas = ExtResource("2_xc6bc")
+atlas = ExtResource("3_ayf2g")
 region = Rect2(64, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xca64"]
-atlas = ExtResource("2_xc6bc")
+atlas = ExtResource("3_ayf2g")
 region = Rect2(96, 0, 32, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ymtva"]
@@ -60,7 +60,7 @@ height = 59.9816
 [node name="bug_monster" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_4qgxo")
+script = ExtResource("1_rtbsm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
@@ -74,7 +74,7 @@ position = Vector2(-4, 3)
 rotation = -1.56262
 shape = SubResource("CapsuleShape2D_s4j3h")
 
-[node name="health_bar" parent="." instance=ExtResource("4_ltbsf")]
+[node name="health_bar" parent="." instance=ExtResource("4_bwg2o")]
 offset_left = -16.0
 offset_top = 22.0
 offset_right = 20.0

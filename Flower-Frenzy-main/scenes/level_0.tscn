@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cggobfsbo0o2p"]
+
+[ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_t5fa5"]
+[ext_resource type="Texture2D" uid="uid://c348gnviowlp4" path="res://arts/summer5/3.png" id="2_4eyfo"]
+[ext_resource type="Texture2D" uid="uid://b2j8kirj8roj2" path="res://arts/summer5/4.png" id="3_ubabo"]
+[ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="4_0xxdp"]
+[ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="5_8a5nr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_16hde"]
+normal = Vector2(0.0156537, -0.999877)
+distance = 5.35551
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_22hjq"]
+normal = Vector2(1, 0)
+distance = 60.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g8vr7"]
+normal = Vector2(-1, 0)
+distance = 26.0
+
+[node name="tutorial" type="Node2D"]
+
+[node name="clouds" type="Sprite2D" parent="."]
+position = Vector2(717, 947)
+scale = Vector2(12.9653, 8.10494)
+texture = ExtResource("1_t5fa5")
+
+[node name="grass" type="Sprite2D" parent="."]
+position = Vector2(532, 171)
+scale = Vector2(8.28819, 7.91127)
+texture = ExtResource("2_4eyfo")
+
+[node name="flowers" type="Sprite2D" parent="."]
+position = Vector2(533, 438.625)
+scale = Vector2(8.32986, 5.8233)
+texture = ExtResource("3_ubabo")
+
+[node name="coco" parent="." instance=ExtResource("4_0xxdp")]
+position = Vector2(585, 423)
+scale = Vector2(2.17014, 1.5216)
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(944, -1095)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(-407, 2010)
+shape = SubResource("WorldBoundaryShape2D_16hde")
+
+[node name="left_wall" type="StaticBody2D" parent="."]
+position = Vector2(-510, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_wall"]
+shape = SubResource("WorldBoundaryShape2D_22hjq")
+
+[node name="right_wall" type="StaticBody2D" parent="."]
+position = Vector2(1636, 33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_wall"]
+position = Vector2(-36, -2)
+shape = SubResource("WorldBoundaryShape2D_g8vr7")
+
+[node name="next_level" parent="." instance=ExtResource("5_8a5nr")]
+position = Vector2(1521, 798)
