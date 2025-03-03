@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 50
+@export var speed = 150
 @export var max_health = 80
 @export var knockback_decay = 0.9  # How fast knockback fades (1 = no decay, 0 = instant stop)
 @export var knockback_resistance = 0.15  # Higher = less knockback effect

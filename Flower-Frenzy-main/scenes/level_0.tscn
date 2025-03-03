@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cggobfsbo0o2p"]
 
-[ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_t5fa5"]
-[ext_resource type="Texture2D" uid="uid://c348gnviowlp4" path="res://arts/summer5/3.png" id="2_4eyfo"]
-[ext_resource type="Texture2D" uid="uid://b2j8kirj8roj2" path="res://arts/summer5/4.png" id="3_ubabo"]
+[ext_resource type="Texture2D" uid="uid://xupstf6ylwyd" path="res://arts/summer5/1.png" id="1_t5fa5"]
+[ext_resource type="Texture2D" uid="uid://bjnjxfm8ncqe7" path="res://arts/summer5/3.png" id="2_4eyfo"]
+[ext_resource type="Texture2D" uid="uid://babpbo012jeyr" path="res://arts/summer5/4.png" id="3_ubabo"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="4_0xxdp"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="5_8a5nr"]
 
