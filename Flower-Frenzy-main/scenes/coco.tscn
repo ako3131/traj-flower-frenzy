@@ -133,7 +133,6 @@ script = ExtResource("1_s8rkf")
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(-10, 0)
 scale = Vector2(3.36563, -2.36483)
-zoom = Vector2(0.55, 0.55)
 script = ExtResource("2_cudp5")
 player = NodePath("..")
 

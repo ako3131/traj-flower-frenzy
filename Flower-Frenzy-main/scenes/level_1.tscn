@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ibo8yq4bg5ij"]
+[gd_scene load_steps=12 format=3 uid="uid://ibo8yq4bg5ij"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3gl47"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="2_x5y03"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://jyfqg6lg6uko" path="res://arts/Forest-nature-fantasy-tilese/BG_1/BG_1.png" id="4_0xcho"]
 [ext_resource type="Texture2D" uid="uid://gsamj2m6hi6n" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
 [ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
+[ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://music.tscn" id="7_63pmp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
 texture = ExtResource("3_65c1m")
@@ -872,3 +873,5 @@ z_index = -5
 position = Vector2(2635, 908)
 scale = Vector2(6, 6)
 texture = ExtResource("6_5etcc")
+
+[node name="music" parent="." instance=ExtResource("7_63pmp")]

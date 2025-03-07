@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cggobfsbo0o2p"]
+[gd_scene load_steps=12 format=3 uid="uid://cggobfsbo0o2p"]
 
 [ext_resource type="Script" path="res://scenes/level_0.gd" id="1_hn7tr"]
 [ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_t5fa5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2j8kirj8roj2" path="res://arts/summer5/4.png" id="3_ubabo"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="4_0xxdp"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="5_8a5nr"]
+[ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://music.tscn" id="8_8nlex"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="8_fxxo2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_16hde"]
@@ -94,3 +95,5 @@ offset_bottom = 693.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
 text = "Enter to Level 1"
+
+[node name="music" parent="." instance=ExtResource("8_8nlex")]
