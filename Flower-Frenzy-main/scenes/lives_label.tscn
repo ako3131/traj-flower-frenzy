@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu7ett65r633d"]
+
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_xddvf"]
+[ext_resource type="Script" path="res://scenes/lives_label.gd" id="2_m1btq"]
+
+[node name="lives_label" type="Label"]
+offset_right = 195.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xddvf")
+theme_override_font_sizes/font_size = 100
+text = "O O O"
+script = ExtResource("2_m1btq")

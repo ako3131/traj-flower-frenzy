@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cufkym4oucwun"]
+
+[ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="1_rwrg1"]
+[ext_resource type="PackedScene" uid="uid://3m8yn16m1ti0" path="res://scenes/combo_label.tscn" id="2_xnoqb"]
+[ext_resource type="PackedScene" uid="uid://cu7ett65r633d" path="res://scenes/lives_label.tscn" id="3_cvwkv"]
+
+[node name="player_hud" type="Node2D"]
+
+[node name="health_bar" parent="." instance=ExtResource("1_rwrg1")]
+offset_left = 47.0
+offset_top = 31.0
+offset_right = 599.0
+offset_bottom = 88.0
+
+[node name="combo_label" parent="." instance=ExtResource("2_xnoqb")]
+offset_left = 629.0
+offset_top = 14.0
+offset_right = 716.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 100
+
+[node name="lives_label" parent="." instance=ExtResource("3_cvwkv")]
+offset_left = 2081.0
+offset_top = 22.0
+offset_right = 2276.0
+offset_bottom = 110.0

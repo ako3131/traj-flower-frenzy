@@ -7,8 +7,8 @@ var bug_scene = preload("res://scenes/bug_monster.tscn")
 func _ready() -> void:
 	character.position = Vector2(551, 482)
 	
-	create_shoes(3)
-	create_bugs(2)
+	#create_shoes(3)
+	#create_bugs(2)
 
 func create_shoes(count: int):
 	var x_change = 70
@@ -29,3 +29,7 @@ func create_bugs(count: int):
 		var bug = bug_scene.instantiate()
 		add_child(bug)
 		bug.position = Vector2(x + (x_change * i), y + (y_change * i))
+
+
+func _on_fall_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

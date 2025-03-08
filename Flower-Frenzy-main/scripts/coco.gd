@@ -11,6 +11,12 @@ extends CharacterBody2D
 @export var knock_back_strength = 150  # Strength of knockback applied to enemies
 @export var hit_strength = 20  # Damage per hit
 
+@export var max_health = 200
+var health = max_health
+var always_show_health = true
+
+var lives = 3
+
 var is_attacking = false
 var hit_count: int = 0
 var missed_swings: int = 0
@@ -46,7 +52,7 @@ func _physics_process(delta: float) -> void:
 			if missed_swings >= 1:
 				hit_count = 0  # Reset hit count after 3 missed swings
 
-		#update_hit_display()  # Update UI
+		$combo_label.update_combo()
 		return  # Prevent other animations from playing during attack
  
 
@@ -108,10 +114,30 @@ func deal_damage() -> bool:
 	update_hit_display()
 	return hit_registered
 
+func take_damage(amount):
+	health -= amount
+	if health <= 0:
+		die()
+
+func die():
+	lives -= 1
+	if lives > 0:
+		respawn()
+	else:
+		game_over()
+	
+func respawn():
+	$lives_label.update_lives()
+	await get_tree().create_timer(.4).timeout  # Delay so health bar shows depleted
+	health = max_health
+	position = Vector2(551, 482)
+	
+func game_over():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
 func update_hit_display():
 	var hit_display = get_node_or_null("/root/main/Combo") 
 	if hit_display:
 		hit_display.text = "COMBO: " + str(hit_count)
-	else: 
-		print("Error: NO COMBO found")
+	#else: 
+		#print("Error: NO COMBO found")

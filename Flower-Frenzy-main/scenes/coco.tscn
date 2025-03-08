@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=26 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://scripts/coco.gd" id="1_s8rkf"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_cudp5"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://br4f7fauxe3nr" path="res://arts/coco-still.PNG" id="5_ekn2i"]
 [ext_resource type="Texture2D" uid="uid://cvuhp2w5beguv" path="res://arts/coco-walk.PNG" id="6_5mebd"]
 [ext_resource type="PackedScene" uid="uid://3m8yn16m1ti0" path="res://scenes/combo_label.tscn" id="7_73i1k"]
+[ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="8_vobfd"]
+[ext_resource type="PackedScene" uid="uid://cu7ett65r633d" path="res://scenes/lives_label.tscn" id="9_a1aip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0tx44"]
 atlas = ExtResource("3_sj8bs")
@@ -123,7 +125,7 @@ radius = 19.0
 height = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfpj"]
-size = Vector2(40.4876, 20.5104)
+size = Vector2(29.75, 117.5)
 
 [node name="coco" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -137,7 +139,7 @@ script = ExtResource("2_cudp5")
 player = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6.10352e-05, -11)
+position = Vector2(6, -6)
 scale = Vector2(4.0625, 4.77083)
 sprite_frames = SubResource("SpriteFrames_oq0jm")
 animation = &"attack"
@@ -159,15 +161,27 @@ collision_mask = 5
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(45, 3.99999)
-rotation = -0.975068
+position = Vector2(51.125, -6.25)
 shape = SubResource("RectangleShape2D_fpfpj")
 
 [node name="combo_label" parent="." instance=ExtResource("7_73i1k")]
-offset_left = -30.0
-offset_top = -690.0
-offset_right = 119.0
-offset_bottom = -531.0
+offset_left = -18.0
+offset_top = -728.0
+offset_right = 131.0
+offset_bottom = -569.0
+theme_override_font_sizes/font_size = 200
+
+[node name="health_bar" parent="." instance=ExtResource("8_vobfd")]
+offset_left = -1040.0
+offset_top = -698.0
+offset_right = -66.0
+offset_bottom = -576.0
+
+[node name="lives_label" parent="." instance=ExtResource("9_a1aip")]
+offset_left = 758.0
+offset_top = -712.0
+offset_right = 1133.0
+offset_bottom = -553.0
 theme_override_font_sizes/font_size = 200
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
