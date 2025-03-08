@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://co6v5mapptj0s"]
 
-[ext_resource type="Script" path="res://music.gd" id="1_20e8s"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="1_20e8s"]
 [ext_resource type="AudioStream" uid="uid://bgvtfat2tpi6b" path="res://arts/forest.wav" id="1_fsp3w"]
 
 [node name="music" type="Node2D"]

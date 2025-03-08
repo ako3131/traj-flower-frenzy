@@ -23,6 +23,8 @@ func _physics_process(delta: float) -> void:
 	# Apply knockback smoothly
 	if is_knocked_back:
 		knockback_velocity *= knockback_decay
+		if knockback_velocity.length() < 100:
+			$AnimatedSprite2D.animation = "default"
 		if knockback_velocity.length() < 1:
 			knockback_velocity = Vector2.ZERO
 			is_knocked_back = false  # Stop knockback
@@ -39,6 +41,9 @@ func apply_knockback(force: Vector2, hit_strength: int) -> void:
 	# Apply knockback based on resistance
 	knockback_velocity = force * (1 - knockback_resistance)  
 	is_knocked_back = true
+	
+	# Show hit animation
+	$AnimatedSprite2D.animation = "hit"
 
 	# Reduce health
 	health -= hit_strength

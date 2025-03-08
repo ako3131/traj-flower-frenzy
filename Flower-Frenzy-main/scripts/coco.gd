@@ -95,7 +95,6 @@ func deal_damage() -> bool:
 	var bodies = $Area2D.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemy"):
-			print("body in player area")
 			hit_registered = true
 
 			# Knockback calculation (now includes knock_back_distance multiplier)

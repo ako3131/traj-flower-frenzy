@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://jyfqg6lg6uko" path="res://arts/Forest-nature-fantasy-tilese/BG_1/BG_1.png" id="4_0xcho"]
 [ext_resource type="Texture2D" uid="uid://gsamj2m6hi6n" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
 [ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
-[ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://music.tscn" id="7_63pmp"]
+[ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://scenes/music.tscn" id="7_63pmp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
 texture = ExtResource("3_65c1m")
