@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ibo8yq4bg5ij"]
+[gd_scene load_steps=13 format=3 uid="uid://ibo8yq4bg5ij"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3gl47"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="2_x5y03"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gsamj2m6hi6n" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
 [ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
 [ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://scenes/music.tscn" id="7_63pmp"]
+[ext_resource type="Texture2D" uid="uid://boxebxd760vva" path="res://arts/flower_1.png" id="8_yo1ii"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
 texture = ExtResource("3_65c1m")
@@ -875,3 +876,8 @@ scale = Vector2(6, 6)
 texture = ExtResource("6_5etcc")
 
 [node name="music" parent="." instance=ExtResource("7_63pmp")]
+
+[node name="Flower" type="Sprite2D" parent="."]
+position = Vector2(524, 457)
+scale = Vector2(-6.02827, 7.86472)
+texture = ExtResource("8_yo1ii")

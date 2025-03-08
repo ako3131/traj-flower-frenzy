@@ -6,7 +6,7 @@ var bug_scene = preload("res://scenes/bug_monster.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	character.position = Vector2(-321, 753)
+	character.position = Vector2(-700, 719)
 	
 	create_shoes(1)
 	create_bugs(1)
@@ -20,15 +20,15 @@ func create_shoes(count: int):
 		var shoe = shoe_scene.instantiate()
 		add_child(shoe)
 		shoe.position = Vector2(x + (x_change * i), y + (y_change * i))
-		shoe.scale = Vector2(2,2)
+		#shoe.scale = Vector2(2,2)
 	
 func create_bugs(count: int):
 	var x_change = 100
 	var y_change = 0
 	var x = 522
-	var y = 788
+	var y = 700
 	for i in range(count):
 		var bug = bug_scene.instantiate()
 		add_child(bug)
 		bug.position = Vector2(x + (x_change * i), y + (y_change * i))
-		bug.scale = Vector2(2,2)
+		#bug.scale = Vector2(2,2)

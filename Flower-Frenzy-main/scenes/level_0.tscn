@@ -30,18 +30,17 @@ scale = Vector2(12.9653, 8.10494)
 texture = ExtResource("1_t5fa5")
 
 [node name="grass" type="Sprite2D" parent="."]
-position = Vector2(532, 171)
-scale = Vector2(8.28819, 7.91127)
+position = Vector2(149.999, 171)
+scale = Vector2(9.61458, 7.91127)
 texture = ExtResource("2_4eyfo")
 
 [node name="flowers" type="Sprite2D" parent="."]
-position = Vector2(533, 438.625)
-scale = Vector2(8.32986, 5.8233)
+position = Vector2(159, 474.125)
+scale = Vector2(9.62847, 6.04244)
 texture = ExtResource("3_ubabo")
 
 [node name="coco" parent="." instance=ExtResource("4_0xxdp")]
-position = Vector2(6, 9)
-scale = Vector2(2, 2)
+position = Vector2(-5, 0)
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(944, -1095)
@@ -51,7 +50,7 @@ position = Vector2(-407, 2010)
 shape = SubResource("WorldBoundaryShape2D_16hde")
 
 [node name="left_wall" type="StaticBody2D" parent="."]
-position = Vector2(-510, 2)
+position = Vector2(-1228, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_wall"]
 shape = SubResource("WorldBoundaryShape2D_22hjq")
@@ -67,9 +66,9 @@ shape = SubResource("WorldBoundaryShape2D_g8vr7")
 position = Vector2(1521, 798)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -755.0
+offset_left = -1149.0
 offset_top = 466.0
-offset_right = -395.0
+offset_right = -771.0
 offset_bottom = 727.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
@@ -88,12 +87,12 @@ text = "J to attack
 "
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 1343.0
+offset_left = 1379.0
 offset_top = 498.0
-offset_right = 1782.0
+offset_right = 1851.0
 offset_bottom = 693.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
-text = "Enter to Level 1"
+text = "Enter Level 1"
 
 [node name="music" parent="." instance=ExtResource("8_8nlex")]

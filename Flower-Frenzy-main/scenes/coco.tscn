@@ -164,10 +164,11 @@ rotation = -0.975068
 shape = SubResource("RectangleShape2D_fpfpj")
 
 [node name="combo_label" parent="." instance=ExtResource("7_73i1k")]
-offset_left = -22.0
-offset_top = -99.0
-offset_right = 28.0
-offset_bottom = -39.0
+offset_left = -30.0
+offset_top = -690.0
+offset_right = 119.0
+offset_bottom = -531.0
+theme_override_font_sizes/font_size = 200
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
