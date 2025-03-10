@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		var hit_registered = deal_damage()
 		
 		if hit_registered:
+			$AudioStreamPlayer2D.play()
 			hit_count += 1
 			missed_swings = 0  # Reset missed count
 		else:
@@ -141,3 +142,6 @@ func update_hit_display():
 		hit_display.text = "COMBO: " + str(hit_count)
 	#else: 
 		#print("Error: NO COMBO found")
+#func _on_hit_detected():
+	#$AudioStreamPlayer2D.play()  # Plays the hit sound
+	

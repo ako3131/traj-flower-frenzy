@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3gl47"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="2_x5y03"]
-[ext_resource type="Texture2D" uid="uid://bq0pic2v2fkw5" path="res://arts/Forest-nature-fantasy-tilese/Terrain_and_Props.png" id="3_65c1m"]
-[ext_resource type="Texture2D" uid="uid://jyfqg6lg6uko" path="res://arts/Forest-nature-fantasy-tilese/BG_1/BG_1.png" id="4_0xcho"]
-[ext_resource type="Texture2D" uid="uid://gsamj2m6hi6n" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
-[ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
+[ext_resource type="Texture2D" uid="uid://coptbfh8w31j2" path="res://arts/Forest-nature-fantasy-tilese/Terrain_and_Props.png" id="3_65c1m"]
+[ext_resource type="Texture2D" uid="uid://bbvelnkfr3rwy" path="res://arts/Forest-nature-fantasy-tilese/BG_1/BG_1.png" id="4_0xcho"]
+[ext_resource type="Texture2D" uid="uid://uljyqpepmg65" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
+[ext_resource type="Texture2D" uid="uid://bcignldrsjuyd" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
 [ext_resource type="Script" path="res://scripts/fall_area.gd" id="7_7ok1c"]
 [ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://scenes/music.tscn" id="7_63pmp"]
-[ext_resource type="Texture2D" uid="uid://boxebxd760vva" path="res://arts/flower_1.png" id="8_yo1ii"]
+[ext_resource type="Texture2D" uid="uid://bbo5pd1sc7n0l" path="res://arts/flower_1.png" id="8_yo1ii"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
 texture = ExtResource("3_65c1m")

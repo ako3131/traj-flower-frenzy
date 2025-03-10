@@ -2,73 +2,37 @@
 
 [ext_resource type="Script" path="res://scripts/coco.gd" id="1_s8rkf"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_cudp5"]
-[ext_resource type="Texture2D" uid="uid://bv8optfes7yr5" path="res://arts/coco-attack.png" id="3_sj8bs"]
-[ext_resource type="Texture2D" uid="uid://br17rkenbojqy" path="res://arts/coco-jump.PNG" id="4_xan4n"]
-[ext_resource type="Texture2D" uid="uid://br4f7fauxe3nr" path="res://arts/coco-still.PNG" id="5_ekn2i"]
-[ext_resource type="Texture2D" uid="uid://cvuhp2w5beguv" path="res://arts/coco-walk.PNG" id="6_5mebd"]
+[ext_resource type="Texture2D" uid="uid://4nddtq8nywdo" path="res://arts/Coco Art New/bat-swing-1-1.png.png" id="3_onrmp"]
+[ext_resource type="Texture2D" uid="uid://dr0i3yfhk0vps" path="res://arts/Coco Art New/bat-swing-1-2.png (1).png" id="4_nleaa"]
+[ext_resource type="Texture2D" uid="uid://cjb1a8wc4ras8" path="res://arts/Coco Art New/bat-swing-1-3.png (1).png" id="5_378qt"]
+[ext_resource type="Texture2D" uid="uid://dftu1utoit8uc" path="res://arts/Coco Art New/coco run 1-2.png.png" id="6_c21qd"]
 [ext_resource type="PackedScene" uid="uid://3m8yn16m1ti0" path="res://scenes/combo_label.tscn" id="7_73i1k"]
+[ext_resource type="Texture2D" uid="uid://bpvla2wxriq66" path="res://arts/Coco Art New/coco run 1-1.png.png" id="7_ns6po"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="8_vobfd"]
 [ext_resource type="PackedScene" uid="uid://cu7ett65r633d" path="res://scenes/lives_label.tscn" id="9_a1aip"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0tx44"]
-atlas = ExtResource("3_sj8bs")
-region = Rect2(0, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jtkhc"]
-atlas = ExtResource("3_sj8bs")
-region = Rect2(32, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w27fv"]
-atlas = ExtResource("3_sj8bs")
-region = Rect2(64, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t53iq"]
-atlas = ExtResource("4_xan4n")
-region = Rect2(0, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rmyvn"]
-atlas = ExtResource("4_xan4n")
-region = Rect2(32, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s0uig"]
-atlas = ExtResource("4_xan4n")
-region = Rect2(64, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8x3p"]
-atlas = ExtResource("4_xan4n")
-region = Rect2(96, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_20hpe"]
-atlas = ExtResource("5_ekn2i")
-region = Rect2(0, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dsonw"]
-atlas = ExtResource("6_5mebd")
-region = Rect2(0, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rd2gl"]
-atlas = ExtResource("6_5mebd")
-region = Rect2(32, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbth6"]
-atlas = ExtResource("6_5mebd")
-region = Rect2(64, 0, 32, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ol2vc"]
-atlas = ExtResource("6_5mebd")
-region = Rect2(96, 0, 32, 24)
+[ext_resource type="Texture2D" uid="uid://ccrdfhfdpu1vn" path="res://arts/Coco Art New/coco run 1-4.png.png" id="9_bxokt"]
+[ext_resource type="Texture2D" uid="uid://mcreaasgwk4t" path="res://arts/Coco Art New/coco run 1-5.png.png" id="10_c3cmv"]
+[ext_resource type="Texture2D" uid="uid://cbmnbnj1nj2nv" path="res://arts/Coco Art New/coco run 1-6.png.png" id="11_bvx6j"]
+[ext_resource type="Texture2D" uid="uid://d0et6d3brqs6b" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="12_3aff4"]
+[ext_resource type="Texture2D" uid="uid://clgeabupjkt7j" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="13_5lq5t"]
+[ext_resource type="Texture2D" uid="uid://521cytv8606s" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="14_n7ql7"]
+[ext_resource type="Texture2D" uid="uid://c3q5xy1ncic6b" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="15_0kxmo"]
+[ext_resource type="Texture2D" uid="uid://5w3q08nn2bsu" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="16_ev4r6"]
+[ext_resource type="Texture2D" uid="uid://dg54hbsk86o1i" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="17_88unt"]
+[ext_resource type="Texture2D" uid="uid://blh1ic6itg1lx" path="res://arts/Coco Art New/coco run 1-3.png.png" id="18_yvyjc"]
+[ext_resource type="AudioStream" uid="uid://d148y6kq57346" path="res://scripts/rusty-blade-slice-4-186529.mp3" id="21_j3m6j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oq0jm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0tx44")
+"texture": ExtResource("3_onrmp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jtkhc")
+"texture": ExtResource("4_nleaa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w27fv")
+"texture": ExtResource("5_378qt")
 }],
 "loop": false,
 "name": &"attack",
@@ -76,16 +40,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t53iq")
+"texture": ExtResource("6_c21qd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rmyvn")
+"texture": ExtResource("7_ns6po")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s0uig")
+"texture": ExtResource("9_bxokt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x8x3p")
+"texture": ExtResource("10_c3cmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bvx6j")
 }],
 "loop": true,
 "name": &"jump",
@@ -93,7 +60,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_20hpe")
+"texture": ExtResource("12_3aff4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5lq5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n7ql7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0kxmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ev4r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_88unt")
 }],
 "loop": true,
 "name": &"still",
@@ -101,16 +83,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dsonw")
+"texture": ExtResource("7_ns6po")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rd2gl")
+"texture": ExtResource("6_c21qd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gbth6")
+"texture": ExtResource("18_yvyjc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ol2vc")
+"texture": ExtResource("10_c3cmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bxokt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bvx6j")
 }],
 "loop": true,
 "name": &"walk",
@@ -125,7 +113,7 @@ radius = 19.0
 height = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfpj"]
-size = Vector2(29.75, 117.5)
+size = Vector2(155.994, 189.643)
 
 [node name="coco" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -139,13 +127,15 @@ script = ExtResource("2_cudp5")
 player = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, -6)
+position = Vector2(1, -1)
 scale = Vector2(4.0625, 4.77083)
 sprite_frames = SubResource("SpriteFrames_oq0jm")
 animation = &"attack"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -2)
+position = Vector2(5, 3)
 shape = SubResource("RectangleShape2D_evwk8")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -153,6 +143,7 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5, 0)
 shape = SubResource("CapsuleShape2D_lb3j2")
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -161,7 +152,8 @@ collision_mask = 5
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(51.125, -6.25)
+position = Vector2(82.1729, 26.0031)
+rotation = 1.57541
 shape = SubResource("RectangleShape2D_fpfpj")
 
 [node name="combo_label" parent="." instance=ExtResource("7_73i1k")]
@@ -183,6 +175,9 @@ offset_top = -712.0
 offset_right = 1133.0
 offset_bottom = -553.0
 theme_override_font_sizes/font_size = 200
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_j3m6j")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
