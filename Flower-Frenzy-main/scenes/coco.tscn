@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvuhp2w5beguv" path="res://arts/coco-walk.PNG" id="6_5mebd"]
 [ext_resource type="PackedScene" uid="uid://3m8yn16m1ti0" path="res://scenes/combo_label.tscn" id="7_73i1k"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="8_vobfd"]
-[ext_resource type="PackedScene" uid="uid://cu7ett65r633d" path="res://scenes/lives_label.tscn" id="9_a1aip"]
+[ext_resource type="PackedScene" path="res://scenes/lives_label.tscn" id="9_a1aip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0tx44"]
 atlas = ExtResource("3_sj8bs")

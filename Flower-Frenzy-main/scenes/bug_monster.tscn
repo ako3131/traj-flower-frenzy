@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://bksp32b5te1ja"]
 
 [ext_resource type="Script" path="res://scripts/bug_monster.gd" id="1_rtbsm"]
-[ext_resource type="Texture2D" uid="uid://cp3j1gwiksckg" path="res://arts/bug_monster_1.png" id="2_ng651"]
-[ext_resource type="Texture2D" uid="uid://djknjok2xpn6j" path="res://arts/bug_monster_1_hit.png" id="3_57cqs"]
-[ext_resource type="Texture2D" uid="uid://b4i5nlvu2e1xq" path="res://arts/bug_monster_1_still.png" id="3_hbbra"]
+[ext_resource type="Texture2D" uid="uid://dtdcaphvenfrx" path="res://arts/bug_monster_1.png" id="2_ng651"]
+[ext_resource type="Texture2D" uid="uid://ciu703nnoqs4p" path="res://arts/bug_monster_1_hit.png" id="3_57cqs"]
+[ext_resource type="Texture2D" uid="uid://c8g1vbab4ks75" path="res://arts/bug_monster_1_still.png" id="3_hbbra"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="4_bwg2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wf2o7"]
