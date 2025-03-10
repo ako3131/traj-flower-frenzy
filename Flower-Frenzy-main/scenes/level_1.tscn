@@ -1,14 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://ibo8yq4bg5ij"]
+[gd_scene load_steps=12 format=3 uid="uid://ibo8yq4bg5ij"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3gl47"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="2_x5y03"]
-[ext_resource type="Texture2D" uid="uid://bq0pic2v2fkw5" path="res://arts/Forest-nature-fantasy-tilese/Terrain_and_Props.png" id="3_65c1m"]
-[ext_resource type="Texture2D" uid="uid://jyfqg6lg6uko" path="res://arts/Forest-nature-fantasy-tilese/BG_1/BG_1.png" id="4_0xcho"]
-[ext_resource type="Texture2D" uid="uid://gsamj2m6hi6n" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
-[ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
-[ext_resource type="Script" path="res://scripts/fall_area.gd" id="7_7ok1c"]
-[ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://scenes/music.tscn" id="7_63pmp"]
-[ext_resource type="Texture2D" uid="uid://boxebxd760vva" path="res://arts/flower_1.png" id="8_yo1ii"]
+[ext_resource type="Texture2D" uid="uid://bld1kri2sfusc" path="res://arts/Forest-nature-fantasy-tilese/Terrain_and_Props.png" id="3_65c1m"]
+[ext_resource type="Texture2D" uid="uid://b5gume2bk5a8b" path="res://arts/Forest-nature-fantasy-tilese/BG_1/BG_1.png" id="4_0xcho"]
+[ext_resource type="Texture2D" uid="uid://bk0krp11c7vfc" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
+[ext_resource type="Texture2D" uid="uid://clk5e4dwg08ew" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
+[ext_resource type="FontFile" uid="uid://uf16b0vodyu7" path="res://arts/monogram.ttf" id="7_pq0qj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
 texture = ExtResource("3_65c1m")
@@ -830,11 +828,11 @@ texture = ExtResource("3_65c1m")
 tile_size = Vector2i(16, 12)
 sources/0 = SubResource("TileSetAtlasSource_pojac")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ejt4"]
-size = Vector2(346.667, 105.833)
-
 [node name="main" type="Node2D"]
 script = ExtResource("1_3gl47")
+
+[node name="coco" parent="." instance=ExtResource("2_x5y03")]
+position = Vector2(435, 192)
 
 [node name="Combo" type="Label" parent="."]
 offset_left = 862.0
@@ -876,23 +874,14 @@ position = Vector2(2635, 908)
 scale = Vector2(6, 6)
 texture = ExtResource("6_5etcc")
 
-[node name="fall_area" type="Area2D" parent="Bg3"]
-collision_mask = 3
-script = ExtResource("7_7ok1c")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bg3/fall_area"]
-position = Vector2(-268.333, 89.4167)
-shape = SubResource("RectangleShape2D_3ejt4")
-
-[node name="Flower" type="Sprite2D" parent="."]
-position = Vector2(524, 457)
-rotation = 3.14159
-scale = Vector2(6.02827, -7.86472)
-texture = ExtResource("8_yo1ii")
-
-[node name="coco" parent="." instance=ExtResource("2_x5y03")]
-position = Vector2(435, 192)
-
-[node name="music" parent="." instance=ExtResource("7_63pmp")]
-
-[connection signal="body_entered" from="Bg3/fall_area" to="Bg3/fall_area" method="_on_body_entered"]
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 438.0
+offset_top = -21.0
+offset_right = 843.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0.643137, 0, 1)
+theme_override_fonts/font = ExtResource("7_pq0qj")
+theme_override_font_sizes/font_size = 125
+text = "Level 1"
