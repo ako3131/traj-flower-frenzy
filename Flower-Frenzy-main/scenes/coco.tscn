@@ -21,6 +21,55 @@
 [ext_resource type="Texture2D" uid="uid://dg54hbsk86o1i" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="17_88unt"]
 [ext_resource type="Texture2D" uid="uid://blh1ic6itg1lx" path="res://arts/Coco Art New/coco run 1-3.png.png" id="18_yvyjc"]
 [ext_resource type="AudioStream" uid="uid://d148y6kq57346" path="res://scripts/rusty-blade-slice-4-186529.mp3" id="21_j3m6j"]
+[ext_resource type="PackedScene" path="res://scenes/lives_label.tscn" id="9_a1aip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tx44"]
+atlas = ExtResource("3_sj8bs")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtkhc"]
+atlas = ExtResource("3_sj8bs")
+region = Rect2(32, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w27fv"]
+atlas = ExtResource("3_sj8bs")
+region = Rect2(64, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t53iq"]
+atlas = ExtResource("4_xan4n")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmyvn"]
+atlas = ExtResource("4_xan4n")
+region = Rect2(32, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0uig"]
+atlas = ExtResource("4_xan4n")
+region = Rect2(64, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8x3p"]
+atlas = ExtResource("4_xan4n")
+region = Rect2(96, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20hpe"]
+atlas = ExtResource("5_ekn2i")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsonw"]
+atlas = ExtResource("6_5mebd")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd2gl"]
+atlas = ExtResource("6_5mebd")
+region = Rect2(32, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbth6"]
+atlas = ExtResource("6_5mebd")
+region = Rect2(64, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol2vc"]
+atlas = ExtResource("6_5mebd")
+region = Rect2(96, 0, 32, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oq0jm"]
 animations = [{

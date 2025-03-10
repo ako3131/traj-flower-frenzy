@@ -7,8 +7,50 @@ var bug_scene = preload("res://scenes/bug_monster.tscn")
 func _ready() -> void:
 	character.position = Vector2(551, 482)
 	
-	#create_shoes(3)
-	#create_bugs(2)
+	# Spawn initial monsters
+	create_shoes(2)  # Spawn 3 shoe monsters
+	create_bugs(2)   # Spawn 2 bug monsters
+	
+	# Spawn additional monsters at specific positions
+	spawn_shoe_monster(Vector2(2100, 500))
+	spawn_shoe_monster(Vector2(4600, 500))
+	spawn_shoe_monster(Vector2(4800, 500))
+	spawn_shoe_monster(Vector2(6000, 500))
+	spawn_shoe_monster(Vector2(8000, 1500))
+	spawn_shoe_monster(Vector2(9000, 1500))
+	spawn_shoe_monster(Vector2(9200, 1500))
+	spawn_bug_monster(Vector2(3100, 500))
+	spawn_bug_monster(Vector2(3500, 500))
+	spawn_bug_monster(Vector2(4500, 1000))
+	spawn_bug_monster(Vector2(4500, 1600))
+	spawn_bug_monster(Vector2(5000, 1600))
+	spawn_bug_monster(Vector2(5500, 1600))
+	spawn_bug_monster(Vector2(7150, 2000))
+	spawn_bug_monster(Vector2(7250, 2000))
+	spawn_bug_monster(Vector2(7350, 2000))
+
+
+# Function to spawn a shoe monster at a specific position
+func spawn_shoe_monster(pos: Vector2) -> void:
+	var shoe = shoe_scene.instantiate()
+	add_child(shoe)
+	shoe.position = pos
+
+# Function to spawn a bug monster at a specific position
+func spawn_bug_monster(pos: Vector2) -> void:
+	var bug = bug_scene.instantiate()
+	add_child(bug)
+	bug.position = pos
+
+# Input handling for monster spawning
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			# Spawn shoe monster with left click
+			spawn_shoe_monster(event.position)
+		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			# Spawn bug monster with right click
+			spawn_bug_monster(event.position)
 
 func create_shoes(count: int):
 	var x_change = 70

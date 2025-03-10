@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():
 		if not is_knocked_back:
-			if position.distance_to(player_position) < 300:
+			if position.distance_to(player_position) < 450:
 				velocity = target_position * speed + knockback_velocity  # Normal movement + knockback
 				$AnimatedSprite2D.animation = "walk"
 			else:
@@ -57,4 +57,12 @@ func apply_knockback(force: Vector2, hit_strength: int) -> void:
 	# Reduce health
 	health -= hit_strength
 	if health <= 0:
-		queue_free()
+		# Play shutter effect before removing the monster
+		var effect = ShutterEffect.new()
+		add_child(effect)
+		effect.setup($AnimatedSprite2D)
+		effect.effect_completed.connect(_on_effect_completed)
+		effect.play()
+
+func _on_effect_completed() -> void:
+	queue_free()
