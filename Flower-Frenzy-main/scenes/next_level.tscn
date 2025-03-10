@@ -21,4 +21,11 @@ visibility_layer = 3
 position = Vector2(1.29688, 3.75)
 shape = SubResource("RectangleShape2D_lmngb")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1154.0
+offset_bottom = 653.0
+color = Color(0, 0, 0, 0)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
