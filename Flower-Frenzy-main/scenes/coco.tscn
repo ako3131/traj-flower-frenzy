@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=25 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://scripts/coco.gd" id="1_s8rkf"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_cudp5"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="10_76ks7"]
 [ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="10_twxms"]
 [ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="11_5ltrr"]
+[ext_resource type="Script" path="res://scenes/flower.gd" id="20_e6few"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oq0jm"]
 animations = [{
@@ -133,10 +134,10 @@ shape = SubResource("RectangleShape2D_fpfpj")
 
 [node name="combo_label" parent="." instance=ExtResource("7_73i1k")]
 offset_left = -31.0
-offset_top = -750.0
+offset_top = -723.0
 offset_right = 44.0
-offset_bottom = -591.0
-theme_override_font_sizes/font_size = 200
+offset_bottom = -560.0
+theme_override_font_sizes/font_size = 150
 
 [node name="health_bar" parent="." instance=ExtResource("8_vobfd")]
 offset_left = -1040.0
@@ -145,11 +146,16 @@ offset_right = -66.0
 offset_bottom = -620.0
 
 [node name="lives_label" parent="." instance=ExtResource("9_a1aip")]
-offset_left = 758.0
-offset_top = -749.0
-offset_right = 1133.0
-offset_bottom = -553.0
-theme_override_font_sizes/font_size = 200
+offset_left = 820.0
+offset_top = -721.0
+offset_right = 1165.0
+offset_bottom = -516.0
+theme_override_font_sizes/font_size = 150
+
+[node name="Flower" type="Sprite2D" parent="."]
+position = Vector2(22, -140)
+scale = Vector2(7, 7)
+script = ExtResource("20_e6few")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

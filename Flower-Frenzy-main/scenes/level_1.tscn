@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ibo8yq4bg5ij"]
+[gd_scene load_steps=14 format=3 uid="uid://ibo8yq4bg5ij"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3gl47"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="2_x5y03"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
 [ext_resource type="Script" path="res://scripts/fall_area.gd" id="7_7ok1c"]
 [ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://scenes/music.tscn" id="7_63pmp"]
-[ext_resource type="Texture2D" uid="uid://boxebxd760vva" path="res://arts/flowers/flower_1.png" id="8_yo1ii"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
 texture = ExtResource("3_65c1m")
@@ -893,12 +892,6 @@ shape = SubResource("RectangleShape2D_3ejt4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bg3/fall_area"]
 position = Vector2(-382.333, 171.667)
 shape = SubResource("RectangleShape2D_3ejt4")
-
-[node name="Flower" type="Sprite2D" parent="."]
-position = Vector2(524, 457)
-rotation = 3.14159
-scale = Vector2(6.02827, -7.86472)
-texture = ExtResource("8_yo1ii")
 
 [node name="coco" parent="." instance=ExtResource("2_x5y03")]
 position = Vector2(435, 192)

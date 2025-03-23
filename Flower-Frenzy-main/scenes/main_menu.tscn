@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="7_7uibr"]
 [ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="8_ge1ga"]
 [ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="9_dqf3g"]
-[ext_resource type="Texture2D" uid="uid://va2qygd0o3mf" path="res://arts/flowers/064.png" id="10_kd5eh"]
-[ext_resource type="Texture2D" uid="uid://de4gixe2ojny5" path="res://arts/flowers/069.png" id="11_ul66l"]
+[ext_resource type="Texture2D" uid="uid://va2qygd0o3mf" path="res://arts/flowers/flower_2.png" id="10_kd5eh"]
+[ext_resource type="Texture2D" uid="uid://de4gixe2ojny5" path="res://arts/flowers/flower_0.png" id="11_ul66l"]
 [ext_resource type="Texture2D" uid="uid://duhkrwf636fui" path="res://arts/flowers/082.png" id="12_a3rs2"]
-[ext_resource type="Texture2D" uid="uid://boxebxd760vva" path="res://arts/flowers/flower_1.png" id="13_0jwh6"]
+[ext_resource type="Texture2D" uid="uid://bt7p67p5u4lw2" path="res://arts/flowers/flower_1.png" id="13_x8wsd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni7gt"]
 animations = [{
@@ -108,15 +108,15 @@ position = Vector2(2061, 1221)
 scale = Vector2(10.375, 9.5)
 texture = ExtResource("12_a3rs2")
 
-[node name="Flower1" type="Sprite2D" parent="."]
-position = Vector2(1127, 1205)
-scale = Vector2(14.875, 11.5)
-texture = ExtResource("13_0jwh6")
-
 [node name="083" type="Sprite2D" parent="."]
 position = Vector2(807, 1220)
 scale = Vector2(10.25, 9.25)
 texture = ExtResource("12_a3rs2")
+
+[node name="009" type="Sprite2D" parent="."]
+position = Vector2(1126, 1209)
+scale = Vector2(11, 10.3125)
+texture = ExtResource("13_x8wsd")
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]

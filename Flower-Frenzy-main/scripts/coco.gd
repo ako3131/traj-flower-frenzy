@@ -15,11 +15,11 @@ extends CharacterBody2D
 var health = max_health
 var always_show_health = true
 
-var lives = 3
-
 var is_attacking = false
-var hit_count: int = 1
+var hit_count: int = 0
 var missed_swings: int = 0
+
+var lives = 3
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -52,7 +52,6 @@ func _physics_process(delta: float) -> void:
 			#if missed_swings >= 1:
 				#hit_count = 0  # Reset hit count after 3 missed swings
 
-		$combo_label.update_combo()
 		return  # Prevent other animations from playing during attack
 
 	# Handle movement only if not attacking
@@ -129,6 +128,11 @@ func respawn():
 func game_over():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
+func power_up():
+	if hit_count >= 8:
+		print("power up")
+		hit_count = 0
+	
 #func update_hit_display():
 	#var hit_display = get_node_or_null("/root/main/Combo") 
 	#if hit_display:
@@ -146,6 +150,8 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 		# Apply knockback smoothly by calling enemy's `apply_knockback` method
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(knock_back, hit_strength)  # Pass both values
+		$combo_label.update_combo()
+		power_up()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
