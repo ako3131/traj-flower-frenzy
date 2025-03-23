@@ -1,18 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://eo7nclmbvsxp"]
+[gd_scene load_steps=15 format=3 uid="uid://eo7nclmbvsxp"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_74e8c"]
-[ext_resource type="FontFile" uid="uid://iycksdx46hl5" path="res://arts/monogram.ttf" id="1_pvj0s"]
-[ext_resource type="Texture2D" uid="uid://c04onk6d4x0go" path="res://arts/menu.webp" id="3_gouh8"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_74e8c"]
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_pvj0s"]
+[ext_resource type="Texture2D" uid="uid://bgnuy6fnxvae8" path="res://arts/menu.webp" id="3_gouh8"]
+[ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="4_tbi23"]
+[ext_resource type="Texture2D" uid="uid://c6v4hyemouvin" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="5_654xa"]
+[ext_resource type="Texture2D" uid="uid://caq0tmqfq0qiy" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="6_s1plh"]
+[ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="7_7uibr"]
+[ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="8_ge1ga"]
+[ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="9_dqf3g"]
+[ext_resource type="Texture2D" uid="uid://va2qygd0o3mf" path="res://arts/flowers/064.png" id="10_kd5eh"]
+[ext_resource type="Texture2D" uid="uid://de4gixe2ojny5" path="res://arts/flowers/069.png" id="11_ul66l"]
+[ext_resource type="Texture2D" uid="uid://duhkrwf636fui" path="res://arts/flowers/082.png" id="12_a3rs2"]
+[ext_resource type="Texture2D" uid="uid://boxebxd760vva" path="res://arts/flowers/flower_1.png" id="13_0jwh6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ni7gt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tbi23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_654xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s1plh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7uibr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ge1ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dqf3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="main_menu" type="Node2D"]
 script = ExtResource("1_74e8c")
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 2304.0
+offset_bottom = 1292.0
+color = Color(0.698039, 0.823529, 1, 1)
+
 [node name="Label" type="Label" parent="."]
-offset_left = -128.0
+offset_left = -187.0
 offset_top = -215.0
-offset_right = 2174.0
-offset_bottom = 348.0
-theme_override_colors/font_color = Color(0.607843, 0, 0, 1)
+offset_right = 2566.0
+offset_bottom = 708.0
+theme_override_colors/font_color = Color(0.241156, 0.241156, 0.241156, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_pvj0s")
 theme_override_font_sizes/font_size = 200
 text = "Flower Frenzy"
@@ -20,28 +63,60 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="tutorial_button" type="Button" parent="."]
-offset_left = 810.0
+offset_left = 744.0
 offset_top = 460.0
-offset_right = 1214.0
+offset_right = 1588.0
 offset_bottom = 646.0
 theme_override_fonts/font = ExtResource("1_pvj0s")
 theme_override_font_sizes/font_size = 130
 text = "Tutorial"
 
 [node name="start_button" type="Button" parent="."]
-offset_left = 650.0
+offset_left = 750.0
 offset_top = 689.0
-offset_right = 1389.0
+offset_right = 1587.0
 offset_bottom = 875.0
 theme_override_fonts/font = ExtResource("1_pvj0s")
 theme_override_font_sizes/font_size = 130
-text = "Start Level One"
+text = "Level One"
 
 [node name="Menu" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
-position = Vector2(997.5, 651)
-scale = Vector2(1.95605, 1.26953)
+position = Vector2(1150.5, 756)
+scale = Vector2(2.25488, 1.47461)
 texture = ExtResource("3_gouh8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(351, 1104)
+scale = Vector2(13.1875, 12.375)
+sprite_frames = SubResource("SpriteFrames_ni7gt")
+frame_progress = 0.337482
+
+[node name="064" type="Sprite2D" parent="."]
+position = Vector2(1765, 1200)
+scale = Vector2(15.875, 11.625)
+texture = ExtResource("10_kd5eh")
+
+[node name="069" type="Sprite2D" parent="."]
+position = Vector2(1434, 1188)
+scale = Vector2(16.5, 14.125)
+texture = ExtResource("11_ul66l")
+
+[node name="082" type="Sprite2D" parent="."]
+position = Vector2(2061, 1221)
+scale = Vector2(10.375, 9.5)
+texture = ExtResource("12_a3rs2")
+
+[node name="Flower1" type="Sprite2D" parent="."]
+position = Vector2(1127, 1205)
+scale = Vector2(14.875, 11.5)
+texture = ExtResource("13_0jwh6")
+
+[node name="083" type="Sprite2D" parent="."]
+position = Vector2(807, 1220)
+scale = Vector2(10.25, 9.25)
+texture = ExtResource("12_a3rs2")
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]

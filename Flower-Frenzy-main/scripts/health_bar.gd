@@ -17,6 +17,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	self.value = parent.health
+	#if parent.get("always_show_health") != null:
+		#print(self.value)
 	if always_show or parent.health != max_val:
 		self.visible = true
 		#if parent.health == min_val:

@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var knockback_decay = 0.9  # How fast knockback fades (1 = no decay, 0 = instant stop)
 @export var knockback_resistance = 0.2  # Higher = less knockback effect
 
+var power = 10
+
 var health = max_health
 var player_position
 var target_position
@@ -39,6 +41,7 @@ func _physics_process(delta: float) -> void:
 				velocity = target_position * speed + knockback_velocity  # Normal movement + knockback
 				$AnimatedSprite2D.animation = "walk"
 			else:
+				velocity = Vector2(0,0)
 				$AnimatedSprite2D.animation = "still"		
 		else:
 			velocity = knockback_velocity  # Apply knockback even when idle
