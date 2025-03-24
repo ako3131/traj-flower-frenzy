@@ -10,7 +10,7 @@ func _init() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	character.position = Vector2(-700, 719)
+	character.position = Vector2(-900, 719)
 	
 	create_shoes(1)
 	create_bugs(1)
@@ -29,7 +29,7 @@ func create_shoes(count: int):
 func create_bugs(count: int):
 	var x_change = 100
 	var y_change = 0
-	var x = 522
+	var x = 122
 	var y = 700
 	for i in range(count):
 		var bug = bug_scene.instantiate()

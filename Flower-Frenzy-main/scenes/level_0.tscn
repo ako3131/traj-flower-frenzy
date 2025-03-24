@@ -66,9 +66,9 @@ shape = SubResource("WorldBoundaryShape2D_g8vr7")
 position = Vector2(1521, 798)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -1149.0
+offset_left = -1435.0
 offset_top = 466.0
-offset_right = -771.0
+offset_right = -1073.0
 offset_bottom = 727.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
@@ -77,9 +77,9 @@ Space to jump
 Shift to run"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 306.0
+offset_left = -259.0
 offset_top = 488.0
-offset_right = 570.0
+offset_right = 17.0
 offset_bottom = 699.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
@@ -96,3 +96,15 @@ theme_override_font_sizes/font_size = 64
 text = "Enter Level 1"
 
 [node name="music" parent="." instance=ExtResource("8_8nlex")]
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 489.0
+offset_top = 223.0
+offset_right = 1276.0
+offset_bottom = 382.0
+theme_override_fonts/font = ExtResource("8_fxxo2")
+theme_override_font_sizes/font_size = 64
+text = "When your hit count turns red,
+press K to use your power up
+
+"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=26 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://scripts/coco.gd" id="1_s8rkf"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_cudp5"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="10_76ks7"]
 [ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="10_twxms"]
 [ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="11_5ltrr"]
-[ext_resource type="Script" path="res://scenes/flower.gd" id="20_e6few"]
+[ext_resource type="Script" path="res://scripts/flower.gd" id="20_e6few"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oq0jm"]
 animations = [{
@@ -85,14 +85,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evwk8"]
-size = Vector2(52, 135)
+size = Vector2(52, 127)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb3j2"]
 radius = 33.0
 height = 136.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfpj"]
-size = Vector2(308, 131)
+size = Vector2(308, 163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkxc5"]
+size = Vector2(901, 525)
 
 [node name="coco" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -112,7 +115,7 @@ sprite_frames = SubResource("SpriteFrames_oq0jm")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(19, -7.5)
+position = Vector2(19, -3.5)
 shape = SubResource("RectangleShape2D_evwk8")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -129,7 +132,7 @@ collision_mask = 5
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(13, -5.5)
+position = Vector2(13, -21.5)
 shape = SubResource("RectangleShape2D_fpfpj")
 
 [node name="combo_label" parent="." instance=ExtResource("7_73i1k")]
@@ -157,6 +160,16 @@ position = Vector2(22, -140)
 scale = Vector2(7, 7)
 script = ExtResource("20_e6few")
 
+[node name="PowerAttackArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerAttackArea"]
+position = Vector2(2.5, -101.5)
+shape = SubResource("RectangleShape2D_nkxc5")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="PowerAttackArea" to="." method="_on_power_attack_area_body_entered"]

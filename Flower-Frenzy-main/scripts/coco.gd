@@ -19,7 +19,14 @@ var is_attacking = false
 var hit_count: int = 0
 var missed_swings: int = 0
 
+var power_up_enabled = false
+
 var lives = 3
+
+var power_up_thresholds: Array = [
+	3,
+	8
+]
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -32,6 +39,12 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
+		
+	# Handle power up attack
+	if power_up_enabled and Input.is_action_just_pressed("power_attack"):
+		$PowerAttackArea.monitoring = true
+		print("power attack button pressed")
+		return
 
 	# Handle attack
 	if Input.is_action_just_pressed("attack") and not is_attacking:
@@ -128,10 +141,19 @@ func respawn():
 func game_over():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
-func power_up():
-	if hit_count >= 8:
-		print("power up")
-		hit_count = 0
+func set_power_up():
+	var thresh = power_up_thresholds[Globals.level]
+	if hit_count >= thresh:
+		print("power up enabled")
+		power_up_enabled = true
+		$combo_label.make_label_red()
+		
+func close_power_up():
+	power_up_enabled = false
+	hit_count = 0
+	$AttackArea.monitoring = false
+	$combo_label.make_label_white()
+	$combo_label.update_combo()
 	
 #func update_hit_display():
 	#var hit_display = get_node_or_null("/root/main/Combo") 
@@ -151,9 +173,22 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(knock_back, hit_strength)  # Pass both values
 		$combo_label.update_combo()
-		power_up()
-
+		set_power_up()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
-		take_damage(body.power)
+		take_damage(body.power)	
+
+func _on_power_attack_area_body_entered(body: Node2D) -> void:
+	print("power attack area saw enemy")
+	if body.is_in_group("enemy"):
+		print("power attacked enemy")
+		# Knockback calculation (now includes knock_back_distance multiplier)
+		var knock_back_direction = Vector2(body.global_position.x - global_position.x, 0).normalized()
+		var knock_back = knock_back_direction * knock_back_strength * knock_back_distance
+
+		# Apply knockback smoothly by calling enemy's `apply_knockback` method
+		if body.has_method("apply_knockback"):
+			body.apply_knockback(knock_back, hit_strength)  # Pass both values
+		close_power_up()
+		

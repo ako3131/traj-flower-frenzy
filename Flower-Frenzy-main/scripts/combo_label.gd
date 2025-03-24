@@ -16,3 +16,9 @@ func update_combo():
 	else:
 		self.visible = true
 		text = "X" + str(hit_count)
+		
+func make_label_red():
+	self.modulate = Color(1, 0, 0)
+	
+func make_label_white():
+	self.modulate = Color(1, 1, 1)
