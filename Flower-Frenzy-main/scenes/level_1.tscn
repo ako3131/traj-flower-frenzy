@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ibo8yq4bg5ij"]
+[gd_scene load_steps=15 format=3 uid="uid://ibo8yq4bg5ij"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3gl47"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="2_x5y03"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
 [ext_resource type="Script" path="res://scripts/fall_area.gd" id="7_7ok1c"]
 [ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://scenes/music.tscn" id="7_63pmp"]
+[ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="9_a8lk3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
 texture = ExtResource("3_65c1m")
@@ -881,7 +882,7 @@ position = Vector2(4861, 940)
 scale = Vector2(6, 6)
 texture = ExtResource("6_5etcc")
 
-[node name="fall_area" type="Area2D" parent="Bg3"]
+[node name="fall_area" type="Area2D" parent="Bg3" groups=["fall_area"]]
 collision_mask = 3
 script = ExtResource("7_7ok1c")
 
@@ -897,5 +898,8 @@ shape = SubResource("RectangleShape2D_3ejt4")
 position = Vector2(435, 192)
 
 [node name="music" parent="." instance=ExtResource("7_63pmp")]
+
+[node name="next_level" parent="." instance=ExtResource("9_a8lk3")]
+position = Vector2(7064, 1285)
 
 [connection signal="body_entered" from="Bg3/fall_area" to="Bg3/fall_area" method="_on_body_entered"]

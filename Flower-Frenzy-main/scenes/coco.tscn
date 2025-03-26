@@ -170,6 +170,7 @@ position = Vector2(2.5, -101.5)
 shape = SubResource("RectangleShape2D_nkxc5")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="PowerAttackArea" to="." method="_on_power_attack_area_body_entered"]

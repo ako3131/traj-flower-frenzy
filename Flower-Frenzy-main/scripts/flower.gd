@@ -3,7 +3,8 @@ extends Sprite2D
 # Textures for each level
 var level_textures: Array = [
 	preload("res://arts/flowers/flower_0.png"),
-	preload("res://arts/flowers/flower_1.png")
+	preload("res://arts/flowers/flower_1.png"),
+	preload("res://arts/flowers/flower_2.png")
 ]
 
 # Current level

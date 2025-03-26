@@ -192,3 +192,7 @@ func _on_power_attack_area_body_entered(body: Node2D) -> void:
 			body.apply_knockback(knock_back, hit_strength)  # Pass both values
 		close_power_up()
 		
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("fall_area"):
+		take_damage(health)

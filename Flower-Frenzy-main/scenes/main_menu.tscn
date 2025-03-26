@@ -78,7 +78,7 @@ offset_right = 1587.0
 offset_bottom = 875.0
 theme_override_fonts/font = ExtResource("1_pvj0s")
 theme_override_font_sizes/font_size = 130
-text = "Level One"
+text = "Start"
 
 [node name="Menu" type="Sprite2D" parent="."]
 visible = false
