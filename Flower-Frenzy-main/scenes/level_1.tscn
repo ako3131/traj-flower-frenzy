@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://gsamj2m6hi6n" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
 [ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
 [ext_resource type="Script" path="res://scripts/fall_area.gd" id="7_7ok1c"]
-[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://forest_music.tscn" id="9_5tuhy"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="9_a8lk3"]
+[ext_resource type="PackedScene" uid="uid://dkrf465gd1pf8" path="res://scenes/game_music.tscn" id="9_wfjg5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
 texture = ExtResource("3_65c1m")
@@ -898,8 +898,8 @@ shape = SubResource("RectangleShape2D_3ejt4")
 position = Vector2(435, 192)
 
 [node name="next_level" parent="." instance=ExtResource("9_a8lk3")]
-position = Vector2(816, 432)
+position = Vector2(2659, 446)
 
-[node name="forest_music" parent="." instance=ExtResource("9_5tuhy")]
+[node name="game_music" parent="." instance=ExtResource("9_wfjg5")]
 
 [connection signal="body_entered" from="Bg3/fall_area" to="Bg3/fall_area" method="_on_body_entered"]

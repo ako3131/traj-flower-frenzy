@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2j8kirj8roj2" path="res://arts/summer5/4.png" id="3_ubabo"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="4_0xxdp"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="5_8a5nr"]
-[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://forest_music.tscn" id="8_4p60t"]
+[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="8_4p60t"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="8_fxxo2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_16hde"]

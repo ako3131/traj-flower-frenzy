@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var walk_speed = 150.0
-@export var run_speed = 250.0
+@export var walk_speed = 350.0
+@export var run_speed = 450.0
 @export_range(0,1) var accerlation = 0.1
 @export_range(0,1) var decelration = 0.1
 
@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 	# Handle power up attack
 	if power_up_enabled and Input.is_action_just_pressed("power_attack"):
 		$PowerAttackArea.monitoring = true
+		$Flower.power_up_animation()
 		print("power attack button pressed")
 		return
 	
