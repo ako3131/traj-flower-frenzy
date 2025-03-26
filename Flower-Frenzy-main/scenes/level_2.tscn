@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://54pahtoqr48v"]
+[gd_scene load_steps=14 format=4 uid="uid://54pahtoqr48v"]
 
 [ext_resource type="Texture2D" uid="uid://bti3lql3fwin2" path="res://arts/Environment/PREVIEWS/magic-cliffs-preview-detail.png" id="1_8qkfn"]
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_wsn4a"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cgl4fg0cgudak" path="res://arts/Environment/PNG/sea.png" id="6_iqksh"]
 [ext_resource type="Texture2D" uid="uid://20mbqm3faugt" path="res://arts/Environment/PNG/tileset.png" id="7_vmajx"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="8_j47bk"]
+[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://forest_music.tscn" id="10_vkoua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2mshp"]
 texture = ExtResource("7_vmajx")
@@ -696,3 +697,5 @@ position = Vector2(672, 578)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fall_area"]
 position = Vector2(3497.5, 1409)
 shape = SubResource("RectangleShape2D_hco0x")
+
+[node name="forest_music" parent="." instance=ExtResource("10_vkoua")]

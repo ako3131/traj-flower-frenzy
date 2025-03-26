@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3narmdxunu5o"]
+
+[ext_resource type="AudioStream" uid="uid://bgvtfat2tpi6b" path="res://arts/forest.wav" id="1_o1iv0"]
+[ext_resource type="Script" path="res://forest_music.gd" id="2_cj6he"]
+
+[node name="forest_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_o1iv0")
+script = ExtResource("2_cj6he")

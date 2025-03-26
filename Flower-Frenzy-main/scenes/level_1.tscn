@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gsamj2m6hi6n" path="res://arts/Forest-nature-fantasy-tilese/BG_2/BG_2.png" id="5_wqrka"]
 [ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="6_5etcc"]
 [ext_resource type="Script" path="res://scripts/fall_area.gd" id="7_7ok1c"]
-[ext_resource type="PackedScene" uid="uid://co6v5mapptj0s" path="res://scenes/music.tscn" id="7_63pmp"]
+[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://forest_music.tscn" id="9_5tuhy"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="9_a8lk3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c3xw"]
@@ -897,9 +897,9 @@ shape = SubResource("RectangleShape2D_3ejt4")
 [node name="coco" parent="." instance=ExtResource("2_x5y03")]
 position = Vector2(435, 192)
 
-[node name="music" parent="." instance=ExtResource("7_63pmp")]
-
 [node name="next_level" parent="." instance=ExtResource("9_a8lk3")]
 position = Vector2(7064, 1285)
+
+[node name="forest_music" parent="." instance=ExtResource("9_5tuhy")]
 
 [connection signal="body_entered" from="Bg3/fall_area" to="Bg3/fall_area" method="_on_body_entered"]
