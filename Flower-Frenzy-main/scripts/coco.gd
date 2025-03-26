@@ -22,6 +22,7 @@ var missed_swings: int = 0
 var power_up_enabled = false
 
 var lives = 3
+var enemy_hit = false
 
 var power_up_thresholds: Array = [
 	3,
@@ -48,6 +49,12 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("power_attack"):
 		close_power_up()
+		
+	if Input.is_action_just_released("attack"):
+		if enemy_hit:
+			hit_count += 1
+			$combo_label.update_combo()
+			enemy_hit = false
 
 	# Handle attack
 	if Input.is_action_just_pressed("attack") and not is_attacking:
@@ -168,7 +175,8 @@ func close_power_up():
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
-		hit_count += 1
+		enemy_hit = true
+		#hit_count += 1
 		# Knockback calculation (now includes knock_back_distance multiplier)
 		var knock_back_direction = Vector2(body.global_position.x - global_position.x, 0).normalized()
 		var knock_back = knock_back_direction * knock_back_strength * knock_back_distance
@@ -176,7 +184,7 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 		# Apply knockback smoothly by calling enemy's `apply_knockback` method
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(knock_back, hit_strength)  # Pass both values
-		$combo_label.update_combo()
+		#$combo_label.update_combo()
 		set_power_up()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
