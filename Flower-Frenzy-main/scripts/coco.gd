@@ -24,6 +24,9 @@ var power_up_enabled = false
 var lives = 3
 var enemy_hit = false
 
+var player_getting_hit = false
+var total_player_damage = 0
+
 var power_up_thresholds: Array = [
 	3,
 	8
@@ -54,7 +57,11 @@ func _physics_process(delta: float) -> void:
 		if enemy_hit:
 			hit_count += 1
 			$combo_label.update_combo()
+			set_power_up()
 			enemy_hit = false
+			
+	#if player_getting_hit:
+		#take_damage(total_player_damage)
 
 	# Handle attack
 	if Input.is_action_just_pressed("attack") and not is_attacking:
@@ -152,6 +159,7 @@ func game_over():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
 func set_power_up():
+	print("check power up", hit_count)
 	var thresh = power_up_thresholds[Globals.level]
 	if hit_count >= thresh:
 		print("power up enabled")
@@ -185,11 +193,12 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(knock_back, hit_strength)  # Pass both values
 		#$combo_label.update_combo()
-		set_power_up()
+		#set_power_up()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		take_damage(body.power)	
+		total_player_damage += body.power
 
 func _on_power_attack_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
@@ -207,3 +216,12 @@ func _on_power_attack_area_body_entered(body: Node2D) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("fall_area"):
 		take_damage(health)
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		total_player_damage -= body.power
+
+
+func _on_hit_timer_timeout() -> void:
+	take_damage(total_player_damage)
