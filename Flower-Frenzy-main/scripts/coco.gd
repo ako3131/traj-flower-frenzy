@@ -45,6 +45,9 @@ func _physics_process(delta: float) -> void:
 		$PowerAttackArea.monitoring = true
 		print("power attack button pressed")
 		return
+	
+	if Input.is_action_just_released("power_attack"):
+		close_power_up()
 
 	# Handle attack
 	if Input.is_action_just_pressed("attack") and not is_attacking:
@@ -149,9 +152,10 @@ func set_power_up():
 		$combo_label.make_label_red()
 		
 func close_power_up():
+	print("power up closed")
 	power_up_enabled = false
 	hit_count = 0
-	$AttackArea.monitoring = false
+	$PowerAttackArea.monitoring = false
 	$combo_label.make_label_white()
 	$combo_label.update_combo()
 	
@@ -180,7 +184,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		take_damage(body.power)	
 
 func _on_power_attack_area_body_entered(body: Node2D) -> void:
-	print("power attack area saw enemy")
 	if body.is_in_group("enemy"):
 		print("power attacked enemy")
 		# Knockback calculation (now includes knock_back_distance multiplier)
