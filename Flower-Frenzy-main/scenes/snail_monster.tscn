@@ -52,7 +52,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1nsg"]
-size = Vector2(181, 100.5)
+size = Vector2(160, 85)
 
 [node name="snail_monster" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -60,17 +60,17 @@ collision_mask = 3
 script = ExtResource("1_l0ihc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, -11)
-scale = Vector2(5.71094, 5.24219)
+position = Vector2(13, -13)
+scale = Vector2(4.94043, 4.68652)
 sprite_frames = SubResource("SpriteFrames_f6k1p")
 animation = &"still"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(12.5, -19.75)
+position = Vector2(19, -22.5)
 shape = SubResource("RectangleShape2D_x1nsg")
 
 [node name="health_bar" parent="." instance=ExtResource("2_0wsj7")]
-offset_left = -48.0
-offset_top = 36.0
-offset_right = 69.0
-offset_bottom = 54.0
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 64.0
+offset_bottom = 46.0
