@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkrf465gd1pf8"]
 
 [ext_resource type="AudioStream" uid="uid://dy0xdowv0ftc6" path="res://arts/magic cliffs.ogg" id="1_bt6vi"]
-[ext_resource type="Script" path="res://scenes/game_music.gd" id="2_tte67"]
+[ext_resource type="Script" path="res://scripts/game_music.gd" id="2_tte67"]
 
 [node name="game_music" type="AudioStreamPlayer"]
 stream = ExtResource("1_bt6vi")

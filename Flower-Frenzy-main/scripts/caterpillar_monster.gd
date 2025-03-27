@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 350
-@export var max_health = 80
+@export var speed = 150
+@export var max_health = 60
 @export var knockback_decay = 0.9  # How fast knockback fades (1 = no decay, 0 = instant stop)
-@export var knockback_resistance = 0.15  # Higher = less knockback effect
+@export var knockback_resistance = 0.2  # Higher = less knockback effect
 
-var power = 20
+var power = 5
 
 var health = max_health
 var player_position
@@ -15,6 +15,10 @@ var is_knocked_back = false  # Flag for knockback state
 @onready var player = get_parent().get_node("coco")
 
 func _physics_process(delta: float) -> void:	
+	# Handle gravity
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
 	# Get player position relative to self position
 	player_position = player.global_position
 	target_position = (player_position - self.global_position).normalized()
@@ -26,15 +30,21 @@ func _physics_process(delta: float) -> void:
 	if is_knocked_back:
 		knockback_velocity *= knockback_decay
 		if knockback_velocity.length() < 100:
-			$AnimatedSprite2D.animation = "fly"
+			$AnimatedSprite2D.animation = "still"
 		if knockback_velocity.length() < 1:
 			knockback_velocity = Vector2.ZERO
 			is_knocked_back = false  # Stop knockback
 
-	if position.distance_to(player_position) < 500 and not is_knocked_back:
-		velocity = target_position * speed + knockback_velocity  # Normal movement + knockback
-	else:
-		velocity = knockback_velocity  # Apply knockback when idle
+	if is_on_floor():
+		if not is_knocked_back:
+			if position.distance_to(player_position) < 450:
+				velocity = target_position * speed + knockback_velocity  # Normal movement + knockback
+				$AnimatedSprite2D.animation = "walk"
+			else:
+				velocity = Vector2(0,0)
+				$AnimatedSprite2D.animation = "still"		
+		else:
+			velocity = knockback_velocity  # Apply knockback even when idle
 		
 	$AnimatedSprite2D.play()
 	move_and_slide()

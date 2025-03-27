@@ -898,7 +898,7 @@ shape = SubResource("RectangleShape2D_3ejt4")
 position = Vector2(435, 192)
 
 [node name="next_level" parent="." instance=ExtResource("9_a8lk3")]
-position = Vector2(2659, 446)
+position = Vector2(792, 446)
 
 [node name="game_music" parent="." instance=ExtResource("9_wfjg5")]
 

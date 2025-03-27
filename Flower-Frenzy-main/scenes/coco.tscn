@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=27 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://scripts/coco.gd" id="1_s8rkf"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_cudp5"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="10_twxms"]
 [ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="11_5ltrr"]
 [ext_resource type="Script" path="res://scripts/flower.gd" id="20_e6few"]
+[ext_resource type="PackedScene" uid="uid://d01jmiaoqkawe" path="res://scenes/flower_counter.tscn" id="21_ou18g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oq0jm"]
 animations = [{
@@ -136,17 +137,17 @@ position = Vector2(13, -21.5)
 shape = SubResource("RectangleShape2D_fpfpj")
 
 [node name="combo_label" parent="." instance=ExtResource("7_73i1k")]
-offset_left = -31.0
-offset_top = -723.0
-offset_right = 44.0
-offset_bottom = -560.0
+offset_left = 145.0
+offset_top = -719.0
+offset_right = 220.0
+offset_bottom = -556.0
 theme_override_font_sizes/font_size = 150
 
 [node name="health_bar" parent="." instance=ExtResource("8_vobfd")]
-offset_left = -1040.0
-offset_top = -698.0
-offset_right = -66.0
-offset_bottom = -620.0
+offset_left = -855.0
+offset_top = -687.0
+offset_right = 119.0
+offset_bottom = -609.0
 
 [node name="lives_label" parent="." instance=ExtResource("9_a1aip")]
 offset_left = 820.0
@@ -171,6 +172,9 @@ shape = SubResource("RectangleShape2D_nkxc5")
 
 [node name="hit_timer" type="Timer" parent="."]
 autostart = true
+
+[node name="flower_counter" parent="." instance=ExtResource("21_ou18g")]
+position = Vector2(-1022, -677)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

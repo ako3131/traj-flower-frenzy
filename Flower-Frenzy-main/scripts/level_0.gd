@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var character = $coco
-var shoe_scene = preload("res://scenes/shoe_monster.tscn")
-var bug_scene = preload("res://scenes/bug_monster.tscn")
+var shoe_scene = preload("res://scenes/converse_monster.tscn")
+var caterpillar_scene = preload("res://scenes/caterpillar_monster.tscn")
 
 func _init() -> void:
 	# Update the global level variable before _ready() is called
@@ -12,27 +12,18 @@ func _init() -> void:
 func _ready() -> void:
 	character.position = Vector2(-900, 719)
 	
-	create_shoes(1)
-	create_bugs(1)
+	# Get all markers in the scene
+	var bug_spawn_points = get_tree().get_nodes_in_group("bug_spawns")
 
-func create_shoes(count: int):
-	var x_change = 70
-	var y_change = -50
-	var x = 1132
-	var y = 628
-	for i in range(count):
-		var shoe = shoe_scene.instantiate()
-		add_child(shoe)
-		shoe.position = Vector2(x + (x_change * i), y + (y_change * i))
-		#shoe.scale = Vector2(2,2)
-	
-func create_bugs(count: int):
-	var x_change = 100
-	var y_change = 0
-	var x = 122
-	var y = 700
-	for i in range(count):
-		var bug = bug_scene.instantiate()
-		add_child(bug)
-		bug.position = Vector2(x + (x_change * i), y + (y_change * i))
-		#bug.scale = Vector2(2,2)
+	for marker in bug_spawn_points:
+		var mob = caterpillar_scene.instantiate()
+		mob.global_position = marker.global_position
+		add_child(mob)
+		
+	# Get all markers in the scene
+	var shoe_spawn_points = get_tree().get_nodes_in_group("shoe_spawns")
+
+	for marker in shoe_spawn_points:
+		var mob = shoe_scene.instantiate()
+		mob.global_position = marker.global_position
+		add_child(mob)

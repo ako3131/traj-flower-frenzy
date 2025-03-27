@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cd4xe7urvqaro"]
+
+[ext_resource type="Script" path="res://scripts/caterpillar_monster.gd" id="1_1pvna"]
+[ext_resource type="Texture2D" uid="uid://sjldlgirwrds" path="res://arts/caterpillar_monster_hit.png" id="1_7btlb"]
+[ext_resource type="Texture2D" uid="uid://dop6bsix66n6b" path="res://arts/caterpillar_monster.png" id="1_goacu"]
+[ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="4_f405l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjwq3"]
+atlas = ExtResource("1_7btlb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whiby"]
+atlas = ExtResource("1_goacu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iom2"]
+atlas = ExtResource("1_goacu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43lw2"]
+atlas = ExtResource("1_goacu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vjpc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjwq3")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whiby")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iom2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43lw2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xn0jv"]
+size = Vector2(147.25, 77.25)
+
+[node name="caterpillar_monster" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_1pvna")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 57.5)
+scale = Vector2(4.5, 4.59375)
+sprite_frames = SubResource("SpriteFrames_4vjpc")
+animation = &"still"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(54.375, 65.375)
+shape = SubResource("RectangleShape2D_xn0jv")
+
+[node name="health_bar" parent="." instance=ExtResource("4_f405l")]
+offset_left = 7.0
+offset_top = 115.0
+offset_right = 104.0
+offset_bottom = 131.0

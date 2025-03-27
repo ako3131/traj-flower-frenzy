@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d01jmiaoqkawe"]
+
+[ext_resource type="Script" path="res://scenes/flower_counter.gd" id="1_i14xd"]
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_lb2sr"]
+
+[node name="flower_counter" type="Node2D"]
+position = Vector2(-27, -11)
+script = ExtResource("1_i14xd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 36.0
+offset_top = -10.0
+offset_right = 81.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("1_lb2sr")
+theme_override_font_sizes/font_size = 90
+text = "X"

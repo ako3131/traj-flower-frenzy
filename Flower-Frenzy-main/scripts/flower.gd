@@ -28,5 +28,5 @@ func power_up_animation():
 
 	tween.tween_property(self, "position", original_position + Vector2(0, -100), 0.1)
 	tween.tween_property(self, "scale", Vector2(20, 20), 0.5)
-	tween.tween_property(self, "scale", Vector2(7, 7), 0.25)
+	tween.tween_property(self, "scale", Vector2(7, 7), 0.1)
 	tween.tween_property(self, "position", original_position, 0.1)

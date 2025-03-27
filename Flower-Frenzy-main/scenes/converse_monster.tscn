@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhmvlmv5j3n4m"]
+
+[ext_resource type="Texture2D" uid="uid://cny50pee82ks8" path="res://arts/converse_monster.png" id="1_0sa7a"]
+[ext_resource type="Script" path="res://converse_monster.gd" id="1_gh3ld"]
+[ext_resource type="Texture2D" uid="uid://rjlhay264cdf" path="res://arts/converse_monster_hit.png" id="2_5lv5v"]
+[ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="3_a2xw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aspg"]
+atlas = ExtResource("1_0sa7a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8ynk"]
+atlas = ExtResource("1_0sa7a")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nug30"]
+atlas = ExtResource("2_5lv5v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40grx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aspg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8ynk")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nug30")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igg5i"]
+size = Vector2(134.625, 116.5)
+
+[node name="converse_monster" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_gh3ld")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(59, 56.5)
+scale = Vector2(4.6875, 4.53125)
+sprite_frames = SubResource("SpriteFrames_40grx")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(53.6875, 46.75)
+shape = SubResource("RectangleShape2D_igg5i")
+
+[node name="health_bar" parent="." instance=ExtResource("3_a2xw4")]
+offset_left = 3.0
+offset_top = 108.0
+offset_right = 82.0
+offset_bottom = 122.0

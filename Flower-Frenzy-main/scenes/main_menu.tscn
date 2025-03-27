@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://eo7nclmbvsxp"]
+[gd_scene load_steps=16 format=3 uid="uid://eo7nclmbvsxp"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_74e8c"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_pvj0s"]
+[ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="2_dk1yo"]
 [ext_resource type="Texture2D" uid="uid://bgnuy6fnxvae8" path="res://arts/menu.webp" id="3_gouh8"]
 [ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="4_tbi23"]
 [ext_resource type="Texture2D" uid="uid://c6v4hyemouvin" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="5_654xa"]
@@ -43,9 +44,15 @@ animations = [{
 [node name="main_menu" type="Node2D"]
 script = ExtResource("1_74e8c")
 
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(1154.5, 652.5)
+scale = Vector2(4.05035, 4.12654)
+texture = ExtResource("2_dk1yo")
+
 [node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = 1362.0
 offset_right = 2304.0
-offset_bottom = 1292.0
+offset_bottom = 2654.0
 color = Color(0.698039, 0.823529, 1, 1)
 
 [node name="Label" type="Label" parent="."]
@@ -88,34 +95,34 @@ scale = Vector2(2.25488, 1.47461)
 texture = ExtResource("3_gouh8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(351, 1104)
-scale = Vector2(13.1875, 12.375)
+position = Vector2(309.5, 1144.5)
+scale = Vector2(10.5938, 9.84375)
 sprite_frames = SubResource("SpriteFrames_ni7gt")
 frame_progress = 0.337482
 
 [node name="064" type="Sprite2D" parent="."]
-position = Vector2(1765, 1200)
-scale = Vector2(15.875, 11.625)
+position = Vector2(1731.5, 1222.5)
+scale = Vector2(11.6875, 8.8125)
 texture = ExtResource("10_kd5eh")
 
 [node name="069" type="Sprite2D" parent="."]
-position = Vector2(1434, 1188)
-scale = Vector2(16.5, 14.125)
+position = Vector2(1400.5, 1213.5)
+scale = Vector2(12.3125, 10.9375)
 texture = ExtResource("11_ul66l")
 
 [node name="082" type="Sprite2D" parent="."]
-position = Vector2(2061, 1221)
-scale = Vector2(10.375, 9.5)
+position = Vector2(2050, 1233)
+scale = Vector2(9.00001, 8)
 texture = ExtResource("12_a3rs2")
 
 [node name="083" type="Sprite2D" parent="."]
-position = Vector2(807, 1220)
-scale = Vector2(10.25, 9.25)
+position = Vector2(791.5, 1237.5)
+scale = Vector2(8.3125, 7.0625)
 texture = ExtResource("12_a3rs2")
 
 [node name="009" type="Sprite2D" parent="."]
-position = Vector2(1126, 1209)
-scale = Vector2(11, 10.3125)
+position = Vector2(1114, 1233.5)
+scale = Vector2(9.5, 8.5625)
 texture = ExtResource("13_x8wsd")
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]

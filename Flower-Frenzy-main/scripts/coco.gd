@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export_range(0,1) var accerlation = 0.1
 @export_range(0,1) var decelration = 0.1
 
-@export var jump_force = -400.0
+@export var jump_force = -470.0
 @export_range(0,1) var decelerate_on_jump_release = 0.5
 
 @export var knock_back_strength = 150  # Strength of knockback applied to enemies
@@ -210,7 +210,7 @@ func _on_power_attack_area_body_entered(body: Node2D) -> void:
 
 		# Apply knockback smoothly by calling enemy's `apply_knockback` method
 		if body.has_method("apply_knockback"):
-			body.apply_knockback(knock_back, hit_strength)  # Pass both values
+			body.apply_knockback(knock_back, hit_strength * 2)  # Pass both values
 		close_power_up()
 		
 

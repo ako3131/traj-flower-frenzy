@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cggobfsbo0o2p"]
+[gd_scene load_steps=13 format=3 uid="uid://cggobfsbo0o2p"]
 
 [ext_resource type="Script" path="res://scripts/level_0.gd" id="1_hn7tr"]
 [ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_t5fa5"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="5_8a5nr"]
 [ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="8_4p60t"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="8_fxxo2"]
+[ext_resource type="PackedScene" uid="uid://hxvruhbwdknc" path="res://scenes/level_0_flower.tscn" id="9_fte1b"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_16hde"]
-normal = Vector2(0.0156537, -0.999877)
-distance = 5.35551
+normal = Vector2(0.0063693, -0.99998)
+distance = 214.257
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_22hjq"]
 normal = Vector2(1, 0)
@@ -19,57 +20,176 @@ distance = 60.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g8vr7"]
 normal = Vector2(-1, 0)
-distance = 26.0
+distance = -335.0
 
 [node name="tutorial" type="Node2D"]
 script = ExtResource("1_hn7tr")
 
-[node name="clouds" type="Sprite2D" parent="."]
-position = Vector2(717, 947)
-scale = Vector2(12.9653, 8.10494)
+[node name="clouds2" type="Sprite2D" parent="."]
+position = Vector2(9131, 662)
+scale = Vector2(9.28475, 6.40123)
 texture = ExtResource("1_t5fa5")
 
-[node name="grass" type="Sprite2D" parent="."]
-position = Vector2(149.999, 171)
-scale = Vector2(9.61458, 7.91127)
+[node name="clouds" type="Sprite2D" parent="clouds2"]
+position = Vector2(587.106, 1.52588e-05)
+scale = Vector2(1.05379, 0.996414)
+texture = ExtResource("1_t5fa5")
+
+[node name="grass" type="Sprite2D" parent="clouds2"]
+position = Vector2(-5.94783, -3.73488)
+scale = Vector2(0.628894, 0.76624)
 texture = ExtResource("2_4eyfo")
 
-[node name="flowers" type="Sprite2D" parent="."]
-position = Vector2(159, 474.125)
-scale = Vector2(9.62847, 6.04244)
+[node name="grass" type="Sprite2D" parent="clouds2/grass"]
+position = Vector2(623.869, -3.4526)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds2/grass/grass"]
+position = Vector2(626.533, -3.47637)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass2" type="Sprite2D" parent="clouds2"]
+position = Vector2(-100, 28.012)
+scale = Vector2(0.628894, 0.76624)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds2/grass2"]
+position = Vector2(629.296, -3.55415)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds2/grass2/grass"]
+position = Vector2(626.533, -3.47637)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds2/grass2/grass/grass"]
+position = Vector2(48.9649, 0.970888)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="flowers" type="Sprite2D" parent="clouds2"]
+position = Vector2(97.3433, 36.3372)
+scale = Vector2(0.531567, 0.608549)
+texture = ExtResource("3_ubabo")
+
+[node name="flowers" type="Sprite2D" parent="clouds2/flowers"]
+position = Vector2(519.364, 3.24396)
+scale = Vector2(0.803346, 0.979976)
+texture = ExtResource("3_ubabo")
+
+[node name="flowers2" type="Sprite2D" parent="clouds2/flowers"]
+position = Vector2(1111.1, -14.704)
+scale = Vector2(1.25196, 1.09117)
+texture = ExtResource("3_ubabo")
+
+[node name="flowers" type="Sprite2D" parent="clouds2/flowers/flowers2"]
+position = Vector2(519.364, 3.24396)
+scale = Vector2(0.803346, 0.979976)
+texture = ExtResource("3_ubabo")
+
+[node name="clouds" type="Sprite2D" parent="."]
+position = Vector2(-615, 649)
+scale = Vector2(9.58334, 6.42593)
+texture = ExtResource("1_t5fa5")
+
+[node name="clouds" type="Sprite2D" parent="clouds"]
+position = Vector2(587.106, 1.52588e-05)
+scale = Vector2(1.05379, 0.996414)
+texture = ExtResource("1_t5fa5")
+
+[node name="grass" type="Sprite2D" parent="clouds"]
+position = Vector2(-5.94783, -3.73488)
+scale = Vector2(0.628894, 0.76624)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds/grass"]
+position = Vector2(623.869, -3.4526)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds/grass/grass"]
+position = Vector2(626.533, -3.47637)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass2" type="Sprite2D" parent="clouds"]
+position = Vector2(-100, 28.012)
+scale = Vector2(0.628894, 0.76624)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds/grass2"]
+position = Vector2(629.296, -3.55415)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds/grass2/grass"]
+position = Vector2(626.533, -3.47637)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="grass" type="Sprite2D" parent="clouds/grass2/grass/grass"]
+position = Vector2(48.9649, 0.970888)
+scale = Vector2(1.18491, 1.02237)
+texture = ExtResource("2_4eyfo")
+
+[node name="flowers" type="Sprite2D" parent="clouds"]
+position = Vector2(97.3433, 36.3372)
+scale = Vector2(0.531567, 0.608549)
+texture = ExtResource("3_ubabo")
+
+[node name="flowers" type="Sprite2D" parent="clouds/flowers"]
+position = Vector2(519.364, 3.24396)
+scale = Vector2(0.803346, 0.979976)
+texture = ExtResource("3_ubabo")
+
+[node name="flowers2" type="Sprite2D" parent="clouds/flowers"]
+position = Vector2(1111.1, -14.704)
+scale = Vector2(1.25196, 1.09117)
+texture = ExtResource("3_ubabo")
+
+[node name="flowers" type="Sprite2D" parent="clouds/flowers/flowers2"]
+position = Vector2(519.364, 3.24396)
+scale = Vector2(0.803346, 0.979976)
+texture = ExtResource("3_ubabo")
+
+[node name="flowers" type="Sprite2D" parent="clouds/flowers/flowers2/flowers"]
+position = Vector2(-2286.95, 10.6326)
+scale = Vector2(0.865996, 0.936357)
 texture = ExtResource("3_ubabo")
 
 [node name="coco" parent="." instance=ExtResource("4_0xxdp")]
 position = Vector2(-5, 0)
 
 [node name="floor" type="StaticBody2D" parent="."]
-position = Vector2(944, -1095)
+position = Vector2(0, 1200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-position = Vector2(-407, 2010)
 shape = SubResource("WorldBoundaryShape2D_16hde")
 
 [node name="left_wall" type="StaticBody2D" parent="."]
-position = Vector2(-1228, -2)
+position = Vector2(-700, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_wall"]
 shape = SubResource("WorldBoundaryShape2D_22hjq")
 
 [node name="right_wall" type="StaticBody2D" parent="."]
-position = Vector2(1636, 33)
+position = Vector2(5000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_wall"]
-position = Vector2(-36, -2)
+position = Vector2(5141, 709)
 shape = SubResource("WorldBoundaryShape2D_g8vr7")
 
 [node name="next_level" parent="." instance=ExtResource("5_8a5nr")]
-position = Vector2(1521, 798)
+position = Vector2(3710, 847)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -1435.0
-offset_top = 466.0
-offset_right = -1073.0
-offset_bottom = 727.0
+offset_left = -1463.0
+offset_top = 471.0
+offset_right = -1103.0
+offset_bottom = 732.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
 text = "A and D to move
@@ -77,29 +197,29 @@ Space to jump
 Shift to run"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -259.0
-offset_top = 488.0
-offset_right = 17.0
-offset_bottom = 699.0
+offset_left = -170.0
+offset_top = 471.0
+offset_right = 112.0
+offset_bottom = 682.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
 text = "J to attack
 "
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 1379.0
-offset_top = 498.0
-offset_right = 1851.0
-offset_bottom = 693.0
+offset_left = 3635.0
+offset_top = 604.0
+offset_right = 3803.0
+offset_bottom = 799.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
-text = "Enter Level 1"
+text = "Level 1"
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 489.0
-offset_top = 223.0
-offset_right = 1276.0
-offset_bottom = 382.0
+offset_left = 1099.0
+offset_top = 503.0
+offset_right = 1832.0
+offset_bottom = 662.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
 text = "When your hit count turns red,
@@ -108,3 +228,12 @@ press K to use your power up
 "
 
 [node name="forest_music" parent="." instance=ExtResource("8_4p60t")]
+
+[node name="bug_spawns" type="Marker2D" parent="." groups=["bug_spawns"]]
+position = Vector2(460, 977)
+
+[node name="show_spawns" type="Marker2D" parent="." groups=["shoe_spawns"]]
+position = Vector2(2089, 662)
+
+[node name="level_0_flower" parent="." instance=ExtResource("9_fte1b")]
+position = Vector2(-279, 942)

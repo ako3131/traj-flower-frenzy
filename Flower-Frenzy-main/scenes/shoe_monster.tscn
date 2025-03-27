@@ -1,21 +1,21 @@
 [gd_scene load_steps=11 format=3 uid="uid://cqlt8de6ou2xe"]
 
 [ext_resource type="Script" path="res://scripts/shoe_monster.gd" id="1_55sky"]
-[ext_resource type="Texture2D" uid="uid://dq73u0abhkty3" path="res://arts/shoe_monster_1.png" id="2_3dkt1"]
+[ext_resource type="Texture2D" uid="uid://djesk1pk4tkr4" path="res://arts/boot_monster.png" id="2_6pkvp"]
 [ext_resource type="Texture2D" uid="uid://183q7sidtnpl" path="res://arts/shoe_monster_1_hit.png" id="3_hnawm"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="4_c2top"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_os8mo"]
-atlas = ExtResource("2_3dkt1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wftf6"]
+atlas = ExtResource("2_6pkvp")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_575b0"]
-atlas = ExtResource("2_3dkt1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdsgx"]
+atlas = ExtResource("2_6pkvp")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_70pyf"]
-atlas = ExtResource("2_3dkt1")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdhea"]
+atlas = ExtResource("2_6pkvp")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8yx6g"]
 atlas = ExtResource("3_hnawm")
@@ -25,16 +25,16 @@ region = Rect2(0, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_os8mo")
+"texture": SubResource("AtlasTexture_wftf6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_575b0")
+"texture": SubResource("AtlasTexture_rdsgx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_70pyf")
+"texture": SubResource("AtlasTexture_fdhea")
 }],
 "loop": true,
-"name": &"default",
+"name": &"fly",
 "speed": 10.0
 }, {
 "frames": [{
@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqols"]
-size = Vector2(86.5, 92.125)
+size = Vector2(107.25, 108.062)
 
 [node name="shoe_monster" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -55,16 +55,17 @@ collision_mask = 3
 script = ExtResource("1_55sky")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(36.125, 11.525)
-scale = Vector2(3.11719, 3.15781)
+position = Vector2(53.125, 0.524981)
+scale = Vector2(4.17969, 3.84531)
 sprite_frames = SubResource("SpriteFrames_ls5f5")
+animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(42.75, 7.0625)
+position = Vector2(67.375, -5.96875)
 shape = SubResource("RectangleShape2D_aqols")
 
 [node name="health_bar" parent="." instance=ExtResource("4_c2top")]
-offset_left = 18.0
-offset_top = 56.0
-offset_right = 61.0
-offset_bottom = 67.0
+offset_left = 26.0
+offset_top = 54.0
+offset_right = 85.0
+offset_bottom = 66.0
