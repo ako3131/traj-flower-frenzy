@@ -29,7 +29,8 @@ var total_player_damage = 0
 
 var power_up_thresholds: Array = [
 	3,
-	8
+	8,
+	10
 ]
 
 func _physics_process(delta: float) -> void:

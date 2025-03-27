@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://jj1qcneve51p"]
+
+[ext_resource type="Texture2D" uid="uid://y6ia5w5a85l5" path="res://arts/snail_monster_hit.png" id="1_2ydd7"]
+[ext_resource type="Texture2D" uid="uid://dtbnh688gyyfh" path="res://arts/snail_monster.png" id="1_akwvw"]
+[ext_resource type="Script" path="res://scenes/snail_monster.gd" id="1_l0ihc"]
+[ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="2_0wsj7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egpfe"]
+atlas = ExtResource("1_2ydd7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrn8j"]
+atlas = ExtResource("1_akwvw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cgj4"]
+atlas = ExtResource("1_akwvw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wswcs"]
+atlas = ExtResource("1_akwvw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6k1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egpfe")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrn8j")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cgj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wswcs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1nsg"]
+size = Vector2(181, 100.5)
+
+[node name="snail_monster" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_l0ihc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -11)
+scale = Vector2(5.71094, 5.24219)
+sprite_frames = SubResource("SpriteFrames_f6k1p")
+animation = &"still"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12.5, -19.75)
+shape = SubResource("RectangleShape2D_x1nsg")
+
+[node name="health_bar" parent="." instance=ExtResource("2_0wsj7")]
+offset_left = -48.0
+offset_top = 36.0
+offset_right = 69.0
+offset_bottom = 54.0

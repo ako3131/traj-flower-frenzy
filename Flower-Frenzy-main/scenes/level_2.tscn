@@ -717,3 +717,9 @@ position = Vector2(-1495, 36)
 
 [node name="flower_markers" type="Marker2D" parent="flower_markers/flower_markers/flower_markers/flower_markers/flower_markers" groups=["flower_markers"]]
 position = Vector2(3227, 87)
+
+[node name="snail_markers" type="Marker2D" parent="." groups=["snail_markers"]]
+position = Vector2(1716, 773)
+
+[node name="sandal_markers" type="Marker2D" parent="." groups=["sandal_markers"]]
+position = Vector2(1420, 620)

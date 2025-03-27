@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://eo7nclmbvsxp"]
+[gd_scene load_steps=19 format=3 uid="uid://eo7nclmbvsxp"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_74e8c"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_pvj0s"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://de4gixe2ojny5" path="res://arts/flowers/flower_0.png" id="11_ul66l"]
 [ext_resource type="Texture2D" uid="uid://duhkrwf636fui" path="res://arts/flowers/082.png" id="12_a3rs2"]
 [ext_resource type="Texture2D" uid="uid://bt7p67p5u4lw2" path="res://arts/flowers/flower_1.png" id="13_x8wsd"]
+[ext_resource type="Texture2D" uid="uid://rjlhay264cdf" path="res://arts/converse_monster_hit.png" id="15_l27b4"]
+[ext_resource type="Texture2D" uid="uid://y6ia5w5a85l5" path="res://arts/snail_monster_hit.png" id="16_aw8q5"]
+[ext_resource type="Texture2D" uid="uid://djknjok2xpn6j" path="res://arts/bug_monster_1_hit.png" id="17_r5vx1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni7gt"]
 animations = [{
@@ -94,7 +97,7 @@ position = Vector2(1150.5, 756)
 scale = Vector2(2.25488, 1.47461)
 texture = ExtResource("3_gouh8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="coco_animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(309.5, 1144.5)
 scale = Vector2(10.5938, 9.84375)
 sprite_frames = SubResource("SpriteFrames_ni7gt")
@@ -124,6 +127,23 @@ texture = ExtResource("12_a3rs2")
 position = Vector2(1114, 1233.5)
 scale = Vector2(9.5, 8.5625)
 texture = ExtResource("13_x8wsd")
+
+[node name="convers_silloutte" type="Sprite2D" parent="."]
+position = Vector2(238, 207)
+scale = Vector2(9.90625, 9.59375)
+texture = ExtResource("15_l27b4")
+flip_h = true
+
+[node name="snail_silloutte" type="Sprite2D" parent="."]
+position = Vector2(1840.5, 980)
+scale = Vector2(10.5313, 9)
+texture = ExtResource("16_aw8q5")
+
+[node name="bug_silloutte" type="Sprite2D" parent="."]
+position = Vector2(2050, 185)
+scale = Vector2(9.125, 8.25)
+texture = ExtResource("17_r5vx1")
+flip_h = true
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
