@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var knockback_decay = 0.9  # How fast knockback fades (1 = no decay, 0 = instant stop)
 @export var knockback_resistance = 0.15  # Higher = less knockback effect
 
-var power = 10
+var power = 7
 
 var health = max_health
 var player_position

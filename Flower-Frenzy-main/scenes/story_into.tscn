@@ -1,0 +1,106 @@
+[gd_scene load_steps=18 format=3 uid="uid://ceaaon0yic8rm"]
+
+[ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="1_fh1yn"]
+[ext_resource type="Texture2D" uid="uid://c6v4hyemouvin" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="2_k5ioj"]
+[ext_resource type="Texture2D" uid="uid://caq0tmqfq0qiy" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="3_nsjg8"]
+[ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="4_wawoi"]
+[ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="5_htgek"]
+[ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="6_uk4qe"]
+[ext_resource type="Texture2D" uid="uid://b4yu74cefphhh" path="res://arts/Coco Art New/coco run 1-1.png.png" id="7_s42bt"]
+[ext_resource type="Texture2D" uid="uid://caf7jlql5bvno" path="res://arts/Coco Art New/coco run 1-2.png.png" id="8_u6wdk"]
+[ext_resource type="Texture2D" uid="uid://bst2321jbyvcd" path="res://arts/Coco Art New/coco run 1-3.png.png" id="9_0k7ud"]
+[ext_resource type="Texture2D" uid="uid://bs127sxrjej8s" path="res://arts/Coco Art New/coco run 1-4.png.png" id="10_1rn7c"]
+[ext_resource type="Texture2D" uid="uid://depsj2wy4mhma" path="res://arts/Coco Art New/coco run 1-5.png.png" id="11_l5aff"]
+[ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="12_2jtg8"]
+[ext_resource type="Texture2D" uid="uid://cny50pee82ks8" path="res://arts/converse_monster.png" id="13_rcwdp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3we10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fh1yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k5ioj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nsjg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wawoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_htgek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uk4qe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_s42bt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u6wdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0k7ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1rn7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l5aff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2jtg8")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rrlt"]
+atlas = ExtResource("13_rcwdp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxv1j"]
+atlas = ExtResource("13_rcwdp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yugoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rrlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxv1j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="story_into" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -92.0
+offset_top = -46.0
+offset_right = 2428.0
+offset_bottom = 1374.0
+color = Color(0, 0, 0, 1)
+
+[node name="coco_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-158, 900)
+scale = Vector2(10.6875, 10.5)
+sprite_frames = SubResource("SpriteFrames_3we10")
+animation = &"run"
+
+[node name="mom_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(1475, 829)
+scale = Vector2(7.9375, 18.1094)
+sprite_frames = SubResource("SpriteFrames_yugoq")
