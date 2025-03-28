@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=28 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://scripts/coco.gd" id="1_s8rkf"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_cudp5"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bs127sxrjej8s" path="res://arts/Coco Art New/coco run 1-4.png.png" id="8_667dh"]
 [ext_resource type="Texture2D" uid="uid://caq0tmqfq0qiy" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="8_ulurq"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="8_vobfd"]
-[ext_resource type="PackedScene" uid="uid://cu7ett65r633d" path="res://scenes/lives_label.tscn" id="9_a1aip"]
 [ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="9_q516u"]
 [ext_resource type="Texture2D" uid="uid://depsj2wy4mhma" path="res://arts/Coco Art New/coco run 1-5.png.png" id="9_y4ocq"]
 [ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="10_76ks7"]
@@ -150,13 +149,6 @@ offset_left = -1068.0
 offset_top = -689.0
 offset_right = -94.0
 offset_bottom = -611.0
-
-[node name="lives_label" parent="." instance=ExtResource("9_a1aip")]
-offset_left = 820.0
-offset_top = -979.0
-offset_right = 1165.0
-offset_bottom = -859.0
-theme_override_font_sizes/font_size = 150
 
 [node name="Flower" type="Sprite2D" parent="."]
 position = Vector2(18, -140)

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj8ys1ntgjxl2"]
+
+[ext_resource type="Script" path="res://scenes/level_2_opening.gd" id="1_s885q"]
+[ext_resource type="Texture2D" uid="uid://oyfxswb2gc6s" path="res://arts/Environment/PNG/sky.png" id="2_xscdg"]
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="4_37ctl"]
+[ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="4_ioyvy"]
+
+[node name="level_2_opening" type="Node2D"]
+script = ExtResource("1_s885q")
+
+[node name="Bg3" type="Sprite2D" parent="."]
+position = Vector2(1162, 643.5)
+scale = Vector2(21.2679, 4.55592)
+texture = ExtResource("2_xscdg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 45.0
+offset_right = 2306.0
+offset_bottom = 747.0
+theme_override_colors/font_color = Color(0.149475, 0.149475, 0.149474, 1)
+theme_override_fonts/font = ExtResource("4_37ctl")
+theme_override_font_sizes/font_size = 200
+text = "Level Two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 588.0
+offset_right = 2306.0
+offset_bottom = 747.0
+theme_override_colors/font_color = Color(0.154876, 0.154876, 0.154876, 1)
+theme_override_fonts/font = ExtResource("4_37ctl")
+theme_override_font_sizes/font_size = 150
+text = "Collect:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flower1" type="Sprite2D" parent="."]
+position = Vector2(1145, 869)
+scale = Vector2(9.46875, 9.9375)
+texture = ExtResource("4_ioyvy")

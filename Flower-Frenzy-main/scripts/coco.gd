@@ -21,7 +21,6 @@ var missed_swings: int = 0
 
 var power_up_enabled = false
 
-var lives = 3
 var enemy_hit = false
 
 var player_getting_hit = false
@@ -155,17 +154,16 @@ func take_damage(amount):
 func die():
 	game_over()
 	
-func respawn():
-	$lives_label.update_lives()
-	await get_tree().create_timer(.4).timeout  # Delay so health bar shows depleted
-	health = max_health
-	position = Vector2(551, 482)
+#func respawn():
+	#$lives_label.update_lives()
+	#await get_tree().create_timer(.4).timeout  # Delay so health bar shows depleted
+	#health = max_health
+	#position = Vector2(551, 482)
 	
 func game_over():
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	
 func set_power_up():
-	print("check power up", hit_count)
 	var thresh = power_up_thresholds[Globals.level]
 	if hit_count >= thresh:
 		print("power up enabled")
