@@ -14,8 +14,6 @@ func _ready() -> void:
 	update_texture()
 
 func update_texture() -> void:
-	print("current levle", current_level)
-	print("glpobal lebel", Globals.level)
 	# Ensure the level is within the array bounds
 	if current_level >= 0 and current_level < level_textures.size():
 		texture = level_textures[current_level]

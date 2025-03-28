@@ -695,7 +695,7 @@ position = Vector2(672, 578)
 [node name="fall_area" type="Area2D" parent="." groups=["fall_area"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fall_area"]
-position = Vector2(4441, 2262)
+position = Vector2(4441, 1934)
 shape = SubResource("RectangleShape2D_hco0x")
 
 [node name="game_music" parent="." instance=ExtResource("11_c2dv4")]
@@ -703,47 +703,74 @@ shape = SubResource("RectangleShape2D_hco0x")
 [node name="flower_markers" type="Marker2D" parent="." groups=["flower_markers"]]
 position = Vector2(1938, 758)
 
+[node name="flower_markers6" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
+position = Vector2(-844, 1)
+
+[node name="flower_markers5" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
+position = Vector2(3820, -206)
+
+[node name="flower_markers4" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
+position = Vector2(2674, -141)
+
+[node name="flower_markers3" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
+position = Vector2(5563, -68)
+
+[node name="flower_markers2" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
+position = Vector2(2705, 502)
+
 [node name="flower_markers" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
 position = Vector2(1213, 602)
-
-[node name="flower_markers" type="Marker2D" parent="flower_markers/flower_markers" groups=["flower_markers"]]
-position = Vector2(1492, -100)
-
-[node name="flower_markers" type="Marker2D" parent="flower_markers/flower_markers/flower_markers" groups=["flower_markers"]]
-position = Vector2(1115, -708)
-
-[node name="flower_markers2" type="Marker2D" parent="flower_markers/flower_markers/flower_markers/flower_markers" groups=["flower_markers"]]
-position = Vector2(1743, 138)
-
-[node name="flower_markers" type="Marker2D" parent="flower_markers/flower_markers/flower_markers/flower_markers" groups=["flower_markers"]]
-position = Vector2(-1146, 65)
 
 [node name="snail_markers" type="Marker2D" parent="." groups=["snail_markers"]]
 position = Vector2(1729, 761)
 
+[node name="snail_markers7" type="Marker2D" parent="snail_markers" groups=["snail_markers"]]
+position = Vector2(3432, -124)
+
+[node name="snail_markers6" type="Marker2D" parent="snail_markers" groups=["snail_markers"]]
+position = Vector2(2641, -123)
+
+[node name="snail_markers5" type="Marker2D" parent="snail_markers" groups=["snail_markers"]]
+position = Vector2(91, -316)
+
+[node name="snail_markers4" type="Marker2D" parent="snail_markers" groups=["snail_markers"]]
+position = Vector2(356, -310)
+
+[node name="snail_markers3" type="Marker2D" parent="snail_markers" groups=["snail_markers"]]
+position = Vector2(4835, 161)
+
 [node name="snail_markers2" type="Marker2D" parent="snail_markers" groups=["snail_markers"]]
 position = Vector2(1863, 621)
-
-[node name="snail_markers" type="Marker2D" parent="snail_markers/snail_markers2" groups=["snail_markers"]]
-position = Vector2(2972, -460)
-
-[node name="snail_markers" type="Marker2D" parent="snail_markers/snail_markers2/snail_markers" groups=["snail_markers"]]
-position = Vector2(-4744, -477)
-
-[node name="snail_markers" type="Marker2D" parent="snail_markers/snail_markers2/snail_markers/snail_markers" groups=["snail_markers"]]
-position = Vector2(265, 6)
 
 [node name="snail_markers" type="Marker2D" parent="snail_markers" groups=["snail_markers"]]
 position = Vector2(412, -7)
 
-[node name="snail_markers" type="Marker2D" parent="snail_markers/snail_markers" groups=["snail_markers"]]
-position = Vector2(2229, -116)
-
-[node name="snail_markers" type="Marker2D" parent="snail_markers/snail_markers/snail_markers" groups=["snail_markers"]]
-position = Vector2(791, -1)
-
 [node name="sandal_markers" type="Marker2D" parent="." groups=["sandal_markers"]]
 position = Vector2(2453, 626)
+
+[node name="sandal_markers12" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
+position = Vector2(4422, -47)
+
+[node name="sandal_markers11" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
+position = Vector2(4177, -86)
+
+[node name="sandal_markers10" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
+position = Vector2(4570, 122)
+
+[node name="sandal_markers9" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
+position = Vector2(4296, 100)
+
+[node name="sandal_markers8" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
+position = Vector2(4001, 92)
+
+[node name="sandal_markers7" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
+position = Vector2(-502, -230)
+
+[node name="sandal_markers6" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
+position = Vector2(275, -123)
+
+[node name="sandal_markers5" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
+position = Vector2(352, 810)
 
 [node name="sandal_markers4" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
 position = Vector2(120, -178)
@@ -754,29 +781,5 @@ position = Vector2(149, 0)
 [node name="sandal_markers2" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
 position = Vector2(484, 731)
 
-[node name="sandal_markers2" type="Marker2D" parent="sandal_markers/sandal_markers2" groups=["sandal_markers"]]
-position = Vector2(-132, 79)
-
 [node name="sandal_markers" type="Marker2D" parent="sandal_markers" groups=["sandal_markers"]]
 position = Vector2(445, 39)
-
-[node name="sandal_markers" type="Marker2D" parent="sandal_markers/sandal_markers" groups=["sandal_markers"]]
-position = Vector2(-170, -162)
-
-[node name="sandal_markers" type="Marker2D" parent="sandal_markers/sandal_markers/sandal_markers" groups=["sandal_markers"]]
-position = Vector2(-777, -107)
-
-[node name="sandal_markers" type="Marker2D" parent="sandal_markers/sandal_markers/sandal_markers/sandal_markers" groups=["sandal_markers"]]
-position = Vector2(4503, 322)
-
-[node name="sandal_markers" type="Marker2D" parent="sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers" groups=["sandal_markers"]]
-position = Vector2(295, 8)
-
-[node name="sandal_markers" type="Marker2D" parent="sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers" groups=["sandal_markers"]]
-position = Vector2(274, 22)
-
-[node name="sandal_markers" type="Marker2D" parent="sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers" groups=["sandal_markers"]]
-position = Vector2(-393, -208)
-
-[node name="sandal_markers" type="Marker2D" parent="sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers/sandal_markers" groups=["sandal_markers"]]
-position = Vector2(245, 39)

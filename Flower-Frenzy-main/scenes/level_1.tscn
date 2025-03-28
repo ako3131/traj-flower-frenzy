@@ -902,4 +902,7 @@ position = Vector2(792, 446)
 
 [node name="game_music" parent="." instance=ExtResource("9_wfjg5")]
 
+[node name="flower_marker" type="Marker2D" parent="." groups=["flower_marker"]]
+position = Vector2(341, 482)
+
 [connection signal="body_entered" from="Bg3/fall_area" to="Bg3/fall_area" method="_on_body_entered"]

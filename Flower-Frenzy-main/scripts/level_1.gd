@@ -3,6 +3,7 @@ extends Node2D
 @onready var character = $coco
 var shoe_scene = preload("res://scenes/shoe_monster.tscn")
 var bug_scene = preload("res://scenes/bug_monster.tscn")
+var flower_scene = preload("res://scenes/level_1_flower.tscn")
 
 func _init() -> void:
 	# Update the global level variable before _ready() is called
@@ -15,6 +16,14 @@ func _ready() -> void:
 	create_shoes(2)  # Spawn 3 shoe monsters
 	create_bugs(2)   # Spawn 2 bug monsters
 	
+		# Get all markers in the scene
+	var flower_spawns = get_tree().get_nodes_in_group("flower_marker")
+
+	for marker in flower_spawns:
+		var flower = flower_scene.instantiate()
+		flower.global_position = marker.global_position
+		add_child(flower)
+		
 	# Spawn additional monsters at specific positions
 	spawn_shoe_monster(Vector2(2100, 500))
 	spawn_shoe_monster(Vector2(4600, 500))

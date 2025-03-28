@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://eo7nclmbvsxp"]
+[gd_scene load_steps=21 format=3 uid="uid://eo7nclmbvsxp"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_74e8c"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_pvj0s"]
@@ -10,13 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="7_7uibr"]
 [ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="8_ge1ga"]
 [ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="9_dqf3g"]
-[ext_resource type="Texture2D" uid="uid://va2qygd0o3mf" path="res://arts/flowers/flower_2.png" id="10_kd5eh"]
-[ext_resource type="Texture2D" uid="uid://de4gixe2ojny5" path="res://arts/flowers/flower_0.png" id="11_ul66l"]
-[ext_resource type="Texture2D" uid="uid://duhkrwf636fui" path="res://arts/flowers/082.png" id="12_a3rs2"]
-[ext_resource type="Texture2D" uid="uid://bt7p67p5u4lw2" path="res://arts/flowers/flower_1.png" id="13_x8wsd"]
+[ext_resource type="Texture2D" uid="uid://va2qygd0o3mf" path="res://arts/flowers/13.png" id="10_kd5eh"]
+[ext_resource type="Texture2D" uid="uid://de4gixe2ojny5" path="res://arts/flowers/old_flower_0.png" id="11_ul66l"]
+[ext_resource type="Texture2D" uid="uid://duhkrwf636fui" path="res://arts/flowers/flower_0.png" id="12_a3rs2"]
+[ext_resource type="Texture2D" uid="uid://bt7p67p5u4lw2" path="res://arts/flowers/old_flower_1.png" id="13_x8wsd"]
 [ext_resource type="Texture2D" uid="uid://rjlhay264cdf" path="res://arts/converse_monster_hit.png" id="15_l27b4"]
 [ext_resource type="Texture2D" uid="uid://y6ia5w5a85l5" path="res://arts/snail_monster_hit.png" id="16_aw8q5"]
 [ext_resource type="Texture2D" uid="uid://djknjok2xpn6j" path="res://arts/bug_monster_1_hit.png" id="17_r5vx1"]
+[ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="18_dbr5p"]
+[ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_1.png" id="19_a7huf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni7gt"]
 animations = [{
@@ -104,27 +106,27 @@ sprite_frames = SubResource("SpriteFrames_ni7gt")
 frame_progress = 0.337482
 
 [node name="064" type="Sprite2D" parent="."]
-position = Vector2(1731.5, 1222.5)
+position = Vector2(2492, 1011)
 scale = Vector2(11.6875, 8.8125)
 texture = ExtResource("10_kd5eh")
 
 [node name="069" type="Sprite2D" parent="."]
-position = Vector2(1400.5, 1213.5)
+position = Vector2(2685, 1104)
 scale = Vector2(12.3125, 10.9375)
 texture = ExtResource("11_ul66l")
 
 [node name="082" type="Sprite2D" parent="."]
-position = Vector2(2050, 1233)
+position = Vector2(2444, 1218)
 scale = Vector2(9.00001, 8)
 texture = ExtResource("12_a3rs2")
 
 [node name="083" type="Sprite2D" parent="."]
-position = Vector2(791.5, 1237.5)
-scale = Vector2(8.3125, 7.0625)
+position = Vector2(2023.75, 1227.75)
+scale = Vector2(8.78125, 8.46875)
 texture = ExtResource("12_a3rs2")
 
 [node name="009" type="Sprite2D" parent="."]
-position = Vector2(1114, 1233.5)
+position = Vector2(2423, 884)
 scale = Vector2(9.5, 8.5625)
 texture = ExtResource("13_x8wsd")
 
@@ -144,6 +146,26 @@ position = Vector2(2050, 185)
 scale = Vector2(9.125, 8.25)
 texture = ExtResource("17_r5vx1")
 flip_h = true
+
+[node name="Flower0" type="Sprite2D" parent="."]
+position = Vector2(747.25, 1226.5)
+scale = Vector2(8.59376, 9.18749)
+texture = ExtResource("12_a3rs2")
+
+[node name="Flower0" type="Sprite2D" parent="Flower0"]
+position = Vector2(770, 1211)
+scale = Vector2(11.4375, 11.125)
+texture = ExtResource("12_a3rs2")
+
+[node name="Flower2" type="Sprite2D" parent="."]
+position = Vector2(1103.12, 1227.38)
+scale = Vector2(9.85937, 9.17188)
+texture = ExtResource("18_dbr5p")
+
+[node name="Flower1" type="Sprite2D" parent="."]
+position = Vector2(1712.25, 1238.12)
+scale = Vector2(9.21875, 8.14062)
+texture = ExtResource("19_a7huf")
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]

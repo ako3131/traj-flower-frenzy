@@ -33,6 +33,14 @@ var power_up_thresholds: Array = [
 	10
 ]
 
+func _ready() -> void:
+	if Globals.level == 0:
+		$flower_counter.hide()
+		$tutorial_flower_counter.show()
+	else:
+		$flower_counter.show()
+		$tutorial_flower_counter.hide()
+
 func _physics_process(delta: float) -> void:
 	# Add gravity
 	if not is_on_floor():
@@ -145,9 +153,8 @@ func take_damage(amount):
 		die()
 
 func die():
-	lives -= 1
-	if lives > 0:
-		respawn()
+	if Globals.level != 0 and Globals.level <= Globals.max_level:
+		$next_level.next_level()
 	else:
 		game_over()
 	
