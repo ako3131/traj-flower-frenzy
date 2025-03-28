@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvxumrol3677c"]
+
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_ko44c"]
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_krv6w"]
+[ext_resource type="Texture2D" uid="uid://cp3j1gwiksckg" path="res://arts/bug_monster_1.png" id="3_vfydq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6b83"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykgc8"]
+atlas = ExtResource("3_vfydq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpsjg"]
+atlas = ExtResource("3_vfydq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80tan"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykgc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpsjg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="game_over" type="Node2D"]
+script = ExtResource("1_krv6w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -94.0
+offset_top = -26.0
+offset_right = 2424.0
+offset_bottom = 1362.0
+color = Color(0.0233718, 0.0233718, 0.0233718, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -2.0
+offset_top = 128.0
+offset_right = 2312.0
+offset_bottom = 795.0
+theme_override_fonts/font = ExtResource("1_ko44c")
+theme_override_font_sizes/font_size = 200
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.535023, 0.535023, 0.535023, 1)
+offset_left = 300.0
+offset_top = 796.0
+offset_right = 1016.0
+offset_bottom = 1002.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ko44c")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6b83")
+text = "Restart"
+
+[node name="Button2" type="Button" parent="."]
+modulate = Color(0.535023, 0.535023, 0.535023, 1)
+offset_left = 1292.0
+offset_top = 795.0
+offset_right = 2008.0
+offset_bottom = 1001.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ko44c")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6b83")
+text = "Menu
+"
+
+[node name="bug_monster" type="AnimatedSprite2D" parent="."]
+position = Vector2(506, 535)
+scale = Vector2(11.3437, 9.90625)
+sprite_frames = SubResource("SpriteFrames_80tan")
+
+[node name="bug_monster2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1756, 538)
+scale = Vector2(11.3437, 9.90625)
+sprite_frames = SubResource("SpriteFrames_80tan")
+flip_h = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -153,10 +153,7 @@ func take_damage(amount):
 		die()
 
 func die():
-	if Globals.level != 0 and Globals.level <= Globals.max_level:
-		$next_level.next_level()
-	else:
-		game_over()
+	game_over()
 	
 func respawn():
 	$lives_label.update_lives()
@@ -165,7 +162,7 @@ func respawn():
 	position = Vector2(551, 482)
 	
 func game_over():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	
 func set_power_up():
 	print("check power up", hit_count)
