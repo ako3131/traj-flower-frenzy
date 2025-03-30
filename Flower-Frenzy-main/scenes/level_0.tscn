@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cggobfsbo0o2p"]
+[gd_scene load_steps=15 format=3 uid="uid://cggobfsbo0o2p"]
 
 [ext_resource type="Script" path="res://scripts/level_0.gd" id="1_hn7tr"]
-[ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_t5fa5"]
-[ext_resource type="Texture2D" uid="uid://c348gnviowlp4" path="res://arts/summer5/3.png" id="2_4eyfo"]
-[ext_resource type="Texture2D" uid="uid://b2j8kirj8roj2" path="res://arts/summer5/4.png" id="3_ubabo"]
+[ext_resource type="Texture2D" uid="uid://b162ummvjwjem" path="res://arts/summer5/1.png" id="1_t5fa5"]
+[ext_resource type="Texture2D" uid="uid://dgo7vbs2rekq1" path="res://arts/summer5/3.png" id="2_4eyfo"]
+[ext_resource type="Texture2D" uid="uid://kpoublc6e28f" path="res://arts/summer5/4.png" id="3_ubabo"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="4_0xxdp"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="5_8a5nr"]
 [ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="8_4p60t"]
-[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="8_fxxo2"]
+[ext_resource type="FontFile" uid="uid://g2a4n528jqy6" path="res://arts/monogram.ttf" id="8_fxxo2"]
+[ext_resource type="Texture2D" uid="uid://bee7omtxg8yl3" path="res://arts/House.png" id="9_62bmp"]
 [ext_resource type="PackedScene" uid="uid://hxvruhbwdknc" path="res://scenes/level_0_flower.tscn" id="9_fte1b"]
+[ext_resource type="Texture2D" uid="uid://5y8js5qhjfuf" path="res://arts/oak_woods_v1.0/decorations/fence_1.png" id="11_c0880"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_16hde"]
 normal = Vector2(0.0063693, -0.99998)
@@ -25,146 +27,12 @@ distance = -335.0
 [node name="tutorial" type="Node2D"]
 script = ExtResource("1_hn7tr")
 
-[node name="clouds2" type="Sprite2D" parent="."]
-position = Vector2(9131, 662)
-scale = Vector2(9.28475, 6.40123)
-texture = ExtResource("1_t5fa5")
-
-[node name="clouds" type="Sprite2D" parent="clouds2"]
-position = Vector2(587.106, 1.52588e-05)
-scale = Vector2(1.05379, 0.996414)
-texture = ExtResource("1_t5fa5")
-
-[node name="grass" type="Sprite2D" parent="clouds2"]
-position = Vector2(-5.94783, -3.73488)
-scale = Vector2(0.628894, 0.76624)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds2/grass"]
-position = Vector2(623.869, -3.4526)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds2/grass/grass"]
-position = Vector2(626.533, -3.47637)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass2" type="Sprite2D" parent="clouds2"]
-position = Vector2(-100, 28.012)
-scale = Vector2(0.628894, 0.76624)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds2/grass2"]
-position = Vector2(629.296, -3.55415)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds2/grass2/grass"]
-position = Vector2(626.533, -3.47637)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds2/grass2/grass/grass"]
-position = Vector2(48.9649, 0.970888)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="flowers" type="Sprite2D" parent="clouds2"]
-position = Vector2(97.3433, 36.3372)
-scale = Vector2(0.531567, 0.608549)
-texture = ExtResource("3_ubabo")
-
-[node name="flowers" type="Sprite2D" parent="clouds2/flowers"]
-position = Vector2(519.364, 3.24396)
-scale = Vector2(0.803346, 0.979976)
-texture = ExtResource("3_ubabo")
-
-[node name="flowers2" type="Sprite2D" parent="clouds2/flowers"]
-position = Vector2(1111.1, -14.704)
-scale = Vector2(1.25196, 1.09117)
-texture = ExtResource("3_ubabo")
-
-[node name="flowers" type="Sprite2D" parent="clouds2/flowers/flowers2"]
-position = Vector2(519.364, 3.24396)
-scale = Vector2(0.803346, 0.979976)
-texture = ExtResource("3_ubabo")
-
-[node name="clouds" type="Sprite2D" parent="."]
-position = Vector2(-615, 649)
-scale = Vector2(9.58334, 6.42593)
-texture = ExtResource("1_t5fa5")
-
-[node name="clouds" type="Sprite2D" parent="clouds"]
-position = Vector2(587.106, 1.52588e-05)
-scale = Vector2(1.05379, 0.996414)
-texture = ExtResource("1_t5fa5")
-
-[node name="grass" type="Sprite2D" parent="clouds"]
-position = Vector2(-5.94783, -3.73488)
-scale = Vector2(0.628894, 0.76624)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds/grass"]
-position = Vector2(623.869, -3.4526)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds/grass/grass"]
-position = Vector2(626.533, -3.47637)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass2" type="Sprite2D" parent="clouds"]
-position = Vector2(-100, 28.012)
-scale = Vector2(0.628894, 0.76624)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds/grass2"]
-position = Vector2(629.296, -3.55415)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds/grass2/grass"]
-position = Vector2(626.533, -3.47637)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="grass" type="Sprite2D" parent="clouds/grass2/grass/grass"]
-position = Vector2(48.9649, 0.970888)
-scale = Vector2(1.18491, 1.02237)
-texture = ExtResource("2_4eyfo")
-
-[node name="flowers" type="Sprite2D" parent="clouds"]
-position = Vector2(97.3433, 36.3372)
-scale = Vector2(0.531567, 0.608549)
-texture = ExtResource("3_ubabo")
-
-[node name="flowers" type="Sprite2D" parent="clouds/flowers"]
-position = Vector2(519.364, 3.24396)
-scale = Vector2(0.803346, 0.979976)
-texture = ExtResource("3_ubabo")
-
-[node name="flowers2" type="Sprite2D" parent="clouds/flowers"]
-position = Vector2(1111.1, -14.704)
-scale = Vector2(1.25196, 1.09117)
-texture = ExtResource("3_ubabo")
-
-[node name="flowers" type="Sprite2D" parent="clouds/flowers/flowers2"]
-position = Vector2(519.364, 3.24396)
-scale = Vector2(0.803346, 0.979976)
-texture = ExtResource("3_ubabo")
-
-[node name="flowers" type="Sprite2D" parent="clouds/flowers/flowers2/flowers"]
-position = Vector2(-2286.95, 10.6326)
-scale = Vector2(0.865996, 0.936357)
-texture = ExtResource("3_ubabo")
-
 [node name="coco" parent="." instance=ExtResource("4_0xxdp")]
+z_index = 1
 position = Vector2(-5, 0)
 
 [node name="floor" type="StaticBody2D" parent="."]
-position = Vector2(0, 1200)
+position = Vector2(-18, 1235)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 shape = SubResource("WorldBoundaryShape2D_16hde")
@@ -183,13 +51,13 @@ position = Vector2(5141, 709)
 shape = SubResource("WorldBoundaryShape2D_g8vr7")
 
 [node name="next_level" parent="." instance=ExtResource("5_8a5nr")]
-position = Vector2(3710, 847)
+position = Vector2(2343, 832)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -1463.0
-offset_top = 471.0
-offset_right = -1103.0
-offset_bottom = 732.0
+offset_left = -518.0
+offset_top = 421.0
+offset_right = -158.0
+offset_bottom = 682.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
 text = "A and D to move
@@ -197,29 +65,29 @@ Space to jump
 Shift to run"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -170.0
-offset_top = 471.0
-offset_right = 112.0
-offset_bottom = 682.0
+offset_left = 309.0
+offset_top = 274.0
+offset_right = 591.0
+offset_bottom = 485.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
 text = "J to attack
 "
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 3635.0
-offset_top = 604.0
-offset_right = 3803.0
-offset_bottom = 799.0
+offset_left = 2410.0
+offset_top = 456.0
+offset_right = 2578.0
+offset_bottom = 651.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
 text = "Level 1"
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 1099.0
-offset_top = 503.0
-offset_right = 1832.0
-offset_bottom = 662.0
+offset_left = 1075.0
+offset_top = 422.0
+offset_right = 1808.0
+offset_bottom = 581.0
 theme_override_fonts/font = ExtResource("8_fxxo2")
 theme_override_font_sizes/font_size = 64
 text = "When your hit count turns red,
@@ -230,10 +98,108 @@ press K to use your power up
 [node name="forest_music" parent="." instance=ExtResource("8_4p60t")]
 
 [node name="bug_spawns" type="Marker2D" parent="." groups=["bug_spawns"]]
-position = Vector2(460, 977)
+position = Vector2(695, 956)
 
 [node name="show_spawns" type="Marker2D" parent="." groups=["shoe_spawns"]]
-position = Vector2(2089, 662)
+position = Vector2(1394, 766)
 
 [node name="level_0_flower" parent="." instance=ExtResource("9_fte1b")]
-position = Vector2(-279, 942)
+position = Vector2(232, 985)
+
+[node name="1" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-895, 624)
+scale = Vector2(4, 4)
+texture = ExtResource("1_t5fa5")
+
+[node name="2" type="Sprite2D" parent="1"]
+z_index = -5
+position = Vector2(576, 1.52588e-05)
+texture = ExtResource("1_t5fa5")
+
+[node name="3" type="Sprite2D" parent="1"]
+z_index = -5
+position = Vector2(1152, 0)
+texture = ExtResource("1_t5fa5")
+metadata/_edit_group_ = true
+
+[node name="3" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(-927, 662)
+scale = Vector2(2.30864, 2.30864)
+texture = ExtResource("2_4eyfo")
+
+[node name="4" type="Sprite2D" parent="3"]
+z_index = -5
+z_as_relative = false
+position = Vector2(573.497, 3.05176e-05)
+scale = Vector2(1.00016, 1.00016)
+texture = ExtResource("2_4eyfo")
+
+[node name="3" type="Sprite2D" parent="3"]
+z_index = -4
+position = Vector2(1143.53, -0.866291)
+texture = ExtResource("2_4eyfo")
+
+[node name="5" type="Sprite2D" parent="3"]
+z_index = 1
+position = Vector2(315.337, -6.49729)
+scale = Vector2(1.74, 1.74)
+texture = ExtResource("3_ubabo")
+
+[node name="6" type="Sprite2D" parent="3/5"]
+position = Vector2(575.798, -3.77978e-06)
+texture = ExtResource("3_ubabo")
+
+[node name="10" type="Sprite2D" parent="3/5"]
+position = Vector2(-575.663, 1.14441e-05)
+texture = ExtResource("3_ubabo")
+
+[node name="8" type="Sprite2D" parent="3/5"]
+position = Vector2(1151.33, 0.433147)
+texture = ExtResource("3_ubabo")
+
+[node name="4" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(-927, 662)
+scale = Vector2(2.30864, 2.30864)
+texture = ExtResource("2_4eyfo")
+
+[node name="4" type="Sprite2D" parent="4"]
+z_index = -5
+z_as_relative = false
+position = Vector2(573.497, 3.05176e-05)
+scale = Vector2(1.00016, 1.00016)
+texture = ExtResource("2_4eyfo")
+
+[node name="5" type="Sprite2D" parent="4"]
+z_index = -4
+texture = ExtResource("2_4eyfo")
+
+[node name="4" type="Sprite2D" parent="4/5"]
+z_index = -5
+z_as_relative = false
+position = Vector2(-568.733, -0.86628)
+scale = Vector2(1.00016, 1.00016)
+texture = ExtResource("2_4eyfo")
+
+[node name="5" type="Sprite2D" parent="4/5"]
+z_index = -5
+z_as_relative = false
+position = Vector2(852.449, 57.6096)
+scale = Vector2(4.60377, 1.00016)
+texture = ExtResource("2_4eyfo")
+
+[node name="3" type="Sprite2D" parent="4/5"]
+z_index = 4
+position = Vector2(1717.89, -3.03207)
+texture = ExtResource("2_4eyfo")
+
+[node name="House" type="Sprite2D" parent="4"]
+position = Vector2(121.717, 3.03211)
+texture = ExtResource("9_62bmp")
+
+[node name="Fence1" type="Sprite2D" parent="."]
+position = Vector2(2392, 961)
+scale = Vector2(6.28662, 6.28662)
+texture = ExtResource("11_c0880")

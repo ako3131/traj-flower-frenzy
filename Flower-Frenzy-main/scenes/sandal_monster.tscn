@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://b7mueoo1d4phi"]
 
 [ext_resource type="Script" path="res://scripts/sandal_monster.gd" id="1_i76v3"]
-[ext_resource type="Texture2D" uid="uid://cj7k7gixmy7nj" path="res://arts/sandal_monster_1.png" id="2_4a3nh"]
-[ext_resource type="Texture2D" uid="uid://b0xerd1r6umix" path="res://arts/sandal_monster_hit_1.png" id="3_kf0tv"]
+[ext_resource type="Texture2D" uid="uid://c6kvyng32cpi0" path="res://arts/sandal_monster_1.png" id="2_4a3nh"]
+[ext_resource type="Texture2D" uid="uid://br072cauxcqnd" path="res://arts/sandal_monster_hit_1.png" id="3_kf0tv"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="3_sk0yy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_et0tp"]

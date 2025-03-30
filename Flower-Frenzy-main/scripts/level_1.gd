@@ -1,90 +1,49 @@
 extends Node2D
 
 @onready var character = $coco
+
 var shoe_scene = preload("res://scenes/shoe_monster.tscn")
 var bug_scene = preload("res://scenes/bug_monster.tscn")
 var flower_scene = preload("res://scenes/level_1_flower.tscn")
 
 func _init() -> void:
-	# Update the global level variable before _ready() is called
 	Globals.level = 1
 
 func _ready() -> void:
-	character.position = Vector2(551, 482)
-	
-	# Spawn initial monsters
-	create_shoes(2)  # Spawn 3 shoe monsters
-	create_bugs(2)   # Spawn 2 bug monsters
-	
-		# Get all markers in the scene
-	var flower_spawns = get_tree().get_nodes_in_group("flower_marker")
+	character.position = Vector2(1000, 1000)
 
+	# Spawn flowers
+	var flower_spawns = get_tree().get_nodes_in_group("flower_marker")
 	for marker in flower_spawns:
 		var flower = flower_scene.instantiate()
 		flower.global_position = marker.global_position
 		add_child(flower)
-		
-	# Spawn additional monsters at specific positions
-	spawn_shoe_monster(Vector2(2100, 500))
-	spawn_shoe_monster(Vector2(4600, 500))
-	spawn_shoe_monster(Vector2(4800, 500))
-	spawn_shoe_monster(Vector2(6000, 500))
-	spawn_shoe_monster(Vector2(8000, 1500))
-	spawn_shoe_monster(Vector2(9000, 1500))
-	spawn_shoe_monster(Vector2(9200, 1500))
-	spawn_bug_monster(Vector2(3100, 500))
-	spawn_bug_monster(Vector2(3500, 500))
-	spawn_bug_monster(Vector2(4500, 1000))
-	spawn_bug_monster(Vector2(4500, 1600))
-	spawn_bug_monster(Vector2(5000, 1600))
-	spawn_bug_monster(Vector2(5500, 1600))
-	spawn_bug_monster(Vector2(7150, 2000))
-	spawn_bug_monster(Vector2(7250, 2000))
-	spawn_bug_monster(Vector2(7350, 2000))
 
+	# Spawn shoes
+	var shoe_spawns = get_tree().get_nodes_in_group("shoe_marker")
+	for marker in shoe_spawns:
+		var shoe = shoe_scene.instantiate()
+		shoe.global_position = marker.global_position
+		add_child(shoe)
 
-# Function to spawn a shoe monster at a specific position
-func spawn_shoe_monster(pos: Vector2) -> void:
-	var shoe = shoe_scene.instantiate()
-	add_child(shoe)
-	shoe.position = pos
+	# Spawn bugs
+	var bug_spawns = get_tree().get_nodes_in_group("bug_marker")
+	for marker in bug_spawns:
+		var bug = bug_scene.instantiate()
+		bug.global_position = marker.global_position
+		add_child(bug)
 
-# Function to spawn a bug monster at a specific position
-func spawn_bug_monster(pos: Vector2) -> void:
-	var bug = bug_scene.instantiate()
-	add_child(bug)
-	bug.position = pos
-
-# Input handling for monster spawning
+# Optional: still allow mouse click spawning (debug or gameplay feature)
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			# Spawn shoe monster with left click
-			spawn_shoe_monster(event.position)
+			var shoe = shoe_scene.instantiate()
+			shoe.global_position = event.position
+			add_child(shoe)
 		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			# Spawn bug monster with right click
-			spawn_bug_monster(event.position)
-
-func create_shoes(count: int):
-	var x_change = 70
-	var y_change = -50
-	var x = 881
-	var y = 389
-	for i in range(count):
-		var shoe = shoe_scene.instantiate()
-		add_child(shoe)
-		shoe.position = Vector2(x + (x_change * i), y + (y_change * i))
-	
-func create_bugs(count: int):
-	var x_change = 100
-	var y_change = 0
-	var x = 130
-	var y = 511
-	for i in range(count):
-		var bug = bug_scene.instantiate()
-		add_child(bug)
-		bug.position = Vector2(x + (x_change * i), y + (y_change * i))
-
+			var bug = bug_scene.instantiate()
+			bug.global_position = event.position
+			add_child(bug)
 
 func _on_fall_area_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass
