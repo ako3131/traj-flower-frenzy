@@ -1,16 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://cggobfsbo0o2p"]
 
 [ext_resource type="Script" path="res://scripts/level_0.gd" id="1_hn7tr"]
-[ext_resource type="Texture2D" uid="uid://b162ummvjwjem" path="res://arts/summer5/1.png" id="1_t5fa5"]
-[ext_resource type="Texture2D" uid="uid://dgo7vbs2rekq1" path="res://arts/summer5/3.png" id="2_4eyfo"]
-[ext_resource type="Texture2D" uid="uid://kpoublc6e28f" path="res://arts/summer5/4.png" id="3_ubabo"]
+[ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_t5fa5"]
+[ext_resource type="Texture2D" uid="uid://c348gnviowlp4" path="res://arts/summer5/3.png" id="2_4eyfo"]
+[ext_resource type="Texture2D" uid="uid://b2j8kirj8roj2" path="res://arts/summer5/4.png" id="3_ubabo"]
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="4_0xxdp"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="5_8a5nr"]
 [ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="8_4p60t"]
-[ext_resource type="FontFile" uid="uid://g2a4n528jqy6" path="res://arts/monogram.ttf" id="8_fxxo2"]
-[ext_resource type="Texture2D" uid="uid://bee7omtxg8yl3" path="res://arts/House.png" id="9_62bmp"]
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="8_fxxo2"]
+[ext_resource type="Texture2D" uid="uid://chehv2k7vq82c" path="res://arts/House.png" id="9_62bmp"]
 [ext_resource type="PackedScene" uid="uid://hxvruhbwdknc" path="res://scenes/level_0_flower.tscn" id="9_fte1b"]
-[ext_resource type="Texture2D" uid="uid://5y8js5qhjfuf" path="res://arts/oak_woods_v1.0/decorations/fence_1.png" id="11_c0880"]
+[ext_resource type="Texture2D" uid="uid://dfnswr3cdm0h4" path="res://arts/oak_woods_v1.0/decorations/fence_1.png" id="11_c0880"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_16hde"]
 normal = Vector2(0.0063693, -0.99998)
@@ -143,8 +143,8 @@ texture = ExtResource("2_4eyfo")
 
 [node name="5" type="Sprite2D" parent="3"]
 z_index = 1
-position = Vector2(315.337, -6.49729)
-scale = Vector2(1.74, 1.74)
+position = Vector2(315.337, 48.5655)
+scale = Vector2(1.74, 2.07989)
 texture = ExtResource("3_ubabo")
 
 [node name="6" type="Sprite2D" parent="3/5"]
@@ -168,8 +168,8 @@ texture = ExtResource("2_4eyfo")
 [node name="4" type="Sprite2D" parent="4"]
 z_index = -5
 z_as_relative = false
-position = Vector2(573.497, 3.05176e-05)
-scale = Vector2(1.00016, 1.00016)
+position = Vector2(573.497, 15.7973)
+scale = Vector2(1.00016, 1.09767)
 texture = ExtResource("2_4eyfo")
 
 [node name="5" type="Sprite2D" parent="4"]
@@ -186,8 +186,8 @@ texture = ExtResource("2_4eyfo")
 [node name="5" type="Sprite2D" parent="4/5"]
 z_index = -5
 z_as_relative = false
-position = Vector2(852.449, 57.6096)
-scale = Vector2(4.60377, 1.00016)
+position = Vector2(852.449, 79.9043)
+scale = Vector2(4.60377, 1.13778)
 texture = ExtResource("2_4eyfo")
 
 [node name="3" type="Sprite2D" parent="4/5"]
@@ -196,7 +196,7 @@ position = Vector2(1717.89, -3.03207)
 texture = ExtResource("2_4eyfo")
 
 [node name="House" type="Sprite2D" parent="4"]
-position = Vector2(121.717, 3.03211)
+position = Vector2(122.15, 8.6631)
 texture = ExtResource("9_62bmp")
 
 [node name="Fence1" type="Sprite2D" parent="."]

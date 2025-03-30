@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cqlt8de6ou2xe"]
 
 [ext_resource type="Script" path="res://scripts/shoe_monster.gd" id="1_55sky"]
-[ext_resource type="Texture2D" uid="uid://c110bs2guldn6" path="res://arts/boot_monster.png" id="2_6pkvp"]
-[ext_resource type="Texture2D" uid="uid://c3u54u7lbrc1n" path="res://arts/shoe_monster_1_hit.png" id="3_hnawm"]
+[ext_resource type="Texture2D" uid="uid://djesk1pk4tkr4" path="res://arts/boot_monster.png" id="2_6pkvp"]
+[ext_resource type="Texture2D" uid="uid://183q7sidtnpl" path="res://arts/shoe_monster_1_hit.png" id="3_hnawm"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="4_c2top"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wftf6"]

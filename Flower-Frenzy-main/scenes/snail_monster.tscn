@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://jj1qcneve51p"]
 
-[ext_resource type="Texture2D" uid="uid://8qa00mavdqox" path="res://arts/snail_monster_hit.png" id="1_2ydd7"]
-[ext_resource type="Texture2D" uid="uid://ybiflwcolhj6" path="res://arts/snail_monster.png" id="1_akwvw"]
+[ext_resource type="Texture2D" uid="uid://y6ia5w5a85l5" path="res://arts/snail_monster_hit.png" id="1_2ydd7"]
+[ext_resource type="Texture2D" uid="uid://dtbnh688gyyfh" path="res://arts/snail_monster.png" id="1_akwvw"]
 [ext_resource type="Script" path="res://scripts/snail_monster.gd" id="1_l0ihc"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="2_0wsj7"]
 

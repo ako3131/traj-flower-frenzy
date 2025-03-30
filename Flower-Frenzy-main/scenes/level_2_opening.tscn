@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj8ys1ntgjxl2"]
 
 [ext_resource type="Script" path="res://scenes/level_2_opening.gd" id="1_s885q"]
-[ext_resource type="Texture2D" uid="uid://csr7tfvqvba8c" path="res://arts/Environment/PNG/sky.png" id="2_xscdg"]
-[ext_resource type="FontFile" uid="uid://g2a4n528jqy6" path="res://arts/monogram.ttf" id="4_37ctl"]
-[ext_resource type="Texture2D" uid="uid://ceyuc7sx14rme" path="res://arts/flowers/flower_2.png" id="4_ioyvy"]
+[ext_resource type="Texture2D" uid="uid://oyfxswb2gc6s" path="res://arts/Environment/PNG/sky.png" id="2_xscdg"]
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="4_37ctl"]
+[ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="4_ioyvy"]
 
 [node name="level_2_opening" type="Node2D"]
 script = ExtResource("1_s885q")

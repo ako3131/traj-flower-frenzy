@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgi44q27x1kji"]
 
-[ext_resource type="AudioStream" uid="uid://dr51o2u0ba6hf" path="res://arts/forest.wav" id="1_fsp3w"]
+[ext_resource type="AudioStream" uid="uid://bgvtfat2tpi6b" path="res://arts/forest.wav" id="1_fsp3w"]
 
 [sub_resource type="GDScript" id="GDScript_yrfkd"]
 script/source = "extends Node2D

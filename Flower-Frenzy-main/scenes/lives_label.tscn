@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu7ett65r633d"]
 
-[ext_resource type="FontFile" uid="uid://g2a4n528jqy6" path="res://arts/monogram.ttf" id="1_xddvf"]
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_xddvf"]
 [ext_resource type="Script" path="res://scripts/lives_label.gd" id="2_m1btq"]
 
 [node name="lives_label" type="Label"]
