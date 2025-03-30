@@ -4,7 +4,7 @@ extends Node2D
 
 var shoe_scene = preload("res://scenes/shoe_monster.tscn")
 var bug_scene = preload("res://scenes/bug_monster.tscn")
-var flower_scene = preload("res://scenes/level_1_flower.tscn")
+var flower_scene = preload("res://scenes/level_3_flower.tscn")
 
 func _init() -> void:
 	Globals.level = 1

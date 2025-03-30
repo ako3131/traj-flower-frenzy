@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d01jmiaoqkawe"]
+[gd_scene load_steps=6 format=3 uid="uid://d01jmiaoqkawe"]
 
 [ext_resource type="Script" path="res://scripts/flower_counter.gd" id="1_i14xd"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_lb2sr"]
-[ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_1.png" id="2_qcu0q"]
+[ext_resource type="Texture2D" uid="uid://d1xpim3nkvg44" path="res://arts/flowers/flower_1.png" id="2_qcu0q"]
 [ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="4_nk6i0"]
+[ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_3.png" id="5_ifgwh"]
 
 [node name="flower_counter" type="Node2D"]
 position = Vector2(-27, -11)
@@ -12,8 +13,8 @@ script = ExtResource("1_i14xd")
 [node name="flower_1" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="flower_1"]
-position = Vector2(-30, 16)
-scale = Vector2(7.75, 6.625)
+position = Vector2(-45, 21.5)
+scale = Vector2(8.25, 7.1875)
 texture = ExtResource("2_qcu0q")
 
 [node name="label" type="Label" parent="flower_1"]
@@ -26,7 +27,7 @@ theme_override_font_sizes/font_size = 90
 text = "X"
 
 [node name="flower_2" type="Node2D" parent="."]
-position = Vector2(228, 0)
+position = Vector2(223, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="flower_2"]
 position = Vector2(-21.5, 23)
@@ -46,11 +47,14 @@ text = "X"
 position = Vector2(438, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="flower_3"]
+position = Vector2(-14, 24)
+scale = Vector2(6.25, 6.3125)
+texture = ExtResource("5_ifgwh")
 
 [node name="label" type="Label" parent="flower_3"]
-offset_left = 36.0
+offset_left = 45.0
 offset_top = -10.0
-offset_right = 81.0
+offset_right = 90.0
 offset_bottom = 62.0
 theme_override_fonts/font = ExtResource("1_lb2sr")
 theme_override_font_sizes/font_size = 90

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://eo7nclmbvsxp"]
+[gd_scene load_steps=22 format=3 uid="uid://eo7nclmbvsxp"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_74e8c"]
 [ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="2_dk1yo"]
@@ -18,7 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://y6ia5w5a85l5" path="res://arts/snail_monster_hit.png" id="16_aw8q5"]
 [ext_resource type="Texture2D" uid="uid://djknjok2xpn6j" path="res://arts/bug_monster_1_hit.png" id="17_r5vx1"]
 [ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="18_dbr5p"]
-[ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_1.png" id="19_a7huf"]
+[ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_3.png" id="19_a7huf"]
+[ext_resource type="Texture2D" uid="uid://d1xpim3nkvg44" path="res://arts/flowers/flower_1.png" id="20_jkfks"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni7gt"]
 animations = [{
@@ -75,19 +76,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="tutorial_button" type="Button" parent="."]
-offset_left = 744.0
-offset_top = 460.0
-offset_right = 1588.0
-offset_bottom = 646.0
+offset_left = 729.0
+offset_top = 483.0
+offset_right = 1573.0
+offset_bottom = 669.0
 theme_override_fonts/font = ExtResource("3_oj580")
 theme_override_font_sizes/font_size = 130
 text = "Tutorial"
 
 [node name="start_button" type="Button" parent="."]
-offset_left = 750.0
-offset_top = 689.0
-offset_right = 1587.0
-offset_bottom = 875.0
+offset_left = 735.0
+offset_top = 712.0
+offset_right = 1572.0
+offset_bottom = 898.0
 theme_override_fonts/font = ExtResource("3_oj580")
 theme_override_font_sizes/font_size = 130
 text = "Start"
@@ -121,7 +122,7 @@ scale = Vector2(9.00001, 8)
 texture = ExtResource("12_a3rs2")
 
 [node name="083" type="Sprite2D" parent="."]
-position = Vector2(2023.75, 1227.75)
+position = Vector2(2591, 1392)
 scale = Vector2(8.78125, 8.46875)
 texture = ExtResource("12_a3rs2")
 
@@ -148,7 +149,7 @@ texture = ExtResource("17_r5vx1")
 flip_h = true
 
 [node name="Flower0" type="Sprite2D" parent="."]
-position = Vector2(747.25, 1226.5)
+position = Vector2(1413, 1226)
 scale = Vector2(8.59376, 9.18749)
 texture = ExtResource("12_a3rs2")
 
@@ -166,6 +167,16 @@ texture = ExtResource("18_dbr5p")
 position = Vector2(1712.25, 1238.12)
 scale = Vector2(9.21875, 8.14062)
 texture = ExtResource("19_a7huf")
+
+[node name="Flower3" type="Sprite2D" parent="."]
+position = Vector2(772, 1227)
+scale = Vector2(10.375, 8.8125)
+texture = ExtResource("20_jkfks")
+
+[node name="Flower4" type="Sprite2D" parent="."]
+position = Vector2(2055, 1229)
+scale = Vector2(10.375, 8.8125)
+texture = ExtResource("20_jkfks")
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
