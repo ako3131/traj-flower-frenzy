@@ -45,6 +45,11 @@ func _ready() -> void:
 	$power_up_sound.volume_db = 0.0  # Reset volume
 	$power_up_sound.pitch_scale = 1.0  # Reset pitch
 	$power_up_sound.stop()  # Stop any previous playback
+	
+	# set up sound effects
+	$hit_sound.volume_db = 0.0  # Reset volume
+	$hit_sound.pitch_scale = 1.0  # Reset pitch
+	$hit_sound.stop()  # Stop any previous playback
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -73,6 +78,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_released("attack"):
 		if enemy_hit:
+			$hit_sound.play()
 			hit_count += 1
 			$combo_label.update_combo()
 			set_power_up()
