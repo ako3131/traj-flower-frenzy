@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://s61dt2qdjl8f"]
+
+[ext_resource type="AudioStream" uid="uid://dn04uonjwtyym" path="res://arts/collect_flower.wav" id="1_dgkv5"]
+
+[node name="collect_sound" type="AudioStreamPlayer"]
+stream = ExtResource("1_dgkv5")

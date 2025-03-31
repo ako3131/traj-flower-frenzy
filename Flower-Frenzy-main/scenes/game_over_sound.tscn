@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4emycqgdarqy"]
+
+[ext_resource type="AudioStream" uid="uid://ket6kbwbldcp" path="res://arts/mixkit-player-losing-or-failing-2042.wav" id="1_oxq5b"]
+
+[node name="game_over_sound" type="AudioStreamPlayer"]
+stream = ExtResource("1_oxq5b")

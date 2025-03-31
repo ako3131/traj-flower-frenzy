@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl4xia814mtg8"]
+
+[ext_resource type="AudioStream" uid="uid://b7ks16b3ujttm" path="res://arts/Blow 1V2.mp3" id="1_nforf"]
+
+[node name="power_up_sound" type="AudioStreamPlayer"]
+stream = ExtResource("1_nforf")
