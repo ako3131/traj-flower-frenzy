@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igg5i"]
-size = Vector2(134.625, 116.5)
+size = Vector2(104.078, 87.5625)
 
 [node name="converse_monster" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -48,17 +48,17 @@ collision_mask = 3
 script = ExtResource("1_gh3ld")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(59, 56.5)
-scale = Vector2(4.6875, 4.53125)
+position = Vector2(48, 18.5)
+scale = Vector2(3.9375, 3.90625)
 sprite_frames = SubResource("SpriteFrames_40grx")
 animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(53.6875, 46.75)
+position = Vector2(43.9609, 10.7812)
 shape = SubResource("RectangleShape2D_igg5i")
 
 [node name="health_bar" parent="." instance=ExtResource("3_a2xw4")]
-offset_left = 3.0
-offset_top = 108.0
-offset_right = 82.0
-offset_bottom = 122.0
+offset_left = 8.0
+offset_top = 58.0
+offset_right = 65.0
+offset_bottom = 67.0

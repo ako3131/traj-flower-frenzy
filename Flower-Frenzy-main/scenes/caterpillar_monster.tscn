@@ -52,7 +52,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xn0jv"]
-size = Vector2(147.25, 77.25)
+size = Vector2(109.625, 60.625)
 
 [node name="caterpillar_monster" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -60,17 +60,17 @@ collision_mask = 3
 script = ExtResource("1_1pvna")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(56, 57.5)
-scale = Vector2(4.5, 4.59375)
+position = Vector2(7, -15)
+scale = Vector2(3.46875, 3.8125)
 sprite_frames = SubResource("SpriteFrames_4vjpc")
 animation = &"still"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(54.375, 65.375)
+position = Vector2(9, -8)
 shape = SubResource("RectangleShape2D_xn0jv")
 
 [node name="health_bar" parent="." instance=ExtResource("4_f405l")]
-offset_left = 7.0
-offset_top = 115.0
-offset_right = 104.0
-offset_bottom = 131.0
+offset_left = -26.0
+offset_top = 29.0
+offset_right = 45.0
+offset_bottom = 45.0

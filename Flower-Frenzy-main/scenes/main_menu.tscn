@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://eo7nclmbvsxp"]
+[gd_scene load_steps=23 format=3 uid="uid://eo7nclmbvsxp"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_74e8c"]
 [ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="2_dk1yo"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="18_dbr5p"]
 [ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_3.png" id="19_a7huf"]
 [ext_resource type="Texture2D" uid="uid://d1xpim3nkvg44" path="res://arts/flowers/flower_1.png" id="20_jkfks"]
+[ext_resource type="Texture2D" uid="uid://183q7sidtnpl" path="res://arts/shoe_monster_1_hit.png" id="21_qgy22"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni7gt"]
 animations = [{
@@ -132,21 +133,20 @@ scale = Vector2(9.5, 8.5625)
 texture = ExtResource("13_x8wsd")
 
 [node name="convers_silloutte" type="Sprite2D" parent="."]
-position = Vector2(238, 207)
+position = Vector2(240, 200)
 scale = Vector2(9.90625, 9.59375)
 texture = ExtResource("15_l27b4")
 flip_h = true
 
 [node name="snail_silloutte" type="Sprite2D" parent="."]
-position = Vector2(1840.5, 980)
+position = Vector2(1788, 784)
 scale = Vector2(10.5313, 9)
 texture = ExtResource("16_aw8q5")
 
 [node name="bug_silloutte" type="Sprite2D" parent="."]
-position = Vector2(2050, 185)
+position = Vector2(470, 622)
 scale = Vector2(9.125, 8.25)
 texture = ExtResource("17_r5vx1")
-flip_h = true
 
 [node name="Flower0" type="Sprite2D" parent="."]
 position = Vector2(1413, 1226)
@@ -177,6 +177,11 @@ texture = ExtResource("20_jkfks")
 position = Vector2(2055, 1229)
 scale = Vector2(10.375, 8.8125)
 texture = ExtResource("20_jkfks")
+
+[node name="ShoeMonster1Hit" type="Sprite2D" parent="."]
+position = Vector2(2045, 220)
+scale = Vector2(11.7891, 10.5703)
+texture = ExtResource("21_qgy22")
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]

@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amoho"]
-size = Vector2(103.5, 111.75)
+size = Vector2(91.875, 92.4375)
 
 [node name="sandal_monster" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -48,17 +48,17 @@ collision_mask = 3
 script = ExtResource("1_i76v3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-17.125, -1.12496)
-scale = Vector2(3.63281, 4.07031)
+position = Vector2(-25.125, 9)
+scale = Vector2(3.13281, 3.4375)
 sprite_frames = SubResource("SpriteFrames_f1ik5")
 animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-14, -6)
+position = Vector2(-19.9375, 4.21875)
 shape = SubResource("RectangleShape2D_amoho")
 
 [node name="health_bar" parent="." instance=ExtResource("3_sk0yy")]
-offset_left = -51.0
-offset_top = 54.0
-offset_right = 21.0
-offset_bottom = 67.0
+offset_left = -53.0
+offset_top = 53.0
+offset_right = 2.0
+offset_bottom = 66.0

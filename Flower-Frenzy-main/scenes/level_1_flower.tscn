@@ -8,6 +8,7 @@ radius = 55.0
 height = 114.0
 
 [node name="level_1_flower" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_0m1fr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
