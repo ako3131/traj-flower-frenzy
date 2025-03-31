@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cvxumrol3677c"]
 
-[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_ko44c"]
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_krv6w"]
+[ext_resource type="FontFile" uid="uid://bwb2llvxmpy3s" path="res://arts/Font/ThaleahFat.ttf" id="2_aqyva"]
 [ext_resource type="Texture2D" uid="uid://cp3j1gwiksckg" path="res://arts/bug_monster_1.png" id="3_vfydq"]
 [ext_resource type="PackedScene" uid="uid://dkrf465gd1pf8" path="res://scenes/game_music.tscn" id="4_g2i6v"]
 
@@ -44,7 +44,7 @@ offset_left = -2.0
 offset_top = 128.0
 offset_right = 2312.0
 offset_bottom = 795.0
-theme_override_fonts/font = ExtResource("1_ko44c")
+theme_override_fonts/font = ExtResource("2_aqyva")
 theme_override_font_sizes/font_size = 200
 text = "Game Over"
 horizontal_alignment = 1
@@ -57,10 +57,10 @@ offset_top = 796.0
 offset_right = 1016.0
 offset_bottom = 1002.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_ko44c")
-theme_override_font_sizes/font_size = 200
+theme_override_fonts/font = ExtResource("2_aqyva")
+theme_override_font_sizes/font_size = 180
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6b83")
-text = "Restart"
+text = "Menu"
 
 [node name="Button2" type="Button" parent="."]
 modulate = Color(0.535023, 0.535023, 0.535023, 1)
@@ -69,19 +69,19 @@ offset_top = 795.0
 offset_right = 2008.0
 offset_bottom = 1001.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_ko44c")
-theme_override_font_sizes/font_size = 200
+theme_override_fonts/font = ExtResource("2_aqyva")
+theme_override_font_sizes/font_size = 180
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6b83")
-text = "Menu
+text = "restart
 "
 
 [node name="bug_monster" type="AnimatedSprite2D" parent="."]
-position = Vector2(506, 535)
+position = Vector2(413, 537)
 scale = Vector2(11.3437, 9.90625)
 sprite_frames = SubResource("SpriteFrames_80tan")
 
 [node name="bug_monster2" type="AnimatedSprite2D" parent="."]
-position = Vector2(1756, 538)
+position = Vector2(1879, 543)
 scale = Vector2(11.3437, 9.90625)
 sprite_frames = SubResource("SpriteFrames_80tan")
 flip_h = true
