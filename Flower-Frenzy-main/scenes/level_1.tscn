@@ -1198,16 +1198,16 @@ position = Vector2(2654, 871)
 position = Vector2(676, 4)
 
 [node name="bug_marker2" type="Marker2D" parent="bug_marker" groups=["bug_markers"]]
-position = Vector2(2349, 5)
+position = Vector2(2278, 2)
 
 [node name="bug_marker3" type="Marker2D" parent="bug_marker" groups=["bug_markers"]]
-position = Vector2(3750, -1)
+position = Vector2(3747, 0)
 
 [node name="bug_marker4" type="Marker2D" parent="bug_marker" groups=["bug_markers"]]
-position = Vector2(-825, 30)
+position = Vector2(-923, 41)
 
 [node name="bug_marker5" type="Marker2D" parent="bug_marker" groups=["bug_markers"]]
-position = Vector2(2641, -1)
+position = Vector2(2597, -1)
 
 [node name="shoe_marker2" type="Marker2D" parent="." groups=["shoe_markers"]]
 position = Vector2(5317, 708)
