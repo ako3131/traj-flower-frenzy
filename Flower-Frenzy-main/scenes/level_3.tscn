@@ -676,7 +676,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1986, 418)
 
 [node name="next_level" parent="." instance=ExtResource("6_4y1o4")]
-position = Vector2(11514, 985)
+position = Vector2(12089, 2926)
 
 [node name="game_music" parent="." instance=ExtResource("7_rybm1")]
 
@@ -876,3 +876,6 @@ position = Vector2(1002, -203)
 
 [node name="shoe_marker11" type="Marker2D" parent="shoe_markers" groups=["shoe_marker"]]
 position = Vector2(432, -180)
+
+[node name="hand_marker" type="Marker2D" parent="." groups=["hand_marker"]]
+position = Vector2(12670, 1093)

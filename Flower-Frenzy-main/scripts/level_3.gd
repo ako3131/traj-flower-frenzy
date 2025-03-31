@@ -5,6 +5,7 @@ extends Node2D
 var shoe_scene = preload("res://scenes/shoe_monster.tscn")
 var bug_scene = preload("res://scenes/bug_monster.tscn")
 var flower_scene = preload("res://scenes/level_3_flower.tscn")
+var hand_scene = preload("res://scenes/hand_monster.tscn")
 
 func _init() -> void:
 	Globals.level = 3
@@ -32,6 +33,15 @@ func _ready() -> void:
 		var bug = bug_scene.instantiate()
 		bug.global_position = marker.global_position
 		add_child(bug)
+		
+
+	# Spawn hand
+	var hand_spawns = get_tree().get_nodes_in_group("hand_marker")
+	for marker in hand_spawns:
+		var bug = hand_scene.instantiate()
+		bug.global_position = marker.global_position
+		add_child(bug)
+
 
 # Optional: still allow mouse click spawning (debug or gameplay feature)
 func _unhandled_input(event: InputEvent) -> void:
