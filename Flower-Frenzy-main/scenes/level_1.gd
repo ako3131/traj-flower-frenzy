@@ -1,8 +1,8 @@
 extends Node2D
 
-#var flower_scene = preload("res://scenes/level_1_flower.tscn")
-#var snail_scene = preload("res://scenes/snail_monster.tscn")
-#var sandal_scene = preload("res://scenes/sandal_monster.tscn")
+var flower_scene = preload("res://scenes/level_1_flower.tscn")
+var bug_scene = preload("res://scenes/caterpillar_monster.tscn")
+var shoe_scene = preload("res://scenes/converse_monster.tscn")
 
 func _init() -> void:
 	# Update the global level variable before _ready() is called
@@ -10,30 +10,29 @@ func _init() -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-	## Get all markers in the scene
-	#var flower_spawns = get_tree().get_nodes_in_group("flower_markers")
-#
-	#for marker in flower_spawns:
-		#var flower = flower_scene.instantiate()
-		#flower.global_position = marker.global_position
-		#add_child(flower)
-		#
-	## Get all markers in the scene
-	#var snail_spawns = get_tree().get_nodes_in_group("snail_markers")
-#
-	#for marker in snail_spawns:
-		#var mob = snail_scene.instantiate()
-		#mob.global_position = marker.global_position
-		#add_child(mob)
-#
-	## Get all markers in the scene
-	#var sandal_spawns = get_tree().get_nodes_in_group("sandal_markers")
-#
-	#for marker in sandal_spawns:
-		#var mob = sandal_scene.instantiate()
-		#mob.global_position = marker.global_position
-		#add_child(mob)
+	# Get all markers in the scene
+	var flower_spawns = get_tree().get_nodes_in_group("flower_markers")
+
+	for marker in flower_spawns:
+		var flower = flower_scene.instantiate()
+		flower.global_position = marker.global_position
+		add_child(flower)
+		
+	# Get all markers in the scene
+	var bug_spawns = get_tree().get_nodes_in_group("bug_markers")
+
+	for marker in bug_spawns:
+		var mob = bug_scene.instantiate()
+		mob.global_position = marker.global_position
+		add_child(mob)
+
+	# Get all markers in the scene
+	var shoe_spawns = get_tree().get_nodes_in_group("shoe_markers")
+
+	for marker in shoe_spawns:
+		var mob = shoe_scene.instantiate()
+		mob.global_position = marker.global_position
+		add_child(mob)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

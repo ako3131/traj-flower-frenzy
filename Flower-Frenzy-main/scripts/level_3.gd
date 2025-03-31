@@ -7,7 +7,7 @@ var bug_scene = preload("res://scenes/bug_monster.tscn")
 var flower_scene = preload("res://scenes/level_3_flower.tscn")
 
 func _init() -> void:
-	Globals.level = 1
+	Globals.level = 3
 
 func _ready() -> void:
 	character.position = Vector2(1000, 1000)

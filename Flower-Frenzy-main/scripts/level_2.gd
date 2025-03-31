@@ -17,22 +17,22 @@ func _ready() -> void:
 		var flower = flower_scene.instantiate()
 		flower.global_position = marker.global_position
 		add_child(flower)
-		#
-	## Get all markers in the scene
-	#var snail_spawns = get_tree().get_nodes_in_group("snail_markers")
-#
-	#for marker in snail_spawns:
-		#var mob = snail_scene.instantiate()
-		#mob.global_position = marker.global_position
-		#add_child(mob)
-#
-	## Get all markers in the scene
-	#var sandal_spawns = get_tree().get_nodes_in_group("sandal_markers")
-#
-	#for marker in sandal_spawns:
-		#var mob = sandal_scene.instantiate()
-		#mob.global_position = marker.global_position
-		#add_child(mob)
+		
+	# Get all markers in the scene
+	var snail_spawns = get_tree().get_nodes_in_group("snail_markers")
+
+	for marker in snail_spawns:
+		var mob = snail_scene.instantiate()
+		mob.global_position = marker.global_position
+		add_child(mob)
+
+	# Get all markers in the scene
+	var sandal_spawns = get_tree().get_nodes_in_group("sandal_markers")
+
+	for marker in sandal_spawns:
+		var mob = sandal_scene.instantiate()
+		mob.global_position = marker.global_position
+		add_child(mob)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
