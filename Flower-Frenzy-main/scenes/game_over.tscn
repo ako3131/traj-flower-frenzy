@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvxumrol3677c"]
+[gd_scene load_steps=10 format=3 uid="uid://cvxumrol3677c"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_krv6w"]
 [ext_resource type="FontFile" uid="uid://bwb2llvxmpy3s" path="res://arts/Font/ThaleahFat.ttf" id="2_aqyva"]
 [ext_resource type="Texture2D" uid="uid://cp3j1gwiksckg" path="res://arts/bug_monster_1.png" id="3_vfydq"]
 [ext_resource type="PackedScene" uid="uid://dkrf465gd1pf8" path="res://scenes/game_music.tscn" id="4_g2i6v"]
+[ext_resource type="PackedScene" uid="uid://4emycqgdarqy" path="res://scenes/game_over_sound.tscn" id="5_ns71q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6b83"]
 
@@ -87,6 +88,8 @@ sprite_frames = SubResource("SpriteFrames_80tan")
 flip_h = true
 
 [node name="game_music" parent="." instance=ExtResource("4_g2i6v")]
+
+[node name="game_over_sound" parent="." instance=ExtResource("5_ns71q")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
