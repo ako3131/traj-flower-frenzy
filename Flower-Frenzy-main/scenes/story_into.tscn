@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ceaaon0yic8rm"]
+[gd_scene load_steps=21 format=3 uid="uid://ceaaon0yic8rm"]
 
 [ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="1_fh1yn"]
 [ext_resource type="Script" path="res://scenes/story_into.gd" id="1_y8onu"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="12_2jtg8"]
 [ext_resource type="Texture2D" uid="uid://cny50pee82ks8" path="res://arts/converse_monster.png" id="13_rcwdp"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="15_lfo8p"]
+[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="16_gmna8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3we10"]
 animations = [{
@@ -127,3 +128,5 @@ offset_bottom = 842.0
 theme_override_fonts/font = ExtResource("15_lfo8p")
 theme_override_font_sizes/font_size = 100
 text = "Ok!"
+
+[node name="forest_music" parent="." instance=ExtResource("16_gmna8")]

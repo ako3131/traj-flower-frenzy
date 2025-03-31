@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://eo7nclmbvsxp"]
+[gd_scene load_steps=24 format=3 uid="uid://eo7nclmbvsxp"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_74e8c"]
 [ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="2_dk1yo"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_3.png" id="19_a7huf"]
 [ext_resource type="Texture2D" uid="uid://d1xpim3nkvg44" path="res://arts/flowers/flower_1.png" id="20_jkfks"]
 [ext_resource type="Texture2D" uid="uid://183q7sidtnpl" path="res://arts/shoe_monster_1_hit.png" id="21_qgy22"]
+[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="22_3kyci"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni7gt"]
 animations = [{
@@ -182,6 +183,8 @@ texture = ExtResource("20_jkfks")
 position = Vector2(2045, 220)
 scale = Vector2(11.7891, 10.5703)
 texture = ExtResource("21_qgy22")
+
+[node name="forest_music" parent="." instance=ExtResource("22_3kyci")]
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]

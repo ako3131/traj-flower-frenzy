@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvxumrol3677c"]
+[gd_scene load_steps=9 format=3 uid="uid://cvxumrol3677c"]
 
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="1_ko44c"]
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_krv6w"]
 [ext_resource type="Texture2D" uid="uid://cp3j1gwiksckg" path="res://arts/bug_monster_1.png" id="3_vfydq"]
+[ext_resource type="PackedScene" uid="uid://dkrf465gd1pf8" path="res://scenes/game_music.tscn" id="4_g2i6v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6b83"]
 
@@ -84,6 +85,8 @@ position = Vector2(1756, 538)
 scale = Vector2(11.3437, 9.90625)
 sprite_frames = SubResource("SpriteFrames_80tan")
 flip_h = true
+
+[node name="game_music" parent="." instance=ExtResource("4_g2i6v")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

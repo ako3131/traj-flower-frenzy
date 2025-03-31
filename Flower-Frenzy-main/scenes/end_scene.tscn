@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dvmdbwjbmrl06"]
+[gd_scene load_steps=21 format=3 uid="uid://dvmdbwjbmrl06"]
 
 [ext_resource type="Script" path="res://scenes/end_scene.gd" id="1_uspku"]
 [ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="2_6w6at"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="13_e3ejq"]
 [ext_resource type="Texture2D" uid="uid://cny50pee82ks8" path="res://arts/converse_monster.png" id="14_cq01j"]
 [ext_resource type="Texture2D" uid="uid://chehv2k7vq82c" path="res://arts/House.png" id="15_4ql2n"]
+[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="16_1233k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rrlt"]
 atlas = ExtResource("14_cq01j")
@@ -114,3 +115,5 @@ position = Vector2(-215, 959)
 scale = Vector2(7.125, 6.8125)
 sprite_frames = SubResource("SpriteFrames_8lybm")
 animation = &"idle"
+
+[node name="forest_music" parent="." instance=ExtResource("16_1233k")]

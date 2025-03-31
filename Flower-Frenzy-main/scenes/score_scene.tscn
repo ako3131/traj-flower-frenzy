@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5el67pktylla"]
+[gd_scene load_steps=9 format=3 uid="uid://5el67pktylla"]
 
 [ext_resource type="Script" path="res://scenes/score_scene.gd" id="1_tj0rg"]
 [ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_x0b6j"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="4_v8j0e"]
 [ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="5_xb676"]
 [ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_3.png" id="6_at60f"]
+[ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="8_q017u"]
 
 [node name="score_scene" type="Node2D"]
 script = ExtResource("1_tj0rg")
@@ -30,17 +31,17 @@ vertical_alignment = 1
 position = Vector2(886, 528)
 
 [node name="Sprite2D" type="Sprite2D" parent="flower_1"]
-position = Vector2(-45, 21.5)
-scale = Vector2(8.25, 7.1875)
+position = Vector2(-176, 46)
+scale = Vector2(11.3125, 9.3125)
 texture = ExtResource("3_5b1cr")
 
 [node name="label" type="Label" parent="flower_1"]
-offset_left = 36.0
-offset_top = -10.0
-offset_right = 81.0
-offset_bottom = 62.0
+offset_left = -70.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 144.0
 theme_override_fonts/font = ExtResource("4_v8j0e")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 180
 text = "X"
 metadata/_edit_use_anchors_ = true
 
@@ -48,17 +49,17 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1109, 530)
 
 [node name="Sprite2D" type="Sprite2D" parent="flower_2"]
-position = Vector2(-21.5, 23)
-scale = Vector2(6.0625, 6.5)
+position = Vector2(-40.5, 40)
+scale = Vector2(8.4375, 8.625)
 texture = ExtResource("5_xb676")
 
 [node name="label" type="Label" parent="flower_2"]
 offset_left = 36.0
-offset_top = -10.0
-offset_right = 81.0
-offset_bottom = 62.0
+offset_top = -4.0
+offset_right = 104.0
+offset_bottom = 139.0
 theme_override_fonts/font = ExtResource("4_v8j0e")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 180
 text = "X"
 metadata/_edit_use_anchors_ = true
 
@@ -66,27 +67,29 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1324, 530)
 
 [node name="Sprite2D" type="Sprite2D" parent="flower_3"]
-position = Vector2(-14, 24)
-scale = Vector2(6.25, 6.3125)
+position = Vector2(89, 42)
+scale = Vector2(9.125, 8.46875)
 texture = ExtResource("6_at60f")
 
 [node name="label" type="Label" parent="flower_3"]
-offset_left = 45.0
-offset_top = -10.0
-offset_right = 90.0
-offset_bottom = 62.0
+offset_left = 174.0
+offset_top = -2.0
+offset_right = 242.0
+offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("4_v8j0e")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 180
 text = "X"
 metadata/_edit_use_anchors_ = true
 
 [node name="start_button" type="Button" parent="."]
-offset_left = 687.0
-offset_top = 718.0
-offset_right = 1524.0
-offset_bottom = 904.0
+offset_left = 686.0
+offset_top = 744.0
+offset_right = 1523.0
+offset_bottom = 930.0
 theme_override_fonts/font = ExtResource("2_gn36y")
 theme_override_font_sizes/font_size = 130
 text = "Main Menu"
+
+[node name="forest_music" parent="." instance=ExtResource("8_q017u")]
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
