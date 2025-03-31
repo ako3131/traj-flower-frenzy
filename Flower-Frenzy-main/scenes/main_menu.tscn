@@ -1,27 +1,28 @@
-[gd_scene load_steps=24 format=3 uid="uid://eo7nclmbvsxp"]
+[gd_scene load_steps=25 format=3 uid="uid://eo7nclmbvsxp"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_74e8c"]
-[ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="2_dk1yo"]
-[ext_resource type="Texture2D" uid="uid://bgnuy6fnxvae8" path="res://arts/menu.webp" id="3_gouh8"]
-[ext_resource type="FontFile" uid="uid://bwb2llvxmpy3s" path="res://arts/Font/ThaleahFat.ttf" id="3_oj580"]
-[ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="4_tbi23"]
-[ext_resource type="Texture2D" uid="uid://c6v4hyemouvin" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="5_654xa"]
-[ext_resource type="Texture2D" uid="uid://caq0tmqfq0qiy" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="6_s1plh"]
-[ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="7_7uibr"]
-[ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="8_ge1ga"]
-[ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="9_dqf3g"]
-[ext_resource type="Texture2D" uid="uid://va2qygd0o3mf" path="res://arts/flowers/13.png" id="10_kd5eh"]
-[ext_resource type="Texture2D" uid="uid://de4gixe2ojny5" path="res://arts/flowers/old_flower_0.png" id="11_ul66l"]
-[ext_resource type="Texture2D" uid="uid://duhkrwf636fui" path="res://arts/flowers/flower_0.png" id="12_a3rs2"]
-[ext_resource type="Texture2D" uid="uid://bt7p67p5u4lw2" path="res://arts/flowers/old_flower_1.png" id="13_x8wsd"]
-[ext_resource type="Texture2D" uid="uid://rjlhay264cdf" path="res://arts/converse_monster_hit.png" id="15_l27b4"]
-[ext_resource type="Texture2D" uid="uid://y6ia5w5a85l5" path="res://arts/snail_monster_hit.png" id="16_aw8q5"]
-[ext_resource type="Texture2D" uid="uid://djknjok2xpn6j" path="res://arts/bug_monster_1_hit.png" id="17_r5vx1"]
-[ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="18_dbr5p"]
-[ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_3.png" id="19_a7huf"]
-[ext_resource type="Texture2D" uid="uid://d1xpim3nkvg44" path="res://arts/flowers/flower_1.png" id="20_jkfks"]
-[ext_resource type="Texture2D" uid="uid://183q7sidtnpl" path="res://arts/shoe_monster_1_hit.png" id="21_qgy22"]
+[ext_resource type="Texture2D" uid="uid://buf4jujh6rg6x" path="res://arts/summer5/1.png" id="2_dk1yo"]
+[ext_resource type="Texture2D" uid="uid://dwwrb1brqeoml" path="res://arts/menu.webp" id="3_gouh8"]
+[ext_resource type="FontFile" uid="uid://dekpsaqijv0vn" path="res://arts/Font/ThaleahFat.ttf" id="3_oj580"]
+[ext_resource type="Texture2D" uid="uid://ckptdsp73wscy" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="4_tbi23"]
+[ext_resource type="Texture2D" uid="uid://bja7l38bu1opj" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="5_654xa"]
+[ext_resource type="Texture2D" uid="uid://cugml6sq47i4w" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="6_s1plh"]
+[ext_resource type="Texture2D" uid="uid://drdujw2v4y31m" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="7_7uibr"]
+[ext_resource type="Texture2D" uid="uid://chxalyxxgig6" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="8_ge1ga"]
+[ext_resource type="Texture2D" uid="uid://d0xsuxf7u3ss0" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="9_dqf3g"]
+[ext_resource type="Texture2D" uid="uid://bxjsj00sdhcsj" path="res://arts/flowers/13.png" id="10_kd5eh"]
+[ext_resource type="Texture2D" uid="uid://c01w2pp3bdy8i" path="res://arts/flowers/old_flower_0.png" id="11_ul66l"]
+[ext_resource type="Texture2D" uid="uid://0vej3tuogrjr" path="res://arts/flowers/flower_0.png" id="12_a3rs2"]
+[ext_resource type="Texture2D" uid="uid://chofo4dwuu2y5" path="res://arts/flowers/old_flower_1.png" id="13_x8wsd"]
+[ext_resource type="Texture2D" uid="uid://b73tjo6rdjg30" path="res://arts/converse_monster_hit.png" id="15_l27b4"]
+[ext_resource type="Texture2D" uid="uid://cm0cyv1l8v2lr" path="res://arts/snail_monster_hit.png" id="16_aw8q5"]
+[ext_resource type="Texture2D" uid="uid://cj3wc0khy580h" path="res://arts/bug_monster_1_hit.png" id="17_r5vx1"]
+[ext_resource type="Texture2D" uid="uid://cum5mbodqtori" path="res://arts/flowers/flower_2.png" id="18_dbr5p"]
+[ext_resource type="Texture2D" uid="uid://b6v0ol0sxv3yd" path="res://arts/flowers/flower_3.png" id="19_a7huf"]
+[ext_resource type="Texture2D" uid="uid://b3ar7lf4kt05e" path="res://arts/flowers/flower_1.png" id="20_jkfks"]
+[ext_resource type="Texture2D" uid="uid://cp273qj5xrvla" path="res://arts/shoe_monster_1_hit.png" id="21_qgy22"]
 [ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="22_3kyci"]
+[ext_resource type="Texture2D" uid="uid://rq7vxs6assvu" path="res://arts/menu_main.png" id="23_tygy8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni7gt"]
 animations = [{
@@ -53,7 +54,7 @@ animations = [{
 script = ExtResource("1_74e8c")
 
 [node name="1" type="Sprite2D" parent="."]
-position = Vector2(1154.5, 652.5)
+position = Vector2(2652, -840)
 scale = Vector2(4.05035, 4.12654)
 texture = ExtResource("2_dk1yo")
 
@@ -64,11 +65,11 @@ offset_bottom = 2654.0
 color = Color(0.698039, 0.823529, 1, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -187.0
-offset_top = -215.0
-offset_right = 2566.0
-offset_bottom = 708.0
-theme_override_colors/font_color = Color(0.241156, 0.241156, 0.241156, 1)
+offset_left = 219.0
+offset_top = -204.0
+offset_right = 2972.0
+offset_bottom = 719.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_oj580")
@@ -78,19 +79,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="tutorial_button" type="Button" parent="."]
-offset_left = 729.0
-offset_top = 483.0
-offset_right = 1573.0
-offset_bottom = 669.0
+offset_left = 1374.0
+offset_top = 461.0
+offset_right = 2218.0
+offset_bottom = 647.0
 theme_override_fonts/font = ExtResource("3_oj580")
 theme_override_font_sizes/font_size = 130
 text = "Tutorial"
 
 [node name="start_button" type="Button" parent="."]
-offset_left = 735.0
-offset_top = 712.0
-offset_right = 1572.0
-offset_bottom = 898.0
+offset_left = 1380.0
+offset_top = 745.0
+offset_right = 2217.0
+offset_bottom = 931.0
 theme_override_fonts/font = ExtResource("3_oj580")
 theme_override_font_sizes/font_size = 130
 text = "Start"
@@ -103,7 +104,7 @@ scale = Vector2(2.25488, 1.47461)
 texture = ExtResource("3_gouh8")
 
 [node name="coco_animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(309.5, 1144.5)
+position = Vector2(1276, 1085)
 scale = Vector2(10.5938, 9.84375)
 sprite_frames = SubResource("SpriteFrames_ni7gt")
 frame_progress = 0.337482
@@ -134,23 +135,23 @@ scale = Vector2(9.5, 8.5625)
 texture = ExtResource("13_x8wsd")
 
 [node name="convers_silloutte" type="Sprite2D" parent="."]
-position = Vector2(240, 200)
+position = Vector2(-830, 167)
 scale = Vector2(9.90625, 9.59375)
 texture = ExtResource("15_l27b4")
 flip_h = true
 
 [node name="snail_silloutte" type="Sprite2D" parent="."]
-position = Vector2(1788, 784)
+position = Vector2(3035, 743)
 scale = Vector2(10.5313, 9)
 texture = ExtResource("16_aw8q5")
 
 [node name="bug_silloutte" type="Sprite2D" parent="."]
-position = Vector2(470, 622)
+position = Vector2(-706, 622)
 scale = Vector2(9.125, 8.25)
 texture = ExtResource("17_r5vx1")
 
 [node name="Flower0" type="Sprite2D" parent="."]
-position = Vector2(1413, 1226)
+position = Vector2(1192, 2525.5)
 scale = Vector2(8.59376, 9.18749)
 texture = ExtResource("12_a3rs2")
 
@@ -160,31 +161,37 @@ scale = Vector2(11.4375, 11.125)
 texture = ExtResource("12_a3rs2")
 
 [node name="Flower2" type="Sprite2D" parent="."]
-position = Vector2(1103.12, 1227.38)
+position = Vector2(882.12, 2526.88)
 scale = Vector2(9.85937, 9.17188)
 texture = ExtResource("18_dbr5p")
 
 [node name="Flower1" type="Sprite2D" parent="."]
-position = Vector2(1712.25, 1238.12)
+position = Vector2(1491.25, 2537.62)
 scale = Vector2(9.21875, 8.14062)
 texture = ExtResource("19_a7huf")
 
 [node name="Flower3" type="Sprite2D" parent="."]
-position = Vector2(772, 1227)
+position = Vector2(551, 2526.5)
 scale = Vector2(10.375, 8.8125)
 texture = ExtResource("20_jkfks")
 
 [node name="Flower4" type="Sprite2D" parent="."]
-position = Vector2(2055, 1229)
+position = Vector2(1834, 2528.5)
 scale = Vector2(10.375, 8.8125)
 texture = ExtResource("20_jkfks")
 
 [node name="ShoeMonster1Hit" type="Sprite2D" parent="."]
-position = Vector2(2045, 220)
+position = Vector2(2941, 217)
 scale = Vector2(11.7891, 10.5703)
 texture = ExtResource("21_qgy22")
 
 [node name="forest_music" parent="." instance=ExtResource("22_3kyci")]
+
+[node name="MenuMain" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1152.5, 678)
+scale = Vector2(2.24902, 1.32422)
+texture = ExtResource("23_tygy8")
 
 [connection signal="pressed" from="tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
