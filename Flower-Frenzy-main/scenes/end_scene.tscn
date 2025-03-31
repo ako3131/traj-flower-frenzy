@@ -1,0 +1,116 @@
+[gd_scene load_steps=20 format=3 uid="uid://dvmdbwjbmrl06"]
+
+[ext_resource type="Script" path="res://scenes/end_scene.gd" id="1_uspku"]
+[ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="2_6w6at"]
+[ext_resource type="Texture2D" uid="uid://c6v4hyemouvin" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="3_e1k6l"]
+[ext_resource type="Texture2D" uid="uid://caq0tmqfq0qiy" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="4_8vikg"]
+[ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="5_i6rng"]
+[ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="6_vfckl"]
+[ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="7_8miox"]
+[ext_resource type="Texture2D" uid="uid://b4yu74cefphhh" path="res://arts/Coco Art New/coco run 1-1.png.png" id="8_hp2bd"]
+[ext_resource type="Texture2D" uid="uid://caf7jlql5bvno" path="res://arts/Coco Art New/coco run 1-2.png.png" id="9_s03qq"]
+[ext_resource type="Texture2D" uid="uid://bst2321jbyvcd" path="res://arts/Coco Art New/coco run 1-3.png.png" id="10_jx3um"]
+[ext_resource type="Texture2D" uid="uid://bs127sxrjej8s" path="res://arts/Coco Art New/coco run 1-4.png.png" id="11_0nrk4"]
+[ext_resource type="Texture2D" uid="uid://depsj2wy4mhma" path="res://arts/Coco Art New/coco run 1-5.png.png" id="12_lplel"]
+[ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="13_e3ejq"]
+[ext_resource type="Texture2D" uid="uid://cny50pee82ks8" path="res://arts/converse_monster.png" id="14_cq01j"]
+[ext_resource type="Texture2D" uid="uid://chehv2k7vq82c" path="res://arts/House.png" id="15_4ql2n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rrlt"]
+atlas = ExtResource("14_cq01j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxv1j"]
+atlas = ExtResource("14_cq01j")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13g1a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rrlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxv1j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lybm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6w6at")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e1k6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8vikg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i6rng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vfckl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8miox")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hp2bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_s03qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jx3um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0nrk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lplel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e3ejq")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="end_scene" type="Node2D"]
+script = ExtResource("1_uspku")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -92.0
+offset_top = -46.0
+offset_right = 2428.0
+offset_bottom = 1374.0
+color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[node name="mom_animation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1475, 829)
+scale = Vector2(7.9375, 18.1094)
+sprite_frames = SubResource("SpriteFrames_13g1a")
+
+[node name="House" type="Sprite2D" parent="."]
+position = Vector2(1609, 706)
+scale = Vector2(2.445, 2.36875)
+texture = ExtResource("15_4ql2n")
+flip_h = true
+
+[node name="coco_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-215, 959)
+scale = Vector2(7.125, 6.8125)
+sprite_frames = SubResource("SpriteFrames_8lybm")
+animation = &"idle"

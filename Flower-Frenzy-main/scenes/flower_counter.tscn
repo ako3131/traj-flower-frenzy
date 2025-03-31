@@ -25,6 +25,7 @@ offset_bottom = 62.0
 theme_override_fonts/font = ExtResource("1_lb2sr")
 theme_override_font_sizes/font_size = 90
 text = "X"
+metadata/_edit_use_anchors_ = true
 
 [node name="flower_2" type="Node2D" parent="."]
 position = Vector2(223, 2)
@@ -42,6 +43,7 @@ offset_bottom = 62.0
 theme_override_fonts/font = ExtResource("1_lb2sr")
 theme_override_font_sizes/font_size = 90
 text = "X"
+metadata/_edit_use_anchors_ = true
 
 [node name="flower_3" type="Node2D" parent="."]
 position = Vector2(438, 2)
@@ -59,3 +61,4 @@ offset_bottom = 62.0
 theme_override_fonts/font = ExtResource("1_lb2sr")
 theme_override_font_sizes/font_size = 90
 text = "X"
+metadata/_edit_use_anchors_ = true
