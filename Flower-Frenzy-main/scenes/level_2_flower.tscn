@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyhaf64g5fq4r"]
+[gd_scene load_steps=5 format=3 uid="uid://dyhaf64g5fq4r"]
 
 [ext_resource type="Texture2D" uid="uid://codpijuqggj0u" path="res://arts/flowers/flower_2.png" id="1_3d83t"]
 [ext_resource type="Script" path="res://scripts/level_2_flower.gd" id="1_pblbq"]
+[ext_resource type="PackedScene" uid="uid://s61dt2qdjl8f" path="res://scenes/collect_sound.tscn" id="3_64juu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5biux"]
 radius = 61.0
@@ -32,5 +33,7 @@ initial_velocity_min = 35.0
 initial_velocity_max = 35.0
 damping_min = 5.0
 damping_max = 5.0
+
+[node name="collect_sound" parent="." instance=ExtResource("3_64juu")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

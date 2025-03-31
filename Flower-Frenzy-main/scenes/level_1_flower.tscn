@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba3guveph1gpn"]
+[gd_scene load_steps=5 format=3 uid="uid://ba3guveph1gpn"]
 
 [ext_resource type="Script" path="res://scenes/level_1_flower.gd" id="1_0m1fr"]
 [ext_resource type="Texture2D" uid="uid://d1xpim3nkvg44" path="res://arts/flowers/flower_1.png" id="1_pwr68"]
+[ext_resource type="PackedScene" uid="uid://s61dt2qdjl8f" path="res://scenes/collect_sound.tscn" id="3_1yxxi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwgdn"]
 radius = 55.0
@@ -19,5 +20,7 @@ texture = ExtResource("1_pwr68")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-13, -6)
 shape = SubResource("CapsuleShape2D_hwgdn")
+
+[node name="collect_sound" parent="." instance=ExtResource("3_1yxxi")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
