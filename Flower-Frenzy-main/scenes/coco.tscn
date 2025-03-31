@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=30 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://scripts/coco.gd" id="1_s8rkf"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_cudp5"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dtwv3y5hy6n77" path="res://scenes/tutorial_flower_counter.tscn" id="22_c2ocm"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="23_73rdl"]
 [ext_resource type="Texture2D" uid="uid://faybu45xp2aj" path="res://arts/healthbarUnder.png" id="23_qkk83"]
+[ext_resource type="PackedScene" uid="uid://cl4xia814mtg8" path="res://scenes/power_up_sound.tscn" id="24_1ssdb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oq0jm"]
 animations = [{
@@ -184,6 +185,8 @@ position = Vector2(-182, -669)
 [node name="next_level" parent="." instance=ExtResource("23_73rdl")]
 visible = false
 position = Vector2(1048, -1609)
+
+[node name="power_up_sound" parent="." instance=ExtResource("24_1ssdb")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -40,6 +40,11 @@ func _ready() -> void:
 	else:
 		$flower_counter.show()
 		$tutorial_flower_counter.hide()
+	
+	# set up sound effects
+	$power_up_sound.volume_db = 0.0  # Reset volume
+	$power_up_sound.pitch_scale = 1.0  # Reset pitch
+	$power_up_sound.stop()  # Stop any previous playback
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -58,6 +63,9 @@ func _physics_process(delta: float) -> void:
 		$PowerAttackArea.monitoring = true
 		$Flower.power_up_animation()
 		print("power attack button pressed")
+		$power_up_sound.play()
+		# Wait for sound to finish before freeing
+		await $power_up_sound.finished
 		return
 	
 	if Input.is_action_just_released("power_attack"):
