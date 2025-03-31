@@ -169,17 +169,17 @@ collision_mask = 5
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PowerAttackArea"]
-position = Vector2(2.5, -101.5)
+position = Vector2(9, -5)
 shape = SubResource("RectangleShape2D_nkxc5")
 
 [node name="hit_timer" type="Timer" parent="."]
 autostart = true
 
 [node name="flower_counter" parent="." instance=ExtResource("21_ou18g")]
-position = Vector2(18, -676)
+position = Vector2(-69, -685)
 
 [node name="tutorial_flower_counter" parent="." instance=ExtResource("22_c2ocm")]
-position = Vector2(406, -663)
+position = Vector2(-182, -669)
 
 [node name="next_level" parent="." instance=ExtResource("23_73rdl")]
 visible = false

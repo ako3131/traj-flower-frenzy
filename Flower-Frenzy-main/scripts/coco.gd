@@ -28,8 +28,9 @@ var total_player_damage = 0
 
 var power_up_thresholds: Array = [
 	3,
-	8,
-	10
+	5,
+	5,
+	5
 ]
 
 func _ready() -> void:

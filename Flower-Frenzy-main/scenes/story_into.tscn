@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://ceaaon0yic8rm"]
+[gd_scene load_steps=20 format=3 uid="uid://ceaaon0yic8rm"]
 
 [ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="1_fh1yn"]
+[ext_resource type="Script" path="res://scenes/story_into.gd" id="1_y8onu"]
 [ext_resource type="Texture2D" uid="uid://c6v4hyemouvin" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="2_k5ioj"]
 [ext_resource type="Texture2D" uid="uid://caq0tmqfq0qiy" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="3_nsjg8"]
 [ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="4_wawoi"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://depsj2wy4mhma" path="res://arts/Coco Art New/coco run 1-5.png.png" id="11_l5aff"]
 [ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="12_2jtg8"]
 [ext_resource type="Texture2D" uid="uid://cny50pee82ks8" path="res://arts/converse_monster.png" id="13_rcwdp"]
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="15_lfo8p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3we10"]
 animations = [{
@@ -86,21 +88,42 @@ animations = [{
 }]
 
 [node name="story_into" type="Node2D"]
+script = ExtResource("1_y8onu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -92.0
 offset_top = -46.0
 offset_right = 2428.0
 offset_bottom = 1374.0
-color = Color(0, 0, 0, 1)
+color = Color(0.111197, 0.111197, 0.111197, 1)
 
 [node name="coco_animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(-158, 900)
-scale = Vector2(10.6875, 10.5)
+position = Vector2(-215, 959)
+scale = Vector2(7.125, 6.8125)
 sprite_frames = SubResource("SpriteFrames_3we10")
-animation = &"run"
+animation = &"idle"
 
 [node name="mom_animation" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(1475, 829)
 scale = Vector2(7.9375, 18.1094)
 sprite_frames = SubResource("SpriteFrames_yugoq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 93.0
+offset_top = 110.0
+offset_right = 1296.0
+offset_bottom = 570.0
+theme_override_fonts/font = ExtResource("15_lfo8p")
+theme_override_font_sizes/font_size = 100
+text = "Mom: Don't forget to bring some 
+flowers on your way back home!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1593.0
+offset_top = 758.0
+offset_right = 1796.0
+offset_bottom = 842.0
+theme_override_fonts/font = ExtResource("15_lfo8p")
+theme_override_font_sizes/font_size = 100
+text = "Ok!"
