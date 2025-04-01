@@ -44,7 +44,7 @@ size = Vector2(104.078, 87.5625)
 
 [node name="converse_monster" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_gh3ld")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
