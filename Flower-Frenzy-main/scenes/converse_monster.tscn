@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhmvlmv5j3n4m"]
 
 [ext_resource type="Texture2D" uid="uid://cny50pee82ks8" path="res://arts/converse_monster.png" id="1_0sa7a"]
-[ext_resource type="Script" path="res://converse_monster.gd" id="1_gh3ld"]
+[ext_resource type="Script" path="res://scripts/converse_monster.gd" id="1_gh3ld"]
 [ext_resource type="Texture2D" uid="uid://rjlhay264cdf" path="res://arts/converse_monster_hit.png" id="2_5lv5v"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="3_a2xw4"]
 

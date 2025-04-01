@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://ceaaon0yic8rm"]
 
 [ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="1_fh1yn"]
-[ext_resource type="Script" path="res://scenes/story_into.gd" id="1_y8onu"]
+[ext_resource type="Script" path="res://scripts/story_into.gd" id="1_y8onu"]
 [ext_resource type="Texture2D" uid="uid://c6v4hyemouvin" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="2_k5ioj"]
 [ext_resource type="Texture2D" uid="uid://caq0tmqfq0qiy" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="3_nsjg8"]
 [ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="4_wawoi"]

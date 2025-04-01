@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="6_4y1o4"]
 [ext_resource type="PackedScene" uid="uid://dkrf465gd1pf8" path="res://scenes/game_music.tscn" id="7_rybm1"]
 [ext_resource type="Texture2D" uid="uid://4njcxsm3li7b" path="res://arts/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="8_e7tsp"]
-[ext_resource type="Script" path="res://scenes/moving_platform.gd" id="9_jevxw"]
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="9_jevxw"]
 [ext_resource type="Texture2D" uid="uid://c7hxc0h5xlfmf" path="res://arts/moving_platform.png" id="10_cpley"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fytkn"]

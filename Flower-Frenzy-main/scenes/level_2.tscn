@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ctvurwa2kqli0" path="res://scenes/coco.tscn" id="8_j47bk"]
 [ext_resource type="Texture2D" uid="uid://cngx5gq8cx21f" path="res://arts/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="9_iflkj"]
 [ext_resource type="PackedScene" uid="uid://dkrf465gd1pf8" path="res://scenes/game_music.tscn" id="11_c2dv4"]
-[ext_resource type="Script" path="res://scenes/moving_platform.gd" id="12_6ip0e"]
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="12_6ip0e"]
 [ext_resource type="Texture2D" uid="uid://c7hxc0h5xlfmf" path="res://arts/moving_platform.png" id="13_4svsa"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="14_5hlxv"]
 

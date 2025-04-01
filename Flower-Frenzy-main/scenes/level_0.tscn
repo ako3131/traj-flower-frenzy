@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://chehv2k7vq82c" path="res://arts/House.png" id="9_62bmp"]
 [ext_resource type="PackedScene" uid="uid://hxvruhbwdknc" path="res://scenes/level_0_flower.tscn" id="9_fte1b"]
 [ext_resource type="Texture2D" uid="uid://dfnswr3cdm0h4" path="res://arts/oak_woods_v1.0/decorations/fence_1.png" id="11_c0880"]
-[ext_resource type="Script" path="res://scenes/moving_platform.gd" id="13_mafma"]
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="13_mafma"]
 [ext_resource type="Texture2D" uid="uid://c7hxc0h5xlfmf" path="res://arts/moving_platform.png" id="14_dyp2y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_16hde"]

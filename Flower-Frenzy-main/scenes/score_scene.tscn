@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://5el67pktylla"]
 
-[ext_resource type="Script" path="res://scenes/score_scene.gd" id="1_tj0rg"]
+[ext_resource type="Script" path="res://scripts/score_scene.gd" id="1_tj0rg"]
 [ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_x0b6j"]
 [ext_resource type="FontFile" uid="uid://bwb2llvxmpy3s" path="res://arts/Font/ThaleahFat.ttf" id="2_gn36y"]
 [ext_resource type="Texture2D" uid="uid://d1xpim3nkvg44" path="res://arts/flowers/flower_1.png" id="3_5b1cr"]

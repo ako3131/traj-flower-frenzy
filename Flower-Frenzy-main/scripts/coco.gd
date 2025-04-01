@@ -42,13 +42,13 @@ func _ready() -> void:
 		$tutorial_flower_counter.hide()
 	
 	# set up sound effects
-	$power_up_sound.volume_db = 0.0  # Reset volume
-	$power_up_sound.pitch_scale = 1.0  # Reset pitch
+	#$power_up_sound.volume_db = 0.0  # Reset volume
+	#$power_up_sound.pitch_scale = 1.0  # Reset pitch
 	$power_up_sound.stop()  # Stop any previous playback
 	
 	# set up sound effects
-	$hit_sound.volume_db = 0.0  # Reset volume
-	$hit_sound.pitch_scale = 1.0  # Reset pitch
+	#$hit_sound.volume_db = 0.0  # Reset volume
+	#$hit_sound.pitch_scale = 1.0  # Reset pitch
 	$hit_sound.stop()  # Stop any previous playback
 
 func _physics_process(delta: float) -> void:

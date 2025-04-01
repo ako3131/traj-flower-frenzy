@@ -4,3 +4,4 @@
 
 [node name="hit_sound" type="AudioStreamPlayer"]
 stream = ExtResource("1_usaun")
+volume_db = 4.0

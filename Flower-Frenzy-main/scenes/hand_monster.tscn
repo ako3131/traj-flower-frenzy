@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dvfimdbw4w23l"]
 
-[ext_resource type="Script" path="res://scenes/hand_monster.gd" id="1_1q57v"]
+[ext_resource type="Script" path="res://scripts/hand_monster.gd" id="1_1q57v"]
 [ext_resource type="Texture2D" uid="uid://daw8co1khtsdu" path="res://arts/hand_monster_hit.png" id="1_r1xt3"]
 [ext_resource type="Texture2D" uid="uid://ccq3cayqwu7ow" path="res://arts/hand_monster.png" id="2_ehu8x"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="3_g04tj"]

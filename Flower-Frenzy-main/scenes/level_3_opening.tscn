@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4610xje2wdmw"]
 
-[ext_resource type="Script" path="res://scenes/level_3_opening.gd" id="1_q0nnh"]
+[ext_resource type="Script" path="res://scripts/level_3_opening.gd" id="1_q0nnh"]
 [ext_resource type="Texture2D" uid="uid://v7kmwe86u8el" path="res://arts/Forest-nature-fantasy-tilese/BG_3/BG_3.png" id="2_ky6o8"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="3_m4hto"]
 [ext_resource type="Texture2D" uid="uid://djh1y88bmllxe" path="res://arts/flowers/flower_3.png" id="4_xhht2"]
