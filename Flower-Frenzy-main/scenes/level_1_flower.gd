@@ -27,6 +27,8 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Sound node valid: ", $collect_sound != null)
 		print("Sound stream: ", $collect_sound.stream)
 		print("Sound bus: ", $collect_sound.bus)
+		
+		body.health += 7
 
 		# 2. Force sound configuration
 		$collect_sound.volume_db = 0.0  # Reset volume

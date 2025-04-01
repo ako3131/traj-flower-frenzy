@@ -80,7 +80,6 @@ func _physics_process(delta: float) -> void:
 		if enemy_hit:
 			$hit_sound.play()
 			hit_count += 1
-			print("hitcount attack", hit_count)
 			$combo_label.update_combo()
 			set_power_up()
 			enemy_hit = false
@@ -187,11 +186,11 @@ func set_power_up():
 		
 func close_power_up():
 	power_up_enabled = false
-	print("hitcount", hit_count - power_up_thresholds[Globals.level])
-	if (hit_count - power_up_thresholds[Globals.level]) < 0:
-		hit_count = 0
-	else:
-		hit_count -= power_up_thresholds[Globals.level]
+	hit_count = 0
+	#if (hit_count - power_up_thresholds[Globals.level]) < 0:
+		#hit_count = 0
+	#else:
+		#hit_count -= power_up_thresholds[Globals.level]
 	$PowerAttackArea.monitoring = false
 	$combo_label.make_label_white()
 	$combo_label.update_combo()
@@ -231,7 +230,6 @@ func _on_power_attack_area_body_entered(body: Node2D) -> void:
 		# Apply knockback smoothly by calling enemy's `apply_knockback` method
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(knock_back, hit_strength * 2)  # Pass both values
-		#close_power_up()
 		
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
