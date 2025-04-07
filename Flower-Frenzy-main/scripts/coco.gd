@@ -54,6 +54,8 @@ func _ready() -> void:
 	#$hit_sound.volume_db = 0.0  # Reset volume
 	#$hit_sound.pitch_scale = 1.0  # Reset pitch
 	$hit_sound.stop()  # Stop any previous playback
+	
+	#$hit_effect.play
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -96,6 +98,8 @@ func _physics_process(delta: float) -> void:
 		is_attacking = true
 		$AnimatedSprite2D.animation = "attack"
 		$AnimatedSprite2D.play()
+		$hit_effect.show()
+		#$hit_effect.play()
 		# Enable hitbox for attack
 		$AttackArea.monitoring = true
 		
@@ -124,6 +128,7 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * speed, speed * accerlation)
 			$AnimatedSprite2D.flip_h = direction < 0
+			$hit_effect.flip_h = direction < 0
 			if is_on_floor():
 				$AnimatedSprite2D.animation = "walk"
 		else:
@@ -140,6 +145,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "attack":
 		is_attacking = false
 		$AttackArea.monitoring = false
+		$hit_effect.hide()
 		# Resume appropriate animation based on state
 		if not is_on_floor() or velocity.length() == 0:
 			$AnimatedSprite2D.animation = "idle"
