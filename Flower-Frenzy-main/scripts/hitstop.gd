@@ -3,8 +3,8 @@ extends Node
 
 signal hitstop_completed
 
-@export var hitstop_duration: float = 0.1  # Reduced duration for better feel
-@export var time_scale_factor: float = 0.5  # How much to slow down time (0.2 = 20% speed)
+@export var hitstop_duration: float = 0.05  # Reduced duration for better feel
+@export var time_scale_factor: float = 0.3  # How much to slow down time (0.2 = 20% speed)
 
 var is_active: bool = false
 var timer: Timer
@@ -40,7 +40,17 @@ func get_affected_nodes() -> Array:
 	return nodes
 
 func start() -> void:
+	# First, disconnect any existing connections to prevent stacking
+	if timer.timeout.is_connected(_on_hitstop_timer_timeout):
+		timer.timeout.disconnect(_on_hitstop_timer_timeout)
+	
 	if is_active:
+		# If hitstop is already active, just refresh the timer duration
+		# without changing the time_scale again
+		timer.stop()
+		timer.wait_time = hitstop_duration
+		timer.timeout.connect(_on_hitstop_timer_timeout, CONNECT_ONE_SHOT)
+		timer.start()
 		return
 	
 	# Use time dilation instead of disabling nodes

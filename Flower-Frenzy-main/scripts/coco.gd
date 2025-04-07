@@ -263,12 +263,10 @@ func _on_power_attack_area_body_entered(body: Node2D) -> void:
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(knock_back, hit_strength * 2)  # Pass both values
 			
-		# Trigger longer hitstop for power attacks (more impact)
+		# Trigger hitstop for power attacks (same duration as normal attacks)
 		if has_node("Hitstop"):
 			var hitstop = get_node("Hitstop")
-			hitstop.hitstop_duration = 0.55  # Longer freeze for power attacks
 			hitstop.start()
-			hitstop.hitstop_duration = 0.5  # Reset immediately after starting
 		
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
