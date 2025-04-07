@@ -5,20 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://s61dt2qdjl8f" path="res://scenes/collect_sound.tscn" id="3_64juu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5biux"]
-radius = 61.0
-height = 128.0
+radius = 29.0
+height = 58.0
 
 [node name="level_2_flower" type="Area2D"]
 collision_mask = 3
 script = ExtResource("1_pblbq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.125, -9.875)
-scale = Vector2(7.10938, 6.48438)
+position = Vector2(2, -1)
+scale = Vector2(4.21094, 3.875)
 texture = ExtResource("1_3d83t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -10)
+position = Vector2(1, 3)
 shape = SubResource("CapsuleShape2D_5biux")
 
 [node name="sparkles" type="CPUParticles2D" parent="."]

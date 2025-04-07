@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cggobfsbo0o2p"]
+[gd_scene load_steps=24 format=4 uid="uid://cggobfsbo0o2p"]
 
 [ext_resource type="Script" path="res://scripts/level_0.gd" id="1_hn7tr"]
 [ext_resource type="Texture2D" uid="uid://dkqcmjdhdvpou" path="res://arts/summer5/1.png" id="1_t5fa5"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c3narmdxunu5o" path="res://scenes/forest_music.tscn" id="8_4p60t"]
 [ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="8_fxxo2"]
 [ext_resource type="Texture2D" uid="uid://chehv2k7vq82c" path="res://arts/House.png" id="9_62bmp"]
-[ext_resource type="PackedScene" uid="uid://hxvruhbwdknc" path="res://scenes/level_0_flower.tscn" id="9_fte1b"]
 [ext_resource type="Texture2D" uid="uid://dfnswr3cdm0h4" path="res://arts/oak_woods_v1.0/decorations/fence_1.png" id="11_c0880"]
 [ext_resource type="Script" path="res://scripts/moving_platform.gd" id="13_mafma"]
 [ext_resource type="Texture2D" uid="uid://c7hxc0h5xlfmf" path="res://arts/moving_platform.png" id="14_dyp2y"]
@@ -749,9 +748,6 @@ flowers you have collected"
 
 [node name="forest_music" parent="." instance=ExtResource("8_4p60t")]
 
-[node name="bug_spawns" type="Marker2D" parent="." groups=["bug_spawns"]]
-position = Vector2(350, 956)
-
 [node name="show_spawns" type="Marker2D" parent="." groups=["shoe_spawns"]]
 position = Vector2(1394, 766)
 
@@ -760,9 +756,6 @@ position = Vector2(200, 86)
 
 [node name="show_spawns2" type="Marker2D" parent="show_spawns" groups=["shoe_spawns"]]
 position = Vector2(163, -31)
-
-[node name="level_0_flower" parent="." instance=ExtResource("9_fte1b")]
-position = Vector2(-100, 950)
 
 [node name="4" type="Sprite2D" parent="."]
 z_index = -4
@@ -826,6 +819,7 @@ remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Node2D/Platform"]
 position = Vector2(5255, 1044)
+scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Platform/AnimatableBody2D"]
 z_index = -1
@@ -841,3 +835,15 @@ shape = SubResource("RectangleShape2D_wbp71")
 libraries = {
 "": SubResource("AnimationLibrary_uovjg")
 }
+
+[node name="bug_spawns" type="Marker2D" parent="." groups=["bug_spawns"]]
+position = Vector2(454, 945)
+
+[node name="flower_marker" type="Marker2D" parent="." groups=["flower_spawns"]]
+position = Vector2(-101, 945)
+
+[node name="flower_marker" type="Marker2D" parent="flower_marker" groups=["flower_spawns"]]
+position = Vector2(145, 0)
+
+[node name="flower_marker2" type="Marker2D" parent="flower_marker" groups=["flower_spawns"]]
+position = Vector2(286, 0)

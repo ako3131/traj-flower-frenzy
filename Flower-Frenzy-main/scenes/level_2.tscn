@@ -1183,7 +1183,7 @@ scale = Vector2(0.03224, 0.428829)
 texture = ExtResource("4_gmvdq")
 
 [node name="Clouds" type="Sprite2D" parent="Sky/Clouds"]
-position = Vector2(641.284, 16.1951)
+position = Vector2(679.804, 29.6386)
 scale = Vector2(1.36581, 1.2161)
 texture = ExtResource("4_gmvdq")
 
@@ -1229,17 +1229,71 @@ shape = SubResource("RectangleShape2D_hco0x")
 
 [node name="game_music" parent="." instance=ExtResource("11_c2dv4")]
 
-[node name="flower_markers" type="Marker2D" parent="." groups=["flower_markers"]]
-position = Vector2(1938, 758)
+[node name="flower_markers5" type="Marker2D" parent="." groups=["flower_markers"]]
+position = Vector2(4766, 1044)
 
-[node name="flower_markers5" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
-position = Vector2(2828, 286)
+[node name="flower_markers2" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-1627, 270)
 
-[node name="flower_markers" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
-position = Vector2(1213, 602)
+[node name="flower_markers7" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-2761, 390)
 
-[node name="flower_markers7" type="Marker2D" parent="flower_markers" groups=["flower_markers"]]
-position = Vector2(-112, 659)
+[node name="flower_markers6" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-3686, -260)
+
+[node name="flower_markers8" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-3478, -260)
+
+[node name="flower_markers9" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-3287, -261)
+
+[node name="flower_markers13" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-2632, -247)
+
+[node name="flower_markers14" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-2516, -250)
+
+[node name="flower_markers15" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-2400, -253)
+
+[node name="flower_markers16" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-1462, -227)
+
+[node name="flower_markers17" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-1177, -86)
+
+[node name="flower_markers18" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-1462, 7)
+
+[node name="flower_markers19" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-1176, 109)
+
+[node name="flower_markers20" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-1515, 248)
+
+[node name="flower_markers3" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-1727, 323)
+
+[node name="flower_markers4" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-1798, 392)
+
+[node name="flower_markers5" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-2626, 388)
+
+[node name="flower_markers21" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-2900, 393)
+
+[node name="flower_markers22" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-228, 65)
+
+[node name="flower_markers23" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-174, 8)
+
+[node name="flower_markers24" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-104, -16)
+
+[node name="flower_markers" type="Marker2D" parent="flower_markers5" groups=["flower_markers"]]
+position = Vector2(-2759, -249)
 
 [node name="snail_markers" type="Marker2D" parent="." groups=["snail_markers"]]
 position = Vector2(1729, 761)
