@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://deb48j8aa3boq"]
+
+[ext_resource type="AudioStream" uid="uid://caoxjbb57j374" path="res://arts/Grass 1.wav" id="1_s7pjc"]
+
+[node name="walk_sound" type="AudioStreamPlayer"]
+stream = ExtResource("1_s7pjc")

@@ -4,4 +4,4 @@
 
 [node name="collect_sound" type="AudioStreamPlayer"]
 stream = ExtResource("1_dgkv5")
-volume_db = 2.0
+volume_db = 1.2
