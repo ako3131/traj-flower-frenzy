@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bewpldxgl6ddn"]
+
+[ext_resource type="AudioStream" uid="uid://dnymigw5igayi" path="res://arts/07_human_atk_sword_1.wav" id="1_hofdi"]
+
+[node name="sword_sound" type="AudioStreamPlayer"]
+stream = ExtResource("1_hofdi")

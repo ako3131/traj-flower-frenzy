@@ -83,6 +83,7 @@ func _physics_process(delta: float) -> void:
 		close_power_up()
 		
 	if Input.is_action_just_released("attack"):
+		$sword_sound.play()
 		if enemy_hit:
 			$hit_sound.play()
 			hit_count += 1
@@ -121,8 +122,15 @@ func _physics_process(delta: float) -> void:
 		var speed
 		if Input.is_action_pressed("sprint"):
 			speed = run_speed
+			if not $run_sound.playing:
+				$run_sound.play()
+			$walk_sound.stop()  # Stop walk sound if running
 		else:
 			speed = walk_speed
+			if velocity != Vector2(0,0):
+				if not $walk_sound.playing:
+					$walk_sound.play()
+			$run_sound.stop()  # Stop run sound if walking
 
 		var direction := Input.get_axis("left", "right")
 		if direction:
@@ -136,6 +144,8 @@ func _physics_process(delta: float) -> void:
 
 		# Jump animation
 		if not is_on_floor() or velocity.length() == 0:
+			$run_sound.stop()
+			$walk_sound.stop()
 			$AnimatedSprite2D.animation = "idle"
 			
 	$AnimatedSprite2D.play()
@@ -228,6 +238,7 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
+		$player_hit_sound.play()
 		take_damage(body.power)	
 		total_player_damage += body.power
 
