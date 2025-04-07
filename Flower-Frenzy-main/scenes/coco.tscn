@@ -245,12 +245,12 @@ position = Vector2(1048, -1609)
 [node name="hit_sound" parent="." instance=ExtResource("25_6yobd")]
 
 [node name="hit_effect" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(15, -1)
 scale = Vector2(4.13505, 1.74154)
 sprite_frames = SubResource("SpriteFrames_kc02g")
 frame = 1
 frame_progress = 1.0
-flip_h = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
