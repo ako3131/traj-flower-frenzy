@@ -3,6 +3,7 @@ extends Node2D
 var flower_scene = preload("res://scenes/level_2_flower.tscn")
 var snail_scene = preload("res://scenes/snail_monster.tscn")
 var sandal_scene = preload("res://scenes/sandal_monster.tscn")
+var coco_scene = preload("res://scenes/coco.tscn")
 
 func _init() -> void:
 	# Update the global level variable before _ready() is called
@@ -10,6 +11,10 @@ func _init() -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var character = coco_scene.instantiate()
+	character.global_position = $player_marker.global_position
+	add_child(character)
+	
 	# Get all markers in the scene
 	var flower_spawns = get_tree().get_nodes_in_group("flower_markers")
 

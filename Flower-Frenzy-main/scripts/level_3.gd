@@ -6,12 +6,15 @@ var shoe_scene = preload("res://scenes/shoe_monster.tscn")
 var bug_scene = preload("res://scenes/bug_monster.tscn")
 var flower_scene = preload("res://scenes/level_3_flower.tscn")
 var hand_scene = preload("res://scenes/hand_monster.tscn")
+var coco_scene = preload("res://scenes/coco.tscn")
 
 func _init() -> void:
 	Globals.level = 3
 
 func _ready() -> void:
-	character.position = Vector2(1000, 1000)
+	var character = coco_scene.instantiate()
+	character.global_position = $player_marker.global_position
+	add_child(character)
 
 	# Spawn flowers
 	var flower_spawns = get_tree().get_nodes_in_group("flower_marker")

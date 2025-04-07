@@ -26,12 +26,16 @@ var enemy_hit = false
 var player_getting_hit = false
 var total_player_damage = 0
 
+var fall_damage_power = 30
+
 var power_up_thresholds: Array = [
 	3,
 	5,
 	5,
 	5
 ]
+
+@onready var player_marker = get_parent().get_node("player_marker")
 
 func _ready() -> void:
 	if Globals.level == 0:
@@ -234,7 +238,8 @@ func _on_power_attack_area_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("fall_area"):
-		take_damage(health)
+		take_damage(fall_damage_power)
+		position = player_marker.position
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

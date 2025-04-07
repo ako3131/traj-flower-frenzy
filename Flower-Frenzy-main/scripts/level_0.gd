@@ -4,6 +4,7 @@ extends Node2D
 var shoe_scene = preload("res://scenes/converse_monster.tscn")
 var caterpillar_scene = preload("res://scenes/caterpillar_monster.tscn")
 var flower_scene = preload("res://scenes/level_0_flower.tscn")
+var coco_scene = preload("res://scenes/coco.tscn")
 
 func _init() -> void:
 	# Update the global level variable before _ready() is called
@@ -11,7 +12,9 @@ func _init() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	character.position = Vector2(-900, 719)
+	var character = coco_scene.instantiate()
+	character.global_position = $player_marker.global_position
+	add_child(character)
 	
 	# Get all markers in the scene
 	var bug_spawn_points = get_tree().get_nodes_in_group("bug_spawns")
