@@ -55,6 +55,12 @@ func _ready() -> void:
 	#$hit_sound.pitch_scale = 1.0  # Reset pitch
 	$hit_sound.stop()  # Stop any previous playback
 	
+	# Create hitstop node for combat feedback
+	var hitstop_node = Hitstop.new()
+	hitstop_node.name = "Hitstop"
+	add_child(hitstop_node)
+	hitstop_node.hitstop_completed.connect(_on_hitstop_completed)
+	
 	#$hit_effect.play
 
 func _physics_process(delta: float) -> void:
@@ -233,6 +239,11 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 		# Apply knockback smoothly by calling enemy's `apply_knockback` method
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(knock_back, hit_strength)  # Pass both values
+			
+		# Trigger hitstop for impact feedback
+		if has_node("Hitstop"):
+			var hitstop = get_node("Hitstop")
+			hitstop.start()
 		#$combo_label.update_combo()
 		#set_power_up()
 
@@ -251,6 +262,13 @@ func _on_power_attack_area_body_entered(body: Node2D) -> void:
 		# Apply knockback smoothly by calling enemy's `apply_knockback` method
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(knock_back, hit_strength * 2)  # Pass both values
+			
+		# Trigger longer hitstop for power attacks (more impact)
+		if has_node("Hitstop"):
+			var hitstop = get_node("Hitstop")
+			hitstop.hitstop_duration = 0.55  # Longer freeze for power attacks
+			hitstop.start()
+			hitstop.hitstop_duration = 0.5  # Reset immediately after starting
 		
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -263,6 +281,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		total_player_damage -= body.power
 
+
+func _on_hitstop_completed() -> void:
+	pass
 
 func _on_hit_timer_timeout() -> void:
 	take_damage(total_player_damage)
