@@ -21,6 +21,14 @@ var missed_swings: int = 0
 
 var power_up_enabled = false
 
+# Time slow ability variables
+var time_slow_enabled = false
+var time_slow_active = false
+var time_slow_duration = 1.0  # Duration in seconds
+var time_slow_timer = 0.0
+var time_slow_factor = 0.3  # How much to slow down time (lower = slower)
+var time_slow_cost = 10  # Hit streak cost
+
 var enemy_hit = false
 
 var player_getting_hit = false
@@ -64,9 +72,14 @@ func _ready() -> void:
 	#$hit_effect.play
 
 func _physics_process(delta: float) -> void:
+	# Adjust delta for time slow effect
+	var adjusted_delta = delta
+	if time_slow_active:
+		adjusted_delta = delta / time_slow_factor
+	
 	# Add gravity
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += calculate_gravity() * adjusted_delta
 
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -75,6 +88,22 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
 		
+	# Handle time slow ability
+	if Input.is_action_just_pressed("time_slow"):
+		# If already active, deactivate first
+		if time_slow_active:
+			deactivate_time_slow()
+		# Then check if we can activate it again
+		elif hit_count >= time_slow_cost:
+			activate_time_slow()
+		
+	# Update time slow effect if active
+	if time_slow_active:
+		time_slow_timer -= delta # Use regular delta instead of adjusted_delta
+		print("Time slow timer: ", time_slow_timer)
+		if time_slow_timer <= 0:
+			deactivate_time_slow()
+
 	# Handle power up attack
 	if power_up_enabled and Input.is_action_just_pressed("power_attack"):
 		$PowerAttackArea.monitoring = true
@@ -84,7 +113,7 @@ func _physics_process(delta: float) -> void:
 		# Wait for sound to finish before freeing
 		await $power_up_sound.finished
 		return
-	
+
 	if Input.is_action_just_released("power_attack"):
 		close_power_up()
 		
@@ -156,6 +185,10 @@ func _physics_process(delta: float) -> void:
 			
 	$AnimatedSprite2D.play()
 	move_and_slide()
+
+# Add this function to handle gravity calculations
+func calculate_gravity() -> Vector2:
+	return Vector2(0, 980)  # Standard gravity value in Godot
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "attack":
@@ -285,3 +318,59 @@ func _on_hitstop_completed() -> void:
 
 func _on_hit_timer_timeout() -> void:
 	take_damage(total_player_damage)
+
+
+func activate_time_slow() -> void:
+	# Consume hit streak
+	hit_count -= time_slow_cost
+	$combo_label.update_combo()
+	
+	# Activate time slow effect
+	time_slow_active = true
+	time_slow_timer = time_slow_duration
+	
+	# Apply time slow effect to everything except player
+	Engine.time_scale = time_slow_factor
+	
+	# Set player to not be affected by time scale
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	$AnimatedSprite2D.process_mode = Node.PROCESS_MODE_ALWAYS
+	$hit_effect.process_mode = Node.PROCESS_MODE_ALWAYS
+	$AttackArea.process_mode = Node.PROCESS_MODE_ALWAYS
+	$PowerAttackArea.process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	# Visual feedback
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(0.7, 0.7, 1.5, 1.0), 0.3)
+	
+	# Play sound effect (you can add a sound node and uncomment this)
+	# $time_slow_sound.play()
+	
+	print("Time slow activated")
+	
+	# Removed velocity adjustment to keep player movement normal
+	# The line below was causing the player to be affected by time slow
+	# velocity = velocity / time_slow_factor
+	
+	# Create a timer to ensure deactivation after duration
+	var timer = get_tree().create_timer(time_slow_duration)
+	timer.timeout.connect(func(): if time_slow_active: deactivate_time_slow())
+
+
+func deactivate_time_slow() -> void:
+	# Reset time scale
+	Engine.time_scale = 1.0
+	time_slow_active = false
+	
+	# Reset process mode for player and components
+	process_mode = Node.PROCESS_MODE_INHERIT
+	$AnimatedSprite2D.process_mode = Node.PROCESS_MODE_INHERIT
+	$hit_effect.process_mode = Node.PROCESS_MODE_INHERIT
+	$AttackArea.process_mode = Node.PROCESS_MODE_INHERIT
+	$PowerAttackArea.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	# Visual feedback
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.3)
+	
+	print("Time slow deactivated")
