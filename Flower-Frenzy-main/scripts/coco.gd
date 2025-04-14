@@ -29,6 +29,18 @@ var time_slow_timer = 0.0
 var time_slow_factor = 0.3  # How much to slow down time (lower = slower)
 var time_slow_cost = 10  # Hit streak cost
 
+# Tornado Slash ability variables
+var tornado_slash_enabled = true  # Whether the ability is available
+var tornado_slash_active = false  # Whether the ability is currently active
+var tornado_slash_duration = 2.0  # Duration in seconds
+var tornado_slash_timer = 0.0  # Current timer for the ability
+var tornado_slash_charge_time = 1.0  # Time needed to hold K to activate
+var tornado_slash_charge_timer = 0.0  # Current charge timer
+var tornado_slash_charging = false  # Whether currently charging the ability
+var tornado_slash_damage_interval = 0.2  # How often to apply damage during spin
+var tornado_slash_damage_timer = 0.0  # Timer for damage application
+var tornado_slash_rotation_speed = 15.0  # How fast to rotate during spin
+
 var enemy_hit = false
 
 var player_getting_hit = false
@@ -46,6 +58,9 @@ var power_up_thresholds: Array = [
 @onready var player_marker = get_parent().get_node("player_marker")
 
 func _ready() -> void:
+	# Reset all game state variables when the scene loads
+	reset_game_state()
+	
 	if Globals.level == 0:
 		$flower_counter.hide()
 		$tutorial_flower_counter.show()
@@ -103,6 +118,48 @@ func _physics_process(delta: float) -> void:
 		print("Time slow timer: ", time_slow_timer)
 		if time_slow_timer <= 0:
 			deactivate_time_slow()
+			
+	# Handle Tornado Slash ability
+	if tornado_slash_enabled:
+		# Start charging when H is pressed
+		if Input.is_action_pressed("tornado_slash") and not is_attacking and not tornado_slash_active:
+			tornado_slash_charging = true
+			tornado_slash_charge_timer += delta
+			
+			# Activate when charged enough
+			if tornado_slash_charge_timer >= tornado_slash_charge_time:
+				activate_tornado_slash()
+				tornado_slash_charging = false
+				tornado_slash_charge_timer = 0.0
+		
+		# Reset charge when H is released
+		if Input.is_action_just_released("tornado_slash") and tornado_slash_charging:
+			tornado_slash_charging = false
+			tornado_slash_charge_timer = 0.0
+		
+		# Update tornado slash if active
+		if tornado_slash_active:
+			# Update timer
+			tornado_slash_timer -= delta
+			if tornado_slash_timer <= 0:
+				deactivate_tornado_slash()
+				return
+			
+			# Rotate player during spin
+			rotation_degrees += tornado_slash_rotation_speed
+			
+			# Apply damage at intervals
+			tornado_slash_damage_timer -= delta
+			if tornado_slash_damage_timer <= 0:
+				apply_tornado_slash_damage()
+				tornado_slash_damage_timer = tornado_slash_damage_interval
+			
+			# Keep attack animation playing
+			if $AnimatedSprite2D.animation != "attack":
+				$AnimatedSprite2D.animation = "attack"
+				$hit_effect.show()
+			
+			return  # Skip other processing while spinning
 
 	# Handle power up attack
 	if power_up_enabled and Input.is_action_just_pressed("power_attack"):
@@ -191,7 +248,7 @@ func calculate_gravity() -> Vector2:
 	return Vector2(0, 980)  # Standard gravity value in Godot
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if $AnimatedSprite2D.animation == "attack":
+	if $AnimatedSprite2D.animation == "attack" and not tornado_slash_active:
 		is_attacking = false
 		$AttackArea.monitoring = false
 		$hit_effect.hide()
@@ -235,6 +292,12 @@ func die():
 	#position = Vector2(551, 482)
 	
 func game_over():
+	# Ensure time scale is reset before changing scene
+	if time_slow_active:
+		deactivate_time_slow()
+	
+	# Reset game state before changing scene
+	reset_game_state()
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	
 func set_power_up():
@@ -374,3 +437,130 @@ func deactivate_time_slow() -> void:
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.3)
 	
 	print("Time slow deactivated")
+
+
+func activate_tornado_slash() -> void:
+	# Activate tornado slash effect
+	tornado_slash_active = true
+	tornado_slash_timer = tornado_slash_duration
+	tornado_slash_damage_timer = 0.0  # Apply damage immediately
+	
+	# Set up attack state
+	is_attacking = true
+	$AnimatedSprite2D.animation = "attack"
+	$AnimatedSprite2D.play()
+	$hit_effect.show()
+	$AttackArea.monitoring = true
+	
+	# Play sound effect
+	$sword_sound.play()
+	
+	# Visual feedback
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1.2, 0.8, 0.8, 1.0), 0.3)
+	
+	print("Tornado slash activated")
+
+
+func deactivate_tornado_slash() -> void:
+	# Reset tornado slash state
+	tornado_slash_active = false
+	rotation_degrees = 0  # Reset rotation
+	
+	# Reset attack state
+	is_attacking = false
+	$AttackArea.monitoring = false
+	$hit_effect.hide()
+	
+	# Resume appropriate animation based on state
+	if not is_on_floor() or velocity.length() == 0:
+		$AnimatedSprite2D.animation = "idle"
+	else:
+		$AnimatedSprite2D.animation = "walk"
+	
+	# Visual feedback
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.3)
+	
+	print("Tornado slash deactivated")
+
+
+func apply_tornado_slash_damage() -> void:
+	# Get all enemies in range
+	var bodies = $AttackArea.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("enemy"):
+			# Calculate knockback in all directions (360 degrees)
+			var knock_back_direction = (body.global_position - global_position).normalized()
+			var knock_back = knock_back_direction * knock_back_strength * knock_back_distance
+			
+			# Apply knockback and damage
+			if body.has_method("apply_knockback"):
+				body.apply_knockback(knock_back, hit_strength)
+				
+			# Trigger hitstop for impact feedback
+			if has_node("Hitstop"):
+				var hitstop = get_node("Hitstop")
+				hitstop.start()
+				
+			# Play hit sound
+			$hit_sound.play()
+
+
+func reset_game_state() -> void:
+	# Reset combat stats
+	is_attacking = false
+	hit_count = 0
+	missed_swings = 0
+	enemy_hit = false
+	player_getting_hit = false
+	total_player_damage = 0
+	
+	# Reset power-up state
+	power_up_enabled = false
+	$PowerAttackArea.monitoring = false
+	
+	# Reset time slow ability
+	if time_slow_active:
+		deactivate_time_slow()
+	time_slow_timer = 0.0
+	
+	# Reset tornado slash ability
+	if tornado_slash_active:
+		deactivate_tornado_slash()
+	tornado_slash_charging = false
+	tornado_slash_charge_timer = 0.0
+	tornado_slash_timer = 0.0
+	tornado_slash_damage_timer = 0.0
+	
+	# Reset health if needed (depending on level design)
+	health = max_health
+	
+	# Reset visual states
+	rotation_degrees = 0
+	modulate = Color(1, 1, 1, 1)
+	
+	# Reset animation state
+	$AnimatedSprite2D.animation = "idle"
+	$hit_effect.hide()
+	
+	# Reset attack area
+	$AttackArea.monitoring = false
+	
+	# Reset process mode
+	process_mode = Node.PROCESS_MODE_INHERIT
+	$AnimatedSprite2D.process_mode = Node.PROCESS_MODE_INHERIT
+	$hit_effect.process_mode = Node.PROCESS_MODE_INHERIT
+	$AttackArea.process_mode = Node.PROCESS_MODE_INHERIT
+	$PowerAttackArea.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	# Ensure Engine time scale is reset
+	Engine.time_scale = 1.0
+	
+	# Stop all sounds
+	$power_up_sound.stop()
+	$hit_sound.stop()
+	$sword_sound.stop()
+	$walk_sound.stop()
+	$run_sound.stop()
+	$player_hit_sound.stop()
