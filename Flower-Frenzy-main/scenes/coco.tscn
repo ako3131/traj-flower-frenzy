@@ -203,9 +203,16 @@ offset_bottom = -570.0
 scale = Vector2(1.00396, 0.400002)
 
 [node name="HealthbarUnder" type="Sprite2D" parent="health_bar"]
+visible = false
 z_index = -1
 position = Vector2(270.429, 52.4998)
 scale = Vector2(9.19795, 24.4999)
+texture = ExtResource("23_qkk83")
+
+[node name="health_bar_under" type="Sprite2D" parent="health_bar"]
+show_behind_parent = true
+position = Vector2(269.931, 56.2498)
+scale = Vector2(9.55591, 28.7499)
 texture = ExtResource("23_qkk83")
 
 [node name="Flower" type="Sprite2D" parent="."]
