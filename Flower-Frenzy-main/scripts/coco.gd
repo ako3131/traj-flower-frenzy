@@ -87,6 +87,10 @@ func _ready() -> void:
 	#$hit_effect.play
 
 func _physics_process(delta: float) -> void:
+	if hit_count >= power_up_thresholds[Globals.level]:
+		$Flower.show()
+	else:
+		$Flower.hide()
 	# Adjust delta for time slow effect
 	var adjusted_delta = delta
 	if time_slow_active:
@@ -164,7 +168,7 @@ func _physics_process(delta: float) -> void:
 	# Handle power up attack
 	if power_up_enabled and Input.is_action_just_pressed("power_attack"):
 		$PowerAttackArea.monitoring = true
-		$Flower.power_up_animation()
+		#$Flower.power_up_animation()
 		print("power attack button pressed")
 		$power_up_sound.play()
 		# Wait for sound to finish before freeing

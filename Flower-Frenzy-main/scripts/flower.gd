@@ -10,6 +10,7 @@ var level_textures: Array = [
 
 # Current level
 var current_level = Globals.level
+var tween: Tween
 
 func _ready() -> void:
 	update_texture()
@@ -34,7 +35,7 @@ func power_up_animation():
 	var sprite_width = 50
 	
 	# Create the tween sequence
-	var tween = create_tween()
+	tween = create_tween()
 	
 	tween.tween_property(self, "position", original_position + Vector2(450, 100), 0.05)
 	tween.tween_property(self, "position", original_position + Vector2(250, 150), 0.05)
@@ -42,4 +43,4 @@ func power_up_animation():
 	tween.tween_property(self, "position", original_position + Vector2(-250, 150), 0.05)
 	tween.tween_property(self, "position", original_position + Vector2(-450, 100), 0.05)
 	tween.tween_property(self, "position", original_position, 0.1)
-	
+	return tween
