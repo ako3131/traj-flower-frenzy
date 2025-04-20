@@ -41,3 +41,10 @@ vertical_alignment = 1
 position = Vector2(1145, 869)
 scale = Vector2(9.46875, 9.9375)
 texture = ExtResource("4_ioyvy")
+
+[node name="black_overlay" type="ColorRect" parent="."]
+offset_left = -14.0
+offset_top = -11.0
+offset_right = 2331.0
+offset_bottom = 1313.0
+color = Color(0, 0, 0, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ctvurwa2kqli0"]
+[gd_scene load_steps=41 format=3 uid="uid://ctvurwa2kqli0"]
 
 [ext_resource type="Script" path="res://scripts/coco.gd" id="1_s8rkf"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_cudp5"]
@@ -25,8 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://faybu45xp2aj" path="res://arts/healthbarUnder.png" id="23_qkk83"]
 [ext_resource type="PackedScene" uid="uid://cl4xia814mtg8" path="res://scenes/power_up_sound.tscn" id="24_1ssdb"]
 [ext_resource type="PackedScene" uid="uid://ws0cpd6esipk" path="res://scenes/hit_sound.tscn" id="25_6yobd"]
-[ext_resource type="Texture2D" uid="uid://yk7jdhfubuln" path="res://arts/Coco Art New/bat-swing-3.png" id="26_ftjb0"]
-[ext_resource type="Texture2D" uid="uid://coj8nc2im6pgp" path="res://arts/Coco Art New/bat-swing-2.png" id="27_7ii0x"]
+[ext_resource type="Texture2D" uid="uid://crkat7yy5lvol" path="res://arts/Coco Art New/pixil-frame-0 (6).png" id="26_umr1t"]
+[ext_resource type="Texture2D" uid="uid://daodxg4v3nxrc" path="res://arts/Coco Art New/pixil-frame-0.png" id="27_rph8l"]
 [ext_resource type="PackedScene" uid="uid://8p4nlpsycbk1" path="res://scenes/player_hit_sound.tscn" id="28_ierft"]
 [ext_resource type="PackedScene" uid="uid://b7sa836h2nafw" path="res://scenes/run_sound.tscn" id="29_4w0x1"]
 [ext_resource type="PackedScene" uid="uid://deb48j8aa3boq" path="res://scenes/walk_sound.tscn" id="30_jamq4"]
@@ -134,29 +134,18 @@ size = Vector2(308, 163)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkxc5"]
 size = Vector2(901, 525)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxwc7"]
-atlas = ExtResource("26_ftjb0")
-region = Rect2(0, 0, 84, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fsqx8"]
-atlas = ExtResource("27_7ii0x")
-region = Rect2(0, 0, 84, 48)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_kc02g"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pxwc7")
+"texture": ExtResource("26_umr1t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fsqx8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pxwc7")
+"texture": ExtResource("27_rph8l")
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [node name="coco" type="CharacterBody2D" groups=["player"]]
@@ -175,6 +164,8 @@ position = Vector2(15.5, -10)
 scale = Vector2(4.65625, 4.5)
 sprite_frames = SubResource("SpriteFrames_oq0jm")
 animation = &"attack"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(19, -3.5)
@@ -255,6 +246,7 @@ scale = Vector2(4.13505, 1.74154)
 sprite_frames = SubResource("SpriteFrames_kc02g")
 frame = 1
 frame_progress = 1.0
+speed_scale = 2.0
 
 [node name="player_hit_sound" parent="." instance=ExtResource("28_ierft")]
 
@@ -271,3 +263,4 @@ frame_progress = 1.0
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="PowerAttackArea" to="." method="_on_power_attack_area_body_entered"]
 [connection signal="timeout" from="hit_timer" to="." method="_on_hit_timer_timeout"]
+[connection signal="animation_finished" from="hit_effect" to="." method="_on_hit_effect_animation_finished"]

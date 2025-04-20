@@ -1,14 +1,14 @@
 [gd_scene load_steps=22 format=3 uid="uid://ibo8yq4bg5ij"]
 
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_d237d"]
-[ext_resource type="Texture2D" uid="uid://bv7nyxe44kcgc" path="res://arts/oak_woods_v1.0/background/background_layer_1.png" id="2_jo8tn"]
-[ext_resource type="Texture2D" uid="uid://cxnx62850vdeu" path="res://arts/oak_woods_v1.0/background/background_layer_2.png" id="3_m78y0"]
-[ext_resource type="Texture2D" uid="uid://bjbq4hif7jp41" path="res://arts/oak_woods_v1.0/background/background_layer_3.png" id="4_038qs"]
+[ext_resource type="Texture2D" uid="uid://j8g2m6ag74wn" path="res://arts/oak_woods_v1.0/background/background_layer_1.png" id="2_jo8tn"]
+[ext_resource type="Texture2D" uid="uid://dgkn5gyddheqk" path="res://arts/oak_woods_v1.0/background/background_layer_2.png" id="3_m78y0"]
+[ext_resource type="Texture2D" uid="uid://dq32dwimm7q88" path="res://arts/oak_woods_v1.0/background/background_layer_3.png" id="4_038qs"]
 [ext_resource type="PackedScene" uid="uid://dqwy57ab5g3sg" path="res://scenes/next_level.tscn" id="6_4y1o4"]
 [ext_resource type="PackedScene" uid="uid://dkrf465gd1pf8" path="res://scenes/game_music.tscn" id="7_rybm1"]
-[ext_resource type="Texture2D" uid="uid://doqlv2bshq6x0" path="res://arts/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="8_e7tsp"]
+[ext_resource type="Texture2D" uid="uid://4njcxsm3li7b" path="res://arts/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="8_e7tsp"]
 [ext_resource type="Script" path="res://scripts/moving_platform.gd" id="9_jevxw"]
-[ext_resource type="Texture2D" uid="uid://umk1adsbjq1x" path="res://arts/moving_platform.png" id="10_cpley"]
+[ext_resource type="Texture2D" uid="uid://c7hxc0h5xlfmf" path="res://arts/moving_platform.png" id="10_cpley"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fytkn"]
 texture = ExtResource("8_e7tsp")

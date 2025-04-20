@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dvfimdbw4w23l"]
 
 [ext_resource type="Script" path="res://scripts/hand_monster.gd" id="1_1q57v"]
-[ext_resource type="Texture2D" uid="uid://b4num6obaun2l" path="res://arts/hand_monster_hit.png" id="1_r1xt3"]
-[ext_resource type="Texture2D" uid="uid://d4e6732ewvdl6" path="res://arts/hand_monster.png" id="2_ehu8x"]
+[ext_resource type="Texture2D" uid="uid://daw8co1khtsdu" path="res://arts/hand_monster_hit.png" id="1_r1xt3"]
+[ext_resource type="Texture2D" uid="uid://ccq3cayqwu7ow" path="res://arts/hand_monster.png" id="2_ehu8x"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="3_g04tj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mn4s7"]
@@ -77,8 +77,8 @@ scale = Vector2(0.704661, 1.42911)
 shape = SubResource("RectangleShape2D_pnv14")
 
 [node name="health_bar" parent="." instance=ExtResource("3_g04tj")]
-offset_left = -17.0
+offset_left = 37.0
 offset_top = 152.0
-offset_right = 294.0
+offset_right = 231.0
 offset_bottom = 175.0
 max_value = 500.0

@@ -192,7 +192,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.animation = "attack"
 		$AnimatedSprite2D.play()
 		$hit_effect.show()
-		#$hit_effect.play()
+		$hit_effect.play()
 		# Enable hitbox for attack
 		$AttackArea.monitoring = true
 		
@@ -251,6 +251,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "attack" and not tornado_slash_active:
 		is_attacking = false
 		$AttackArea.monitoring = false
+		print("hiding hit effect")
 		$hit_effect.hide()
 		# Resume appropriate animation based on state
 		if not is_on_floor() or velocity.length() == 0:
@@ -258,6 +259,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		else:
 			$AnimatedSprite2D.animation = "walk"
 		
+
+
+
 @export var knock_back_distance = 4  # Adjust this to control knockback distance
 #
 #func deal_damage() -> bool:
@@ -564,3 +568,15 @@ func reset_game_state() -> void:
 	$walk_sound.stop()
 	$run_sound.stop()
 	$player_hit_sound.stop()
+
+
+#func _on_hit_effect_animation_finished() -> void:
+	##if not tornado_slash_active:
+		#is_attacking = false
+		#$AttackArea.monitoring = false
+		#$hit_effect.hide()
+		## Resume appropriate animation based on state
+		#if not is_on_floor() or velocity.length() == 0:
+			#$AnimatedSprite2D.animation = "idle"
+		#else:
+			#$AnimatedSprite2D.animation = "walk"
