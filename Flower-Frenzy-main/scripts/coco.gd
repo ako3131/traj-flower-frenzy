@@ -88,9 +88,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if hit_count >= power_up_thresholds[Globals.level]:
-		$Flower.show()
+		$Flower.turn_normal()
 	else:
-		$Flower.hide()
+		$Flower.turn_grey()
+		
 	# Adjust delta for time slow effect
 	var adjusted_delta = delta
 	if time_slow_active:
@@ -168,10 +169,8 @@ func _physics_process(delta: float) -> void:
 	# Handle power up attack
 	if power_up_enabled and Input.is_action_just_pressed("power_attack"):
 		$PowerAttackArea.monitoring = true
-		#$Flower.power_up_animation()
-		print("power attack button pressed")
+		$Flower.power_up_animation()
 		$power_up_sound.play()
-		# Wait for sound to finish before freeing
 		await $power_up_sound.finished
 		return
 
@@ -255,7 +254,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "attack" and not tornado_slash_active:
 		is_attacking = false
 		$AttackArea.monitoring = false
-		print("hiding hit effect")
 		$hit_effect.hide()
 		# Resume appropriate animation based on state
 		if not is_on_floor() or velocity.length() == 0:
