@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 450
-@export var max_health = 200
+@export var max_health = 300
 @export var knockback_decay = 0.9  # How fast knockback fades (1 = no decay, 0 = instant stop)
 @export var knockback_resistance = 0.3  # Higher = less knockback effect
 
@@ -50,6 +50,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func apply_knockback(force: Vector2, hit_strength: int) -> void:
+	$boss_hit.play()
+	
 	# Apply knockback based on resistance
 	knockback_velocity = force * (1 - knockback_resistance)  
 	is_knocked_back = true
@@ -69,4 +71,4 @@ func apply_knockback(force: Vector2, hit_strength: int) -> void:
 
 func _on_effect_completed() -> void:
 	queue_free()
-	get_tree().change_scene_to_file("res://scenes/end_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/boss_defeated_scene.tscn")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvfimdbw4w23l"]
+[gd_scene load_steps=13 format=3 uid="uid://dvfimdbw4w23l"]
 
 [ext_resource type="Script" path="res://scripts/hand_monster.gd" id="1_1q57v"]
 [ext_resource type="Texture2D" uid="uid://daw8co1khtsdu" path="res://arts/hand_monster_hit.png" id="1_r1xt3"]
 [ext_resource type="Texture2D" uid="uid://ccq3cayqwu7ow" path="res://arts/hand_monster.png" id="2_ehu8x"]
 [ext_resource type="PackedScene" uid="uid://ddck1vgo382wf" path="res://scenes/health_bar.tscn" id="3_g04tj"]
+[ext_resource type="PackedScene" uid="uid://ba2fh4w7cobrv" path="res://scenes/boss_hit.tscn" id="5_bocgg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mn4s7"]
 atlas = ExtResource("1_r1xt3")
@@ -82,3 +83,5 @@ offset_top = 152.0
 offset_right = 231.0
 offset_bottom = 175.0
 max_value = 500.0
+
+[node name="boss_hit" parent="." instance=ExtResource("5_bocgg")]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvtg18fe73bcp"]
+
+[ext_resource type="AudioStream" uid="uid://cs7piuh4hfhi0" path="res://arts/25_Wind_01.wav" id="1_8k52q"]
+
+[node name="boss_die" type="AudioStreamPlayer"]
+stream = ExtResource("1_8k52q")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba2fh4w7cobrv"]
+
+[ext_resource type="AudioStream" uid="uid://dqe430etwi17y" path="res://arts/21_orc_damage_1.wav" id="1_vneup"]
+
+[node name="boss_hit" type="AudioStreamPlayer"]
+stream = ExtResource("1_vneup")

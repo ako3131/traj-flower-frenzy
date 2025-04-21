@@ -1,0 +1,117 @@
+[gd_scene load_steps=21 format=3 uid="uid://d3lq1cq0tkkxk"]
+
+[ext_resource type="Script" path="res://scenes/boss_defeated_scene.gd" id="1_l3tf5"]
+[ext_resource type="Texture2D" uid="uid://dq6it0ycubtay" path="res://arts/Coco Art New/kid-male-idle1-1.png.png" id="4_rmym8"]
+[ext_resource type="Texture2D" uid="uid://c6v4hyemouvin" path="res://arts/Coco Art New/kid-male-idle1-2.png.png" id="5_idt8e"]
+[ext_resource type="Texture2D" uid="uid://caq0tmqfq0qiy" path="res://arts/Coco Art New/kid-male-idle1-3.png.png" id="6_n8jfw"]
+[ext_resource type="Texture2D" uid="uid://brjt7p2jf8uop" path="res://arts/Coco Art New/kid-male-idle1-4.png.png" id="7_702jn"]
+[ext_resource type="Texture2D" uid="uid://cbhie0pe3hy3o" path="res://arts/Coco Art New/kid-male-idle1-5.png.png" id="8_ogtg8"]
+[ext_resource type="Texture2D" uid="uid://cboi13bunnsxj" path="res://arts/Coco Art New/kid-male-idle1-6.png.png" id="9_4e438"]
+[ext_resource type="Texture2D" uid="uid://b4yu74cefphhh" path="res://arts/Coco Art New/coco run 1-1.png.png" id="10_qtgmn"]
+[ext_resource type="Texture2D" uid="uid://caf7jlql5bvno" path="res://arts/Coco Art New/coco run 1-2.png.png" id="11_lqw8d"]
+[ext_resource type="Texture2D" uid="uid://bst2321jbyvcd" path="res://arts/Coco Art New/coco run 1-3.png.png" id="12_ldqln"]
+[ext_resource type="Texture2D" uid="uid://bs127sxrjej8s" path="res://arts/Coco Art New/coco run 1-4.png.png" id="13_388iv"]
+[ext_resource type="Texture2D" uid="uid://depsj2wy4mhma" path="res://arts/Coco Art New/coco run 1-5.png.png" id="14_gwq7m"]
+[ext_resource type="Texture2D" uid="uid://ccq3cayqwu7ow" path="res://arts/hand_monster.png" id="15_cm6ig"]
+[ext_resource type="Texture2D" uid="uid://r20pfejp8sum" path="res://arts/Coco Art New/coco run 1-6.png.png" id="15_ecslg"]
+[ext_resource type="PackedScene" uid="uid://cvtg18fe73bcp" path="res://scenes/boss_die.tscn" id="16_5l1tn"]
+[ext_resource type="PackedScene" uid="uid://dkrf465gd1pf8" path="res://scenes/game_music.tscn" id="17_iy4ui"]
+[ext_resource type="FontFile" uid="uid://dqurhn86yqfc3" path="res://arts/monogram.ttf" id="17_txhxb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpv08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rmym8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_idt8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n8jfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_702jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ogtg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4e438")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qtgmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lqw8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ldqln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_388iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gwq7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ecslg")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wordk"]
+atlas = ExtResource("15_cm6ig")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubavd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wordk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="boss_defeated_scene" type="Node2D"]
+script = ExtResource("1_l3tf5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -92.0
+offset_top = -46.0
+offset_right = 2428.0
+offset_bottom = 1374.0
+color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[node name="coco_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(794, 949)
+scale = Vector2(7.125, 6.8125)
+sprite_frames = SubResource("SpriteFrames_gpv08")
+animation = &"idle"
+
+[node name="hand" type="AnimatedSprite2D" parent="."]
+position = Vector2(1567, 865)
+scale = Vector2(13, 12.5938)
+sprite_frames = SubResource("SpriteFrames_ubavd")
+
+[node name="boss_die" parent="." instance=ExtResource("16_5l1tn")]
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 469.0
+offset_top = 633.0
+offset_right = 1257.0
+offset_bottom = 717.0
+theme_override_fonts/font = ExtResource("17_txhxb")
+theme_override_font_sizes/font_size = 100
+text = "Phew.. that was close"
+
+[node name="game_music" parent="." instance=ExtResource("17_iy4ui")]

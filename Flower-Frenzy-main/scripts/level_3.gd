@@ -22,29 +22,29 @@ func _ready() -> void:
 		var flower = flower_scene.instantiate()
 		flower.global_position = marker.global_position
 		add_child(flower)
-#
-	## Spawn shoes
-	#var shoe_spawns = get_tree().get_nodes_in_group("shoe_marker")
-	#for marker in shoe_spawns:
-		#var shoe = shoe_scene.instantiate()
-		#shoe.global_position = marker.global_position
-		#add_child(shoe)
-#
-	## Spawn bugs
-	#var bug_spawns = get_tree().get_nodes_in_group("bug_marker")
-	#for marker in bug_spawns:
-		#var bug = bug_scene.instantiate()
-		#bug.global_position = marker.global_position
-		#add_child(bug)
+
+	# Spawn shoes
+	var shoe_spawns = get_tree().get_nodes_in_group("shoe_marker")
+	for marker in shoe_spawns:
+		var shoe = shoe_scene.instantiate()
+		shoe.global_position = marker.global_position
+		add_child(shoe)
+
+	# Spawn bugs
+	var bug_spawns = get_tree().get_nodes_in_group("bug_marker")
+	for marker in bug_spawns:
+		var bug = bug_scene.instantiate()
+		bug.global_position = marker.global_position
+		add_child(bug)
 		
 
 	# Spawn hand
 	var hand_spawns = get_tree().get_nodes_in_group("hand_marker")
 	for marker in hand_spawns:
+		print(marker.global_position)
 		var bug = hand_scene.instantiate()
-		bug.global_position = marker.global_position
 		add_child(bug)
-
+		bug.global_position = marker.global_position
 
 # Optional: still allow mouse click spawning (debug or gameplay feature)
 func _unhandled_input(event: InputEvent) -> void:
@@ -60,3 +60,16 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_fall_area_body_entered(body: Node2D) -> void:
 	pass
+
+
+func _on_boss_thresh_body_entered(body: Node2D) -> void:
+	print("hello")
+	if body.is_in_group("player"):
+		print("here")
+		boss_fight()
+		
+
+func boss_fight():
+	$boss_sound.play()
+	$Background/BG1/Sprite2D.modulate = Color(1, 0.5, 0.5)
+	$game_music.pitch_scale = 0.8
