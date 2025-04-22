@@ -121,19 +121,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_evwk8"]
-size = Vector2(52, 127)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb3j2"]
-radius = 33.0
-height = 136.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfpj"]
-size = Vector2(308, 163)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkxc5"]
-size = Vector2(901, 525)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_kc02g"]
 animations = [{
 "frames": [{
@@ -148,6 +135,19 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evwk8"]
+size = Vector2(52, 127)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb3j2"]
+radius = 33.0
+height = 136.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfpj"]
+size = Vector2(308, 163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkxc5"]
+size = Vector2(901, 525)
+
 [node name="coco" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
@@ -159,13 +159,29 @@ scale = Vector2(3.36563, -2.36483)
 script = ExtResource("2_cudp5")
 player = NodePath("..")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="coco_animation" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coco_animation"]
 position = Vector2(15.5, -10)
 scale = Vector2(4.65625, 4.5)
 sprite_frames = SubResource("SpriteFrames_oq0jm")
 animation = &"attack"
 frame = 2
 frame_progress = 1.0
+
+[node name="hit_effect" type="AnimatedSprite2D" parent="coco_animation"]
+visible = false
+position = Vector2(15, -1)
+scale = Vector2(4.13505, 1.74154)
+sprite_frames = SubResource("SpriteFrames_kc02g")
+frame = 1
+frame_progress = 1.0
+speed_scale = 2.0
+
+[node name="Flower" type="Sprite2D" parent="coco_animation"]
+position = Vector2(18, -140)
+scale = Vector2(6, 6)
+script = ExtResource("20_e6few")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(19, -3.5)
@@ -215,11 +231,6 @@ position = Vector2(269.931, 56.2498)
 scale = Vector2(9.55591, 28.7499)
 texture = ExtResource("23_qkk83")
 
-[node name="Flower" type="Sprite2D" parent="."]
-position = Vector2(18, -140)
-scale = Vector2(6, 6)
-script = ExtResource("20_e6few")
-
 [node name="PowerAttackArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 5
@@ -246,15 +257,6 @@ position = Vector2(1048, -1609)
 
 [node name="hit_sound" parent="." instance=ExtResource("25_6yobd")]
 
-[node name="hit_effect" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(15, -1)
-scale = Vector2(4.13505, 1.74154)
-sprite_frames = SubResource("SpriteFrames_kc02g")
-frame = 1
-frame_progress = 1.0
-speed_scale = 2.0
-
 [node name="player_hit_sound" parent="." instance=ExtResource("28_ierft")]
 
 [node name="run_sound" parent="." instance=ExtResource("29_4w0x1")]
@@ -263,11 +265,11 @@ speed_scale = 2.0
 
 [node name="sword_sound" parent="." instance=ExtResource("31_3nsfv")]
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="coco_animation/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="coco_animation/hit_effect" to="." method="_on_hit_effect_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="PowerAttackArea" to="." method="_on_power_attack_area_body_entered"]
 [connection signal="timeout" from="hit_timer" to="." method="_on_hit_timer_timeout"]
-[connection signal="animation_finished" from="hit_effect" to="." method="_on_hit_effect_animation_finished"]

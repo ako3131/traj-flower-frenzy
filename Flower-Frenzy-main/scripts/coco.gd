@@ -32,14 +32,14 @@ var time_slow_cost = 10  # Hit streak cost
 # Tornado Slash ability variables
 var tornado_slash_enabled = true  # Whether the ability is available
 var tornado_slash_active = false  # Whether the ability is currently active
-var tornado_slash_duration = 2.0  # Duration in seconds
+var tornado_slash_duration = .7  # Duration in seconds
 var tornado_slash_timer = 0.0  # Current timer for the ability
 var tornado_slash_charge_time = 1.0  # Time needed to hold K to activate
 var tornado_slash_charge_timer = 0.0  # Current charge timer
 var tornado_slash_charging = false  # Whether currently charging the ability
 var tornado_slash_damage_interval = 0.2  # How often to apply damage during spin
 var tornado_slash_damage_timer = 0.0  # Timer for damage application
-var tornado_slash_rotation_speed = 15.0  # How fast to rotate during spin
+var tornado_slash_rotation_speed = 30.0  # How fast to rotate during spin
 
 var enemy_hit = false
 
@@ -56,6 +56,9 @@ var power_up_thresholds: Array = [
 ]
 
 @onready var player_marker = get_parent().get_node("player_marker")
+@onready var animated_sprite := $coco_animation/AnimatedSprite2D
+@onready var hit_effect := $coco_animation/hit_effect
+@onready var flower := $coco_animation/Flower
 
 func _ready() -> void:
 	# Reset all game state variables when the scene loads
@@ -88,9 +91,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if hit_count >= power_up_thresholds[Globals.level]:
-		$Flower.turn_normal()
+		flower.turn_normal()
 	else:
-		$Flower.turn_grey()
+		flower.turn_grey()
 		
 	# Adjust delta for time slow effect
 	var adjusted_delta = delta
@@ -151,7 +154,7 @@ func _physics_process(delta: float) -> void:
 				return
 			
 			# Rotate player during spin
-			rotation_degrees += tornado_slash_rotation_speed
+			$coco_animation.rotation_degrees += tornado_slash_rotation_speed
 			
 			# Apply damage at intervals
 			tornado_slash_damage_timer -= delta
@@ -160,16 +163,16 @@ func _physics_process(delta: float) -> void:
 				tornado_slash_damage_timer = tornado_slash_damage_interval
 			
 			# Keep attack animation playing
-			if $AnimatedSprite2D.animation != "attack":
-				$AnimatedSprite2D.animation = "attack"
-				$hit_effect.show()
+			if animated_sprite.animation != "attack":
+				animated_sprite.animation = "attack"
+				hit_effect.show()
 			
 			return  # Skip other processing while spinning
 
 	# Handle power up attack
 	if power_up_enabled and Input.is_action_just_pressed("power_attack"):
 		$PowerAttackArea.monitoring = true
-		$Flower.power_up_animation()
+		flower.power_up_animation()
 		$power_up_sound.play()
 		await $power_up_sound.finished
 		return
@@ -192,10 +195,10 @@ func _physics_process(delta: float) -> void:
 	# Handle attack
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		is_attacking = true
-		$AnimatedSprite2D.animation = "attack"
-		$AnimatedSprite2D.play()
-		$hit_effect.show()
-		$hit_effect.play()
+		animated_sprite.animation = "attack"
+		animated_sprite.play()
+		hit_effect.show()
+		hit_effect.play()
 		# Enable hitbox for attack
 		$AttackArea.monitoring = true
 		
@@ -230,10 +233,10 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_axis("left", "right")
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * speed, speed * accerlation)
-			$AnimatedSprite2D.flip_h = direction < 0
-			$hit_effect.flip_h = direction < 0
+			animated_sprite.flip_h = direction < 0
+			hit_effect.flip_h = direction < 0
 			if is_on_floor():
-				$AnimatedSprite2D.animation = "walk"
+				animated_sprite.animation = "walk"
 		else:
 			velocity.x = move_toward(velocity.x, 0, walk_speed * decelration)
 
@@ -241,9 +244,9 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor() or velocity.length() == 0:
 			$run_sound.stop()
 			$walk_sound.stop()
-			$AnimatedSprite2D.animation = "idle"
+			animated_sprite.animation = "idle"
 			
-	$AnimatedSprite2D.play()
+	animated_sprite.play()
 	move_and_slide()
 
 # Add this function to handle gravity calculations
@@ -251,15 +254,15 @@ func calculate_gravity() -> Vector2:
 	return Vector2(0, 980)  # Standard gravity value in Godot
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if $AnimatedSprite2D.animation == "attack" and not tornado_slash_active:
+	if animated_sprite.animation == "attack" and not tornado_slash_active:
 		is_attacking = false
 		$AttackArea.monitoring = false
-		$hit_effect.hide()
+		hit_effect.hide()
 		# Resume appropriate animation based on state
 		if not is_on_floor() or velocity.length() == 0:
-			$AnimatedSprite2D.animation = "idle"
+			animated_sprite.animation = "idle"
 		else:
-			$AnimatedSprite2D.animation = "walk"
+			animated_sprite.animation = "walk"
 		
 
 
@@ -403,8 +406,8 @@ func activate_time_slow() -> void:
 	
 	# Set player to not be affected by time scale
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	$AnimatedSprite2D.process_mode = Node.PROCESS_MODE_ALWAYS
-	$hit_effect.process_mode = Node.PROCESS_MODE_ALWAYS
+	animated_sprite.process_mode = Node.PROCESS_MODE_ALWAYS
+	hit_effect.process_mode = Node.PROCESS_MODE_ALWAYS
 	$AttackArea.process_mode = Node.PROCESS_MODE_ALWAYS
 	$PowerAttackArea.process_mode = Node.PROCESS_MODE_ALWAYS
 	
@@ -433,8 +436,8 @@ func deactivate_time_slow() -> void:
 	
 	# Reset process mode for player and components
 	process_mode = Node.PROCESS_MODE_INHERIT
-	$AnimatedSprite2D.process_mode = Node.PROCESS_MODE_INHERIT
-	$hit_effect.process_mode = Node.PROCESS_MODE_INHERIT
+	animated_sprite.process_mode = Node.PROCESS_MODE_INHERIT
+	hit_effect.process_mode = Node.PROCESS_MODE_INHERIT
 	$AttackArea.process_mode = Node.PROCESS_MODE_INHERIT
 	$PowerAttackArea.process_mode = Node.PROCESS_MODE_INHERIT
 	
@@ -453,9 +456,9 @@ func activate_tornado_slash() -> void:
 	
 	# Set up attack state
 	is_attacking = true
-	$AnimatedSprite2D.animation = "attack"
-	$AnimatedSprite2D.play()
-	$hit_effect.show()
+	animated_sprite.animation = "attack"
+	animated_sprite.play()
+	hit_effect.show()
 	$AttackArea.monitoring = true
 	
 	# Play sound effect
@@ -471,18 +474,18 @@ func activate_tornado_slash() -> void:
 func deactivate_tornado_slash() -> void:
 	# Reset tornado slash state
 	tornado_slash_active = false
-	rotation_degrees = 0  # Reset rotation
+	$coco_animation.rotation_degrees = 0  # Reset rotation
 	
 	# Reset attack state
 	is_attacking = false
 	$AttackArea.monitoring = false
-	$hit_effect.hide()
+	hit_effect.hide()
 	
 	# Resume appropriate animation based on state
 	if not is_on_floor() or velocity.length() == 0:
-		$AnimatedSprite2D.animation = "idle"
+		animated_sprite.animation = "idle"
 	else:
-		$AnimatedSprite2D.animation = "walk"
+		animated_sprite.animation = "walk"
 	
 	# Visual feedback
 	var tween = create_tween()
@@ -547,16 +550,16 @@ func reset_game_state() -> void:
 	modulate = Color(1, 1, 1, 1)
 	
 	# Reset animation state
-	$AnimatedSprite2D.animation = "idle"
-	$hit_effect.hide()
+	animated_sprite.animation = "idle"
+	hit_effect.hide()
 	
 	# Reset attack area
 	$AttackArea.monitoring = false
 	
 	# Reset process mode
 	process_mode = Node.PROCESS_MODE_INHERIT
-	$AnimatedSprite2D.process_mode = Node.PROCESS_MODE_INHERIT
-	$hit_effect.process_mode = Node.PROCESS_MODE_INHERIT
+	animated_sprite.process_mode = Node.PROCESS_MODE_INHERIT
+	hit_effect.process_mode = Node.PROCESS_MODE_INHERIT
 	$AttackArea.process_mode = Node.PROCESS_MODE_INHERIT
 	$PowerAttackArea.process_mode = Node.PROCESS_MODE_INHERIT
 	
